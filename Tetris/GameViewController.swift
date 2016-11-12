@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
 
     // MARK: - Properties
 
     var board = Board()
-    let interval: TimeInterval = 1.0
+    let interval: TimeInterval = 0.3
     var timer: Timer?
-    var currentPiece: Tetrimino!
-    let screenHeight = UIScreen.main.bounds.height
+    var currentPiece: Piece!
     var screenCentre = UIScreen.main.bounds.width / 2.0
+    var audioPlayer = AVAudioPlayer()
+
+    var gameOverLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "GAME OVER"
+        label.font = UIFont.boldSystemFont(ofSize: 44.0)
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
 
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        configureApperance()
+        configureGameOverLabel()
+        configureAudioPlayer()
         
         timer = Timer.scheduledTimer(
             timeInterval: interval,
@@ -35,23 +48,51 @@ class GameViewController: UIViewController {
         )
     }
 
+    private func configureApperance() { 
+        view.backgroundColor = .white
+    }
+
+    private func configureGameOverLabel() {
+        view.addSubview(gameOverLabel)
+
+        let views =  ["gameOverLabel": gameOverLabel]
+        addConstraints(format: "V:|[gameOverLabel]|", views: views)
+        addConstraints(format: "H:|[gameOverLabel]|", views: views)
+    }
+
+    func configureAudioPlayer() {
+        do {
+            let file = URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            audioPlayer = try AVAudioPlayer(contentsOf: file)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch {
+            print("")
+        }
+
+    }
+
     // MARK: - Main Loop
 
-    func mainLoop() {
+    func mainLoop(timer: Timer) {
         if currentPiece == nil {
-            currentPiece = L()
+            currentPiece = L.random()
             currentPiece.add(to: view)
-        }
 
-        for square in currentPiece.squares {
-            if (square.frame.origin.y + edgeLength) > screenHeight {
-                board.add(piece: currentPiece)
-                currentPiece = nil
-                return
+            if board.intersectsBottom(with: currentPiece) {
+                timer.invalidate()
+                view.bringSubview(toFront: gameOverLabel)
+                gameOverLabel.isHidden = false
             }
         }
-
-        currentPiece.moveDone()
+        else if board.intersectsBottom(with: currentPiece) {
+            board.add(piece: currentPiece)
+            board.killRows()
+            currentPiece = nil
+        }
+        else {
+            currentPiece.moveDown()
+        }
     }
 }
 
@@ -62,19 +103,26 @@ extension GameViewController: UIGestureRecognizerDelegate {
         guard currentPiece != nil else { return false }
 
         let touchLocation = touch.location(in: view)
-
-        if currentPiece.isHit(by: touch) {
-            currentPiece.rotate(in: view)
-        }
-        else if touchLocation.x > screenCentre {
-            if board.intersectsRight(with: currentPiece) == false {
-                currentPiece.moveRight()
+        switch gestureRecognizer {
+        case _ as UILongPressGestureRecognizer:
+            if currentPiece.isHit(by: touch) {
+                currentPiece.fallDown()
             }
-        }
-        else {
-            if board.intersectsLeft(with: currentPiece) == false {
-                currentPiece.moveLeft()
+        case _ as UITapGestureRecognizer:
+            if currentPiece.isHit(by: touch) {
+                currentPiece.rotate(in: view)
             }
+            else if touchLocation.x > screenCentre {
+                if board.intersectsRight(with: currentPiece) == false {
+                    currentPiece.moveRight()
+                }
+            }
+            else {
+                if board.intersectsLeft(with: currentPiece) == false {
+                    currentPiece.moveLeft()
+                }
+            }
+        default: break
         }
 
         return false

@@ -10,13 +10,11 @@ import UIKit
 
 class Square: UIView {
 
-    var currentRow = 0
-    var currentCol = 0
+    var row = 0
+    var col = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,5 +23,12 @@ class Square: UIView {
 
     func isHit(by touch: UITouch) -> Bool {
         return hitTest(touch.location(in: self), with: nil) != nil
+    }
+
+    func moveDown() {
+        row += 1
+        var newFrame = frame
+        newFrame.origin.y = newFrame.origin.y + newFrame.size.height
+        frame = newFrame
     }
 }
