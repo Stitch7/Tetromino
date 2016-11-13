@@ -8,8 +8,9 @@
 
 import UIKit
 
+typealias Pattern = [[Bool]]
+
 protocol Piece {
-    typealias Pattern = [[Bool]]
 
     var color: UIColor { get }
     var pattern: Pattern { get set }
@@ -17,7 +18,7 @@ protocol Piece {
     var currentRow: Int { get set }
     var currentCol: Int { get set }
 
-    mutating func add(to view: UIView)
+    mutating func build()
     mutating func rotate(in view: UIView)
     mutating func moveLeft()
     mutating func moveRight()
@@ -28,7 +29,8 @@ protocol Piece {
 }
 
 extension Piece {
-    mutating func add(to view: UIView) {
+
+    mutating func build() {
         squares = [Square]()
         let rowCount = 4
         let colCount = 4
@@ -36,17 +38,17 @@ extension Piece {
             for colNo in 0..<colCount {
                 guard pattern[rowNo][colNo] else { continue }
 
-                let square = Square(frame: CGRect(
+                let row = currentRow + rowNo
+                let col = currentCol + colNo
+                let frame = CGRect(
                     x: CGFloat(currentCol) * Board.squareWidth + CGFloat(colNo) * Board.squareWidth,
                     y: CGFloat(currentRow) * Board.squareHeight + CGFloat(rowNo) * Board.squareHeight,
                     width: Board.squareWidth,
                     height: Board.squareHeight
-                ))
+                )
+                let square = Square(row: row, col: col, frame: frame)
                 square.backgroundColor = color
-                square.row = currentRow + rowNo
-                square.col = currentCol + colNo
                 squares.append(square)
-                view.addSubview(square)
             }
         }
     }
@@ -58,10 +60,14 @@ extension Piece {
             [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
             [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
         ]
+
         for square in squares {
             square.removeFromSuperview()
         }
-        add(to: view)
+        build()
+        for square in squares {
+            view.addSubview(square)
+        }
 
         if isOutsideLeft() {
             moveRight()
@@ -154,8 +160,8 @@ struct I: Piece {
     let color = UIColor.green
     var squares = [Square]()
     var currentRow = 0
-    var currentCol = 3
-    var pattern: Piece.Pattern = [
+    var currentCol = 4
+    var pattern: Pattern = [
         [true, false, false, false],
         [true, false, false, false],
         [true, false, false, false],
@@ -168,7 +174,7 @@ struct O: Piece {
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
-    var pattern: Piece.Pattern = [
+    var pattern: Pattern = [
         [false, false, false, false],
         [false, true, true, false],
         [false, true, true, false],
@@ -181,7 +187,7 @@ struct Z: Piece {
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
-    var pattern: Piece.Pattern = [
+    var pattern: Pattern = [
         [true, true, false, false],
         [false, true, true, false],
         [false, false, false, false],
@@ -194,7 +200,7 @@ struct T: Piece {
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
-    var pattern: Piece.Pattern = [
+    var pattern: Pattern = [
         [true, true, true, false],
         [false, true, false, false],
         [false, false, false, false],
@@ -207,7 +213,7 @@ struct L: Piece {
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
-    var pattern: Piece.Pattern = [
+    var pattern: Pattern = [
         [false, true, false, false],
         [false, true, false, false],
         [false, true, true, false],

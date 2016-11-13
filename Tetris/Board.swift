@@ -19,6 +19,19 @@ struct Board {
 
     var grid: [[Square?]]
 
+    var completedRows: [Int] {
+        var rows = [Int]()
+        for (i, row) in grid.enumerated() {
+            if row.flatMap({ $0 }).count == row.count {
+                rows.append(i)
+            }
+        }
+
+        return rows
+    }
+
+    // MARK: - Initializers
+
     init() {
         grid = [[Square?]]()
         for _ in 0..<Board.numRows {
@@ -27,36 +40,37 @@ struct Board {
     }
 
     mutating func add(piece: Piece) {
-        
         for square in piece.squares {
             grid[square.row][square.col] = square
         }
     }
 
-    mutating func killRows() {
-        var completedRows = [Int]()
-        for (i, row) in grid.enumerated() {
-            if row.flatMap({ $0 }).count == row.count {
-                completedRows.append(i)
+    func walkSlots(_ range: CountableRange<Int> = 0..<Board.numRows, completion: ((Int, Int) -> Void)) {
+        for row in range {
+            for col in 0..<Board.numCols {
+                completion(row, col)
             }
         }
+    }
 
-        if completedRows.count > 0 {
-            for row in completedRows {
-                for square in grid[row] {
-                    square?.removeFromSuperview()
-                }
-                grid[row] = [Square?](repeating: nil, count: Board.numCols)
+    mutating func killCompletedRows() {
+        let rows = self.completedRows
+
+        for row in rows.reversed() {
+            for square in grid[row] {
+                square?.removeFromSuperview()
             }
+            grid.remove(at: row)
+        }
 
-            for row in completedRows {
-                if grid[row].flatMap({ $0 }).count == 0 {
-                    for rowNoToMove in (Board.numRows - row..<Board.numRows).reversed() {
-                        for square in grid[rowNoToMove].flatMap({ $0 }) {
-                            square.moveDown()
-                        }
-                    }
-                }
+        for _ in rows {
+            grid.insert([Square?](repeating: nil, count: Board.numCols), at: 0)
+        }
+
+        walkSlots { row, col in
+            guard let square = grid[row][col] else { return }
+            for _ in 0..<row - square.row {
+                square.moveDown()
             }
         }
     }
@@ -85,8 +99,7 @@ struct Board {
             }
 
             for boardRow in grid {
-                for boardSquare in boardRow {
-                    guard let toCompare = boardSquare else { continue }
+                for toCompare in boardRow.flatMap({ $0 }) {
                     if square.row == toCompare.row && square.col == toCompare.col + 1 {
                         return true
                     }
@@ -103,8 +116,7 @@ struct Board {
             }
 
             for boardRow in grid {
-                for boardSquare in boardRow {
-                    guard let toCompare = boardSquare else { continue }
+                for toCompare in boardRow.flatMap({ $0 }) {
                     if square.col == toCompare.col && square.row == toCompare.row - 1 {
                         return true
                     }

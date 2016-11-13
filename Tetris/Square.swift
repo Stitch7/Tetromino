@@ -13,10 +13,16 @@ class Square: UIView {
     var row = 0
     var col = 0
 
-    override init(frame: CGRect) {
+    init(row: Int, col: Int, frame: CGRect = .zero) {
+        self.row = row
+        self.col = col
         super.init(frame: frame)
     }
-    
+
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+
     required init?(coder aDecoder: NSCoder) {
         return nil
     }

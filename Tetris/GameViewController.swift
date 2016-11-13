@@ -69,7 +69,6 @@ class GameViewController: UIViewController {
         } catch {
             print("")
         }
-
     }
 
     // MARK: - Main Loop
@@ -77,17 +76,19 @@ class GameViewController: UIViewController {
     func mainLoop(timer: Timer) {
         if currentPiece == nil {
             currentPiece = L.random()
-            currentPiece.add(to: view)
+            currentPiece.build()
+            for square in currentPiece.squares {
+                view.addSubview(square)
+            }
 
             if board.intersectsBottom(with: currentPiece) {
                 timer.invalidate()
-                view.bringSubview(toFront: gameOverLabel)
-                gameOverLabel.isHidden = false
+                gameOver = true
             }
         }
         else if board.intersectsBottom(with: currentPiece) {
             board.add(piece: currentPiece)
-            board.killRows()
+            board.killCompletedRows()
             currentPiece = nil
         }
         else {
@@ -96,7 +97,7 @@ class GameViewController: UIViewController {
     }
 }
 
-// MARK: - UIGestureRecognizerDelegate
+// MARK: - User Input
 
 extension GameViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
