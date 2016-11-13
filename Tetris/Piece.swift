@@ -10,6 +10,8 @@ import UIKit
 
 typealias Pattern = [[Bool]]
 
+// MARK: Piece
+
 protocol Piece {
 
     var color: UIColor { get }
@@ -27,6 +29,8 @@ protocol Piece {
 
     func isHit(by touch: UITouch) -> Bool
 }
+
+// MARK: Piece Implementation
 
 extension Piece {
 
@@ -136,7 +140,7 @@ extension Piece {
     }
 }
 
-// MARK: Random Factory
+// MARK: Tetris Pieces
 
 extension Piece {
     static func random() -> Piece {

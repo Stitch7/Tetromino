@@ -17,7 +17,6 @@ class GameViewController: UIViewController {
     let interval: TimeInterval = 0.1
     var timer: Timer?
     var currentPiece: Piece!
-    var screenCentre = UIScreen.main.bounds.width / 2.0
     var audioPlayer = AVAudioPlayer()
 
     var gameOver = false {
@@ -28,14 +27,12 @@ class GameViewController: UIViewController {
             }
         }
     }
-
     var gameOverView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
     }()
-
     var gameOverLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -137,6 +134,8 @@ extension GameViewController: UIGestureRecognizerDelegate {
             }
         case _ as UITapGestureRecognizer:
             if gameOver { return false }
+
+            let screenCentre = UIScreen.main.bounds.width / 2.0
 
             if currentPiece.isHit(by: touch) {
                 currentPiece.rotate(in: view)

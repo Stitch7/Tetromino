@@ -1,5 +1,5 @@
 //
-//  UIViewController+addConstraints.swift
+//  UIView+addConstraints.swift
 //  Tetris
 //
 //  Created by Christopher Reitz on 05/11/2016.
