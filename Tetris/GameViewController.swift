@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     // MARK: - Properties
 
     var board = Board()
-    let interval: TimeInterval = 0.1
+    let interval: TimeInterval = 0.7
     var timer: Timer?
     var currentPiece: Piece!
     var audioPlayer = AVAudioPlayer()
@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     var gameOver = false {
         didSet {
             if gameOver {
+                timer?.invalidate()
                 view.bringSubview(toFront: gameOverView)
                 gameOverView.isHidden = false
             }
@@ -80,7 +81,6 @@ class GameViewController: UIViewController {
             }
 
             if board.intersectsBottom(with: currentPiece) {
-                timer.invalidate()
                 gameOver = true
             }
         }
@@ -112,21 +112,19 @@ extension GameViewController: UIGestureRecognizerDelegate {
 
     func handleTabGestures(with touch: UITouch) {
         let touchLocation = touch.location(in: view)
-        let screenCentre = UIScreen.main.bounds.width / 2.0
 
-        if currentPiece.isHit(by: touch) {
+        if currentPieceIsHit(by: touch) {
             let rotatedPiece = currentPiece.rotated
             if board.intersects(with: rotatedPiece) == false {
-                for square in currentPiece.squares {
-                    square.removeFromSuperview()
-                }
-                currentPiece = rotatedPiece
-                for square in currentPiece.squares {
-                    view.addSubview(square)
-                }
+                rotate(piece: rotatedPiece)
             }
         }
-        else if touchLocation.x > screenCentre {
+        else if touchLocation.y > bottomOfScreen() {
+            if board.intersectsBottom(with: currentPiece) == false {
+                currentPiece.moveDown()
+            }
+        }
+        else if touchLocation.x > centerOfCurrentPiece() {
             if board.intersectsRight(with: currentPiece) == false {
                 currentPiece.moveRight()
             }
@@ -139,8 +137,35 @@ extension GameViewController: UIGestureRecognizerDelegate {
     }
 
     func handleLongPressGestures(with touch: UITouch) {
-        if currentPiece.isHit(by: touch) {
+        if currentPieceIsHit(by: touch) {
             currentPiece.fallDown()
         }
+    }
+
+    func currentPieceIsHit(by touch: UITouch) -> Bool {
+        for square in currentPiece.squares {
+            if square.isHit(by: touch) {
+                return true
+            }
+        }
+        return false
+    }
+
+    func rotate(piece: Piece) {
+        for square in currentPiece.squares {
+            square.removeFromSuperview()
+        }
+        currentPiece = piece
+        for square in currentPiece.squares {
+            view.addSubview(square)
+        }
+    }
+
+    func centerOfCurrentPiece() -> CGFloat {
+        return currentPiece.leftX + ((currentPiece.rightX - currentPiece.leftX) / 2.0)
+    }
+
+    func bottomOfScreen() -> CGFloat {
+        return (view.frame.size.height / 10) * 9.2
     }
 }

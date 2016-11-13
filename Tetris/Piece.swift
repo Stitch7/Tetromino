@@ -19,19 +19,42 @@ protocol Piece {
     var currentRow: Int { get set }
     var currentCol: Int { get set }
     var rotated: Piece { get }
+    var leftX: CGFloat { get }
+    var rightX: CGFloat { get }
 
     mutating func build()
     mutating func moveLeft()
     mutating func moveRight()
     mutating func moveDown()
     mutating func fallDown()
-
-    func isHit(by touch: UITouch) -> Bool
 }
 
 // MARK: Piece Implementation
 
 extension Piece {
+
+    var leftX: CGFloat {
+        let leftSquare = squares.sorted(by: {$0.col < $1.col }).first!
+        return leftSquare.frame.origin.x
+    }
+
+    var rightX: CGFloat {
+        let rightSquare = squares.sorted(by: {$0.col < $1.col }).last!
+        return rightSquare.frame.origin.x + rightSquare.frame.size.width
+    }
+
+    var rotated: Piece {
+        var rotated = self
+        rotated.pattern = [
+            [pattern[0][3], pattern[1][3], pattern[2][3], pattern[3][3]],
+            [pattern[0][2], pattern[1][2], pattern[2][2], pattern[3][2]],
+            [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
+            [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
+        ]
+        rotated.build()
+        return rotated
+    }
+
     mutating func build() {
         squares = [Square]()
         let rowCount = 4
@@ -53,19 +76,6 @@ extension Piece {
                 squares.append(square)
             }
         }
-    }
-
-    var rotated: Piece {
-        var rotated = self
-        rotated.pattern = [
-            [pattern[0][3], pattern[1][3], pattern[2][3], pattern[3][3]],
-            [pattern[0][2], pattern[1][2], pattern[2][2], pattern[3][2]],
-            [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
-            [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
-        ]
-        rotated.build()
-
-        return rotated
     }
 
     mutating func moveLeft() {
@@ -97,15 +107,6 @@ extension Piece {
 
     mutating func fallDown() {
         print("FALLING DOWN")
-    }
-
-    func isHit(by touch: UITouch) -> Bool {
-        for square in squares {
-            if square.isHit(by: touch) {
-                return true
-            }
-        }
-        return false
     }
 }
 
