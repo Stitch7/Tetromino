@@ -109,8 +109,6 @@ extension Piece {
     }
 }
 
-// MARK: Tetris Pieces
-
 extension Piece {
     static func random() -> Piece {
         switch arc4random_uniform(7) {
@@ -124,95 +122,4 @@ extension Piece {
         default: fatalError("Piece randomizer out of bounds")
         }
     }
-}
-
-struct O: Piece {
-    let color = UIColor.flatRed
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [false, false, false, false],
-        [false, true, true, false],
-        [false, true, true, false],
-        [false, false, false, false],
-    ]
-}
-
-struct I: Piece {
-    let color = UIColor.flatGreen
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 4
-    var pattern: Pattern = [
-        [true, false, false, false],
-        [true, false, false, false],
-        [true, false, false, false],
-        [true, false, false, false]
-    ]
-}
-
-struct S: Piece {
-    let color = UIColor.flatMint
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [false, true, true, false],
-        [true, true, false, false],
-        [false, false, false, false],
-        [false, false, false, false],
-    ]
-}
-
-struct Z: Piece {
-    let color = UIColor.flatOrange
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [true, true, false, false],
-        [false, true, true, false],
-        [false, false, false, false],
-        [false, false, false, false],
-    ]
-}
-
-struct L: Piece {
-    let color = UIColor.flatBlue
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [false, true, false, false],
-        [false, true, false, false],
-        [false, true, true, false],
-        [false, false, false, false]
-    ]
-}
-
-struct J: Piece {
-    let color = UIColor.flatPurple
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [false, false, true, false],
-        [false, false, true, false],
-        [false, true, true, false],
-        [false, false, false, false]
-    ]
-}
-
-struct T: Piece {
-    let color = UIColor.flatYellow
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [true, true, true, false],
-        [false, true, false, false],
-        [false, false, false, false],
-        [false, false, false, false],
-        ]
 }
