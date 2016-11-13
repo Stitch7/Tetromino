@@ -33,7 +33,6 @@ protocol Piece {
 // MARK: Piece Implementation
 
 extension Piece {
-
     mutating func build() {
         squares = [Square]()
         let rowCount = 4
@@ -132,7 +131,7 @@ extension Piece {
 }
 
 struct I: Piece {
-    let color = UIColor.green
+    let color = UIColor.flatGreen
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 4
@@ -145,7 +144,7 @@ struct I: Piece {
 }
 
 struct O: Piece {
-    let color = UIColor.red
+    let color = UIColor.flatRed
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
@@ -158,7 +157,7 @@ struct O: Piece {
 }
 
 struct Z: Piece {
-    let color = UIColor.orange
+    let color = UIColor.flatOrange
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
@@ -171,7 +170,7 @@ struct Z: Piece {
 }
 
 struct T: Piece {
-    let color = UIColor.yellow
+    let color = UIColor.flatYellow
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
@@ -184,7 +183,7 @@ struct T: Piece {
 }
 
 struct L: Piece {
-    let color = UIColor.blue
+    let color = UIColor.flatBlue
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3

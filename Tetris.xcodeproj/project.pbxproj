@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304800171DD89785002D6CFF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304800161DD89785002D6CFF /* Colors.swift */; };
 		30BE10071DD7442500E5559D /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE10061DD7442500E5559D /* BoardTests.swift */; };
 		30F50C231DCEAE6A002A92C7 /* djrush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30F50C221DCEAE6A002A92C7 /* djrush.mp3 */; };
 		9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		304800161DD89785002D6CFF /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		30BE10061DD7442500E5559D /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		30F50C221DCEAE6A002A92C7 /* djrush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = djrush.mp3; sourceTree = "<group>"; };
 		9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
 				9DE354AF1DCAA9660041DADF /* Board.swift */,
+				304800161DD89785002D6CFF /* Colors.swift */,
 				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
 				9DE354AD1DCAA9360041DADF /* Piece.swift */,
 				9DE354AB1DCAA92F0041DADF /* Square.swift */,
@@ -304,6 +307,7 @@
 				9DE354B01DCAA9660041DADF /* Board.swift in Sources */,
 				9DE354AC1DCAA92F0041DADF /* Square.swift in Sources */,
 				9DE354801DCAA4AF0041DADF /* GameViewController.swift in Sources */,
+				304800171DD89785002D6CFF /* Colors.swift in Sources */,
 				9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */,
 				9DE3547E1DCAA4AF0041DADF /* AppDelegate.swift in Sources */,
 				9DE354AE1DCAA9360041DADF /* Piece.swift in Sources */,
