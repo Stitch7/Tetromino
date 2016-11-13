@@ -8,11 +8,17 @@
 
 import UIKit
 
+extension UIView {
+    func addConstraints(format: String, views: [String : Any]) {
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format,
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: views))
+    }
+}
+
 extension UIViewController {
     func addConstraints(format: String, views: [String : Any]) {
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format,
-                                                           options: [],
-                                                           metrics: nil,
-                                                           views: views))
+        view.addConstraints(format: format, views: views)
     }
 }

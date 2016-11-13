@@ -14,19 +14,34 @@ class GameViewController: UIViewController {
     // MARK: - Properties
 
     var board = Board()
-    let interval: TimeInterval = 0.3
+    let interval: TimeInterval = 0.1
     var timer: Timer?
     var currentPiece: Piece!
     var screenCentre = UIScreen.main.bounds.width / 2.0
     var audioPlayer = AVAudioPlayer()
 
+    var gameOver = false {
+        didSet {
+            if gameOver {
+                view.bringSubview(toFront: gameOverView)
+                gameOverView.isHidden = false
+            }
+        }
+    }
+
+    var gameOverView: UIVisualEffectView = {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+
     var gameOverLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "GAME OVER"
-        label.font = UIFont.boldSystemFont(ofSize: 44.0)
+        label.font = UIFont.systemFont(ofSize: 44, weight: UIFontWeightUltraLight)
         label.textAlignment = .center
-        label.isHidden = true
         return label
     }()
 
@@ -36,9 +51,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         configureApperance()
-        configureGameOverLabel()
-        configureAudioPlayer()
-        
+        configureGameOverView()
+//        configureAudioPlayer()
+
         timer = Timer.scheduledTimer(
             timeInterval: interval,
             target: self,
@@ -52,12 +67,23 @@ class GameViewController: UIViewController {
         view.backgroundColor = .white
     }
 
-    private func configureGameOverLabel() {
-        view.addSubview(gameOverLabel)
+    private func configureGameOverView() {
+        view.addSubview(gameOverView)
+        let views =  ["gameOverView": gameOverView]
+        addConstraints(format: "V:|[gameOverView]|", views: views)
+        addConstraints(format: "H:|[gameOverView]|", views: views)
 
-        let views =  ["gameOverLabel": gameOverLabel]
-        addConstraints(format: "V:|[gameOverLabel]|", views: views)
-        addConstraints(format: "H:|[gameOverLabel]|", views: views)
+        let vibrancyView = UIVisualEffectView(effect: gameOverView.effect)
+        vibrancyView.translatesAutoresizingMaskIntoConstraints = false
+        gameOverView.contentView.addSubview(vibrancyView)
+        let vibrancyViews =  ["vibrancyView": vibrancyView]
+        gameOverView.contentView.addConstraints(format: "V:|[vibrancyView]|", views: vibrancyViews)
+        gameOverView.contentView.addConstraints(format: "H:|[vibrancyView]|", views: vibrancyViews)
+
+        vibrancyView.contentView.addSubview(gameOverLabel)
+        let vibrancySubViews =  ["gameOverLabel": gameOverLabel]
+        vibrancyView.contentView.addConstraints(format: "V:|[gameOverLabel]|", views: vibrancySubViews)
+        vibrancyView.contentView.addConstraints(format: "H:|[gameOverLabel]|", views: vibrancySubViews)
     }
 
     func configureAudioPlayer() {
@@ -110,6 +136,8 @@ extension GameViewController: UIGestureRecognizerDelegate {
                 currentPiece.fallDown()
             }
         case _ as UITapGestureRecognizer:
+            if gameOver { return false }
+
             if currentPiece.isHit(by: touch) {
                 currentPiece.rotate(in: view)
             }
