@@ -13,7 +13,6 @@ typealias Pattern = [[Bool]]
 // MARK: Piece
 
 protocol Piece {
-
     var color: UIColor { get }
     var pattern: Pattern { get set }
     var squares: [Square] { get set }
@@ -114,20 +113,30 @@ extension Piece {
 
 extension Piece {
     static func random() -> Piece {
-        switch arc4random_uniform(10) {
-        case 0: return I()
-        case 1: return O()
-        case 2: return Z()
-        case 3: return T()
+        switch arc4random_uniform(7) {
+        case 0: return O()
+        case 1: return I()
+        case 2: return S()
+        case 3: return Z()
         case 4: return L()
-        case 5: return I()
-        case 6: return O()
-        case 7: return Z()
-        case 8: return T()
-        case 9: return L()
-        default: return L()
+        case 5: return J()
+        case 6: return T()
+        default: fatalError("Piece randomizer out of bounds")
         }
     }
+}
+
+struct O: Piece {
+    let color = UIColor.flatRed
+    var squares = [Square]()
+    var currentRow = 0
+    var currentCol = 3
+    var pattern: Pattern = [
+        [false, false, false, false],
+        [false, true, true, false],
+        [false, true, true, false],
+        [false, false, false, false],
+    ]
 }
 
 struct I: Piece {
@@ -143,15 +152,15 @@ struct I: Piece {
     ]
 }
 
-struct O: Piece {
-    let color = UIColor.flatRed
+struct S: Piece {
+    let color = UIColor.flatMint
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3
     var pattern: Pattern = [
+        [false, true, true, false],
+        [true, true, false, false],
         [false, false, false, false],
-        [false, true, true, false],
-        [false, true, true, false],
         [false, false, false, false],
     ]
 }
@@ -169,19 +178,6 @@ struct Z: Piece {
     ]
 }
 
-struct T: Piece {
-    let color = UIColor.flatYellow
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
-        [true, true, true, false],
-        [false, true, false, false],
-        [false, false, false, false],
-        [false, false, false, false],
-    ]
-}
-
 struct L: Piece {
     let color = UIColor.flatBlue
     var squares = [Square]()
@@ -193,4 +189,30 @@ struct L: Piece {
         [false, true, true, false],
         [false, false, false, false]
     ]
+}
+
+struct J: Piece {
+    let color = UIColor.flatPurple
+    var squares = [Square]()
+    var currentRow = 0
+    var currentCol = 3
+    var pattern: Pattern = [
+        [false, false, true, false],
+        [false, false, true, false],
+        [false, true, true, false],
+        [false, false, false, false]
+    ]
+}
+
+struct T: Piece {
+    let color = UIColor.flatYellow
+    var squares = [Square]()
+    var currentRow = 0
+    var currentCol = 3
+    var pattern: Pattern = [
+        [true, true, true, false],
+        [false, true, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+        ]
 }

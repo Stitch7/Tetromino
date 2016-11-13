@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     // MARK: - Properties
 
     var board = Board()
-    let interval: TimeInterval = 0.5
+    let interval: TimeInterval = 0.1
     var timer: Timer?
     var currentPiece: Piece!
     var audioPlayer = AVAudioPlayer()

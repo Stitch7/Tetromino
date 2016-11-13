@@ -18,14 +18,20 @@ extension UIColor {
         )
     }
 
-
-
     class var flatBlue: UIColor {
         return UIColor.hsb(224, 50, 63)
     }
 
+    class var flatPurple: UIColor {
+        return UIColor.hsb(253, 52, 77)
+    }
+    
     class var flatGreen: UIColor {
         return UIColor.hsb(145, 77, 80)
+    }
+
+    class var flatMint: UIColor {
+        return UIColor.hsb(168, 86, 74)
     }
 
     class var flatYellow: UIColor {
