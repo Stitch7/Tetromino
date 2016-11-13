@@ -10,8 +10,12 @@ import UIKit
 
 class Square: UIView {
 
+    // MARK: - Properties
+
     var row = 0
     var col = 0
+
+    // MARK: - Initializers
 
     init(row: Int, col: Int, frame: CGRect = .zero) {
         self.row = row
@@ -19,13 +23,11 @@ class Square: UIView {
         super.init(frame: frame)
     }
 
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-
     required init?(coder aDecoder: NSCoder) {
         return nil
     }
+
+    // MARK: - Public
 
     func isHit(by touch: UITouch) -> Bool {
         return hitTest(touch.location(in: self), with: nil) != nil

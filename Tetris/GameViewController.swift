@@ -14,7 +14,7 @@ class GameViewController: UIViewController {
     // MARK: - Properties
 
     var board = Board()
-    let interval: TimeInterval = 0.1
+    let interval: TimeInterval = 0.5
     var timer: Timer?
     var currentPiece: Piece!
     var audioPlayer = AVAudioPlayer()
@@ -124,35 +124,48 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard currentPiece != nil else { return false }
+        guard !gameOver, currentPiece != nil else { return false }
 
-        let touchLocation = touch.location(in: view)
         switch gestureRecognizer {
-        case _ as UILongPressGestureRecognizer:
-            if currentPiece.isHit(by: touch) {
-                currentPiece.fallDown()
-            }
-        case _ as UITapGestureRecognizer:
-            if gameOver { return false }
-
-            let screenCentre = UIScreen.main.bounds.width / 2.0
-
-            if currentPiece.isHit(by: touch) {
-                currentPiece.rotate(in: view)
-            }
-            else if touchLocation.x > screenCentre {
-                if board.intersectsRight(with: currentPiece) == false {
-                    currentPiece.moveRight()
-                }
-            }
-            else {
-                if board.intersectsLeft(with: currentPiece) == false {
-                    currentPiece.moveLeft()
-                }
-            }
+        case _ as UITapGestureRecognizer:       handleTabGestures(with: touch)
+        case _ as UILongPressGestureRecognizer: handleLongPressGestures(with: touch)
         default: break
         }
 
         return false
+    }
+
+    func handleTabGestures(with touch: UITouch) {
+        let touchLocation = touch.location(in: view)
+        let screenCentre = UIScreen.main.bounds.width / 2.0
+
+        if currentPiece.isHit(by: touch) {
+            let rotatedPiece = currentPiece.rotated
+            if board.intersects(with: rotatedPiece) == false {
+                for square in currentPiece.squares {
+                    square.removeFromSuperview()
+                }
+                currentPiece = rotatedPiece
+                for square in currentPiece.squares {
+                    view.addSubview(square)
+                }
+            }
+        }
+        else if touchLocation.x > screenCentre {
+            if board.intersectsRight(with: currentPiece) == false {
+                currentPiece.moveRight()
+            }
+        }
+        else {
+            if board.intersectsLeft(with: currentPiece) == false {
+                currentPiece.moveLeft()
+            }
+        }
+    }
+
+    func handleLongPressGestures(with touch: UITouch) {
+        if currentPiece.isHit(by: touch) {
+            currentPiece.fallDown()
+        }
     }
 }

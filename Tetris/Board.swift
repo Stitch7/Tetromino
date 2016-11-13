@@ -76,21 +76,10 @@ struct Board {
         }
     }
 
-    func intersectsRight(with piece: Piece) -> Bool {
-        for square in piece.squares {
-            if square.col == Board.numCols - 1 {
-                return true
-            }
-
-            for boardRow in grid {
-                for toCompare in boardRow.flatMap({ $0 }) {
-                    if square.row == toCompare.row && square.col == toCompare.col - 1 {
-                        return true
-                    }
-                }
-            }
-        }
-        return false
+    func intersects(with piece: Piece) -> Bool {
+        return intersectsLeft(with: piece)
+            || intersectsRight(with: piece)
+            || intersectsBottom(with: piece)
     }
 
     func intersectsLeft(with piece: Piece) -> Bool {
@@ -102,6 +91,23 @@ struct Board {
             for boardRow in grid {
                 for toCompare in boardRow.flatMap({ $0 }) {
                     if square.row == toCompare.row && square.col == toCompare.col + 1 {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    func intersectsRight(with piece: Piece) -> Bool {
+        for square in piece.squares {
+            if square.col == Board.numCols - 1 {
+                return true
+            }
+
+            for boardRow in grid {
+                for toCompare in boardRow.flatMap({ $0 }) {
+                    if square.row == toCompare.row && square.col == toCompare.col - 1 {
                         return true
                     }
                 }

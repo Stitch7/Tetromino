@@ -19,9 +19,9 @@ protocol Piece {
     var squares: [Square] { get set }
     var currentRow: Int { get set }
     var currentCol: Int { get set }
+    var rotated: Piece { get }
 
     mutating func build()
-    mutating func rotate(in view: UIView)
     mutating func moveLeft()
     mutating func moveRight()
     mutating func moveDown()
@@ -57,46 +57,17 @@ extension Piece {
         }
     }
 
-    mutating func rotate(in view: UIView) {
-        pattern = [
+    var rotated: Piece {
+        var rotated = self
+        rotated.pattern = [
             [pattern[0][3], pattern[1][3], pattern[2][3], pattern[3][3]],
             [pattern[0][2], pattern[1][2], pattern[2][2], pattern[3][2]],
             [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
             [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
         ]
+        rotated.build()
 
-        for square in squares {
-            square.removeFromSuperview()
-        }
-        build()
-        for square in squares {
-            view.addSubview(square)
-        }
-
-        if isOutsideLeft() {
-            moveRight()
-        }
-        else if isOutsideRight() {
-            moveLeft()
-        }
-    }
-
-    private func isOutsideLeft() -> Bool {
-        for square in squares {
-            if square.frame.origin.x < 0 {
-                return true
-            }
-        }
-        return false
-    }
-
-    private func isOutsideRight() -> Bool {
-        for square in squares {
-            if square.frame.origin.x + square.frame.size.width > Board.width {
-                return true
-            }
-        }
-        return false
+        return rotated
     }
 
     mutating func moveLeft() {
