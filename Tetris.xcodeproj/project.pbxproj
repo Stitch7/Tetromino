@@ -16,6 +16,7 @@
 		304800231DD8A032002D6CFF /* J.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304800221DD8A032002D6CFF /* J.swift */; };
 		304800251DD8A039002D6CFF /* T.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304800241DD8A039002D6CFF /* T.swift */; };
 		30BE10071DD7442500E5559D /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE10061DD7442500E5559D /* BoardTests.swift */; };
+		30C325C51DD8A42A0027943B /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325C41DD8A42A0027943B /* GameOverView.swift */; };
 		30F50C231DCEAE6A002A92C7 /* djrush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30F50C221DCEAE6A002A92C7 /* djrush.mp3 */; };
 		9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */; };
 		9DE3547E1DCAA4AF0041DADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		304800221DD8A032002D6CFF /* J.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = J.swift; sourceTree = "<group>"; };
 		304800241DD8A039002D6CFF /* T.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T.swift; sourceTree = "<group>"; };
 		30BE10061DD7442500E5559D /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
+		30C325C41DD8A42A0027943B /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		30F50C221DCEAE6A002A92C7 /* djrush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = djrush.mp3; sourceTree = "<group>"; };
 		9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
 		9DE3547A1DCAA4AF0041DADF /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
 				9DE354AF1DCAA9660041DADF /* Board.swift */,
 				304800161DD89785002D6CFF /* Colors.swift */,
+				30C325C41DD8A42A0027943B /* GameOverView.swift */,
 				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
 				9DE354AD1DCAA9360041DADF /* Piece.swift */,
 				9DE354AB1DCAA92F0041DADF /* Square.swift */,
@@ -181,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				30BE10061DD7442500E5559D /* BoardTests.swift */,
-				9DE354941DCAA4AF0041DADF /* Info.plist */,
 				9DE354921DCAA4AF0041DADF /* TetrisTests.swift */,
+				9DE354941DCAA4AF0041DADF /* Info.plist */,
 			);
 			path = TetrisTests;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				304800231DD8A032002D6CFF /* J.swift in Sources */,
 				304800211DD8A02C002D6CFF /* L.swift in Sources */,
 				304800171DD89785002D6CFF /* Colors.swift in Sources */,
+				30C325C51DD8A42A0027943B /* GameOverView.swift in Sources */,
 				9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */,
 				9DE3547E1DCAA4AF0041DADF /* AppDelegate.swift in Sources */,
 				9DE354AE1DCAA9360041DADF /* Piece.swift in Sources */,

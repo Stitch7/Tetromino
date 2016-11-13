@@ -27,20 +27,7 @@ class GameViewController: UIViewController {
             }
         }
     }
-    var gameOverView: UIVisualEffectView = {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.isHidden = true
-        return view
-    }()
-    var gameOverLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "GAME OVER"
-        label.font = UIFont.systemFont(ofSize: 44, weight: UIFontWeightUltraLight)
-        label.textAlignment = .center
-        return label
-    }()
+    let gameOverView = GameOverView()
 
     // MARK: - UIViewController
 
@@ -69,18 +56,6 @@ class GameViewController: UIViewController {
         let views =  ["gameOverView": gameOverView]
         addConstraints(format: "V:|[gameOverView]|", views: views)
         addConstraints(format: "H:|[gameOverView]|", views: views)
-
-        let vibrancyView = UIVisualEffectView(effect: gameOverView.effect)
-        vibrancyView.translatesAutoresizingMaskIntoConstraints = false
-        gameOverView.contentView.addSubview(vibrancyView)
-        let vibrancyViews =  ["vibrancyView": vibrancyView]
-        gameOverView.contentView.addConstraints(format: "V:|[vibrancyView]|", views: vibrancyViews)
-        gameOverView.contentView.addConstraints(format: "H:|[vibrancyView]|", views: vibrancyViews)
-
-        vibrancyView.contentView.addSubview(gameOverLabel)
-        let vibrancySubViews =  ["gameOverLabel": gameOverLabel]
-        vibrancyView.contentView.addConstraints(format: "V:|[gameOverLabel]|", views: vibrancySubViews)
-        vibrancyView.contentView.addConstraints(format: "H:|[gameOverLabel]|", views: vibrancySubViews)
     }
 
     func configureAudioPlayer() {
