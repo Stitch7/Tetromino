@@ -34,8 +34,12 @@ struct Board {
 
     init() {
         grid = [[Square?]]()
-        for _ in 0..<Board.numRows {
-            grid.append([Square?](repeating: nil, count: Board.numCols))
+        insertEmptyRows(count: Board.numRows)
+    }
+
+    mutating func insertEmptyRows(count: Int) {
+        for _ in 0..<count {
+            grid.insert([Square?](repeating: nil, count: Board.numCols), at: 0)
         }
     }
 
@@ -54,18 +58,15 @@ struct Board {
     }
 
     mutating func killCompletedRows() {
-        let rows = self.completedRows
+        let completedRows = self.completedRows
 
-        for row in rows.reversed() {
+        for row in completedRows.reversed() {
             for square in grid[row] {
                 square?.removeFromSuperview()
             }
             grid.remove(at: row)
         }
-
-        for _ in rows {
-            grid.insert([Square?](repeating: nil, count: Board.numCols), at: 0)
-        }
+        insertEmptyRows(count: completedRows.count)
 
         walkSlots { row, col in
             guard let square = grid[row][col] else { return }
