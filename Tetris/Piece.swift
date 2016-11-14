@@ -110,7 +110,7 @@ extension Piece {
     }
 }
 
-extension Piece {
+struct PieceFactory {
     static func random() -> Piece {
         let pieceIndex = 1 + ((arc4random_uniform(7) + 1) % 7)
         switch pieceIndex {

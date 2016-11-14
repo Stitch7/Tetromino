@@ -113,6 +113,7 @@ class BoardTests: XCTestCase {
 
         var piece = I()
         piece.build()
+        board.add(piece: piece)
         for _ in 0..<5 {
             piece.moveDown()
         }

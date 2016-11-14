@@ -9,10 +9,9 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     typealias LaunchOptions = [UIApplicationLaunchOptionsKey: Any]?
-
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions) -> Bool {
@@ -20,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func configureWindow() {
+    private func configureWindow() {
         let gameVC = GameViewController()
         let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
         tapGesture.delegate = gameVC

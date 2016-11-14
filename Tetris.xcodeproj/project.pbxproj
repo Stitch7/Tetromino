@@ -21,6 +21,7 @@
 		30C325C91DD8CD530027943B /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325C81DD8CD530027943B /* LevelView.swift */; };
 		30C325CB1DD8CDDB0027943B /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CA1DD8CDDB0027943B /* NextPieceView.swift */; };
 		30C325CE1DD8ECFF0027943B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CD1DD8ECFF0027943B /* Score.swift */; };
+		30C325D01DD946E70027943B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CF1DD946E70027943B /* Music.swift */; };
 		30F50C231DCEAE6A002A92C7 /* djrush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30F50C221DCEAE6A002A92C7 /* djrush.mp3 */; };
 		9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */; };
 		9DE3547E1DCAA4AF0041DADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		30C325C81DD8CD530027943B /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 		30C325CA1DD8CDDB0027943B /* NextPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
 		30C325CD1DD8ECFF0027943B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		30C325CF1DD946E70027943B /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		30F50C221DCEAE6A002A92C7 /* djrush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = djrush.mp3; sourceTree = "<group>"; };
 		9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
 		9DE3547A1DCAA4AF0041DADF /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
 				9DE354AF1DCAA9660041DADF /* Board.swift */,
 				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
+				30C325CF1DD946E70027943B /* Music.swift */,
 				9DE354AD1DCAA9360041DADF /* Piece.swift */,
 				30C325CD1DD8ECFF0027943B /* Score.swift */,
 				9DE354AB1DCAA92F0041DADF /* Square.swift */,
@@ -363,6 +366,7 @@
 				3048001F1DD8A023002D6CFF /* Z.swift in Sources */,
 				9DE354AC1DCAA92F0041DADF /* Square.swift in Sources */,
 				3048001B1DD8A013002D6CFF /* I.swift in Sources */,
+				30C325D01DD946E70027943B /* Music.swift in Sources */,
 				9DE354801DCAA4AF0041DADF /* GameViewController.swift in Sources */,
 				304800231DD8A032002D6CFF /* J.swift in Sources */,
 				304800211DD8A02C002D6CFF /* L.swift in Sources */,

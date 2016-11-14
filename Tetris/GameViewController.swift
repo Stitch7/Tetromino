@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import AVFoundation
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -18,7 +17,7 @@ class GameViewController: UIViewController {
     let interval: TimeInterval = 0.7
     var timer: Timer?
     var currentPiece: Piece!
-    var audioPlayer = AVAudioPlayer()
+    var musicPlayer = MusicPlayer(music: .techno)
 
     var gameOver = false {
         didSet {
@@ -40,7 +39,7 @@ class GameViewController: UIViewController {
         configureApperance()
         configureNavigationBar()
         configureGameOverView()
-//        configureAudioPlayer()
+//        musicPlayer.play()
 
         timer = Timer.scheduledTimer(
             timeInterval: interval,
@@ -71,40 +70,39 @@ class GameViewController: UIViewController {
         addConstraints(format: "H:|[gameOverView]|", views: views)
     }
 
-    func configureAudioPlayer() {
-        do {
-            let file = URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
-            audioPlayer = try AVAudioPlayer(contentsOf: file)
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
-        } catch {
-            print("")
+    // MARK: - Main Loop
+
+    func mainLoop() {
+        if currentPiece == nil {
+            spawnNewPiece()
+            return
+        }
+
+        if board.intersectsBottom(with: currentPiece) {
+            landPiece()
+            return
+        }
+
+        currentPiece.moveDown()
+    }
+
+    func spawnNewPiece() {
+        currentPiece = PieceFactory.random()
+        currentPiece.build()
+        for square in currentPiece.squares {
+            view.addSubview(square)
+        }
+
+        if board.intersectsBottom(with: currentPiece) {
+            gameOver = true
         }
     }
 
-    // MARK: - Main Loop
-
-    func mainLoop(timer: Timer) {
-        if currentPiece == nil {
-            currentPiece = L.random()
-            currentPiece.build()
-            for square in currentPiece.squares {
-                view.addSubview(square)
-            }
-
-            if board.intersectsBottom(with: currentPiece) {
-                gameOver = true
-            }
-        }
-        else if board.intersectsBottom(with: currentPiece) {
-            board.add(piece: currentPiece)
-            let killedRows = board.killCompletedRows()
-            score.add(numberOfRows: killedRows)
-            currentPiece = nil
-        }
-        else {
-            currentPiece.moveDown()
-        }
+    func landPiece() {
+        board.add(piece: currentPiece)
+        let killedRows = board.killCompletedRows()
+        score.add(numberOfRows: killedRows)
+        currentPiece = nil
     }
 }
 
@@ -112,13 +110,7 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard
-            !gameOver,
-            currentPiece != nil,
-            !(gestureRecognizer is UILongPressGestureRecognizer)
-        else {
-            return false
-        }
+        guard !gameOver, currentPiece != nil else { return false }
 
         return handleTabGestures(with: touch)
     }
@@ -131,23 +123,24 @@ extension GameViewController: UIGestureRecognizerDelegate {
             if board.intersects(with: rotatedPiece) == false {
                 rotate(piece: rotatedPiece)
             }
-        }
-        else if touchLocation.y > bottomOfScreen() {
-            if board.intersectsBottom(with: currentPiece) == false {
-                currentPiece.moveDown()
-            }
-        }
-        else if touchLocation.x > centerOfCurrentPiece() {
-            if board.intersectsRight(with: currentPiece) == false {
-                currentPiece.moveRight()
-            }
-        }
-        else {
-            if board.intersectsLeft(with: currentPiece) == false {
-                currentPiece.moveLeft()
-            }
+            return false
         }
 
+        if touchLocation.y > bottomOfScreen() &&
+            board.intersectsBottom(with: currentPiece) == false {
+            currentPiece.moveDown()
+            return false
+        }
+
+        if touchLocation.x > centerOfCurrentPiece() &&
+           board.intersectsRight(with: currentPiece) == false {
+            currentPiece.moveRight()
+            return false
+        }
+
+        if board.intersectsLeft(with: currentPiece) == false {
+            currentPiece.moveLeft()
+        }
         return false
     }
 

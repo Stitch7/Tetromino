@@ -10,6 +10,8 @@ import UIKit
 
 struct Board {
 
+    // MARK: - Properties
+
     static let width = UIScreen.main.bounds.width
     static let height = UIScreen.main.bounds.height
     static let squareWidth = Board.width / CGFloat(Board.numCols)
