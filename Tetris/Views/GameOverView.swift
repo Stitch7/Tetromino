@@ -21,6 +21,11 @@ class GameOverView: UIVisualEffectView {
         return label
     }()
 
+    var newHighScore = false {
+        didSet {
+
+        }
+    }
 
     // MARK: - Initializers
 

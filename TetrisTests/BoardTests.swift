@@ -26,16 +26,25 @@ class BoardTests: XCTestCase {
     // MARK: - Tests
     
     func test4PiecesInARowGetKilled() {
+        let numRows = 4
+
         var board = Board()
         // complete the last 4 rows by placing squares in all cols
-        let last4Rows = Board.numRows-4..<Board.numRows
+        let last4Rows = Board.numRows-numRows..<Board.numRows
         board.walkSlots(last4Rows) { row, col in
             board.grid[row][col] = Square(row: row, col: col)
         }
-        assert(board.completedRows.count == 4)
+        assert(board.completedRows.count == numRows)
+
+        let killedRows = board.killCompletedRows()
+
+        // test if `killCompletedRows` returns correct number of killed rows
+        XCTAssert(
+            killedRows == numRows,
+            "killCompletedRows doesn't kill \(numRows) rows"
+        )
 
         // test if no complete row remains after `killCompletedRows`
-        board.killCompletedRows()
         XCTAssert(
             board.completedRows.count == 0,
             "Completed rows remaining after killCompletedRows"
@@ -51,7 +60,7 @@ class BoardTests: XCTestCase {
         }
         assert(board.completedRows.count == 4)
 
-        board.killCompletedRows()
+        _ = board.killCompletedRows()
         assert(board.completedRows.count == 0)
 
         var noSquaresFoundInLastRow = true

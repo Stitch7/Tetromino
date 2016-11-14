@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     // MARK: - Properties
 
     var board = Board()
+    var score = Score(userDefaults: UserDefaults.standard)
     let interval: TimeInterval = 0.7
     var timer: Timer?
     var currentPiece: Piece!
@@ -23,6 +24,7 @@ class GameViewController: UIViewController {
         didSet {
             if gameOver {
                 timer?.invalidate()
+                gameOverView.newHighScore = score.save()
                 view.bringSubview(toFront: gameOverView)
                 gameOverView.isHidden = false
             }
@@ -36,6 +38,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         configureApperance()
+        configureNavigationBar()
         configureGameOverView()
 //        configureAudioPlayer()
 
@@ -50,6 +53,15 @@ class GameViewController: UIViewController {
 
     private func configureApperance() { 
         view.backgroundColor = .white
+    }
+
+    private func configureNavigationBar() {
+        let scoreView = ScoreView()
+        navigationItem.titleView = scoreView
+        score.view = scoreView
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: LevelView())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NextPieceView())
     }
 
     private func configureGameOverView() {
@@ -86,7 +98,8 @@ class GameViewController: UIViewController {
         }
         else if board.intersectsBottom(with: currentPiece) {
             board.add(piece: currentPiece)
-            board.killCompletedRows()
+            let killedRows = board.killCompletedRows()
+            score.add(numberOfRows: killedRows)
             currentPiece = nil
         }
         else {
@@ -99,18 +112,18 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard !gameOver, currentPiece != nil else { return false }
-
-        switch gestureRecognizer {
-        case _ as UITapGestureRecognizer:       handleTabGestures(with: touch)
-        case _ as UILongPressGestureRecognizer: handleLongPressGestures(with: touch)
-        default: break
+        guard
+            !gameOver,
+            currentPiece != nil,
+            !(gestureRecognizer is UILongPressGestureRecognizer)
+        else {
+            return false
         }
 
-        return false
+        return handleTabGestures(with: touch)
     }
 
-    func handleTabGestures(with touch: UITouch) {
+    func handleTabGestures(with touch: UITouch) -> Bool {
         let touchLocation = touch.location(in: view)
 
         if currentPieceIsHit(by: touch) {
@@ -134,12 +147,8 @@ extension GameViewController: UIGestureRecognizerDelegate {
                 currentPiece.moveLeft()
             }
         }
-    }
 
-    func handleLongPressGestures(with touch: UITouch) {
-        if currentPieceIsHit(by: touch) {
-            currentPiece.fallDown()
-        }
+        return false
     }
 
     func currentPieceIsHit(by touch: UITouch) -> Bool {
@@ -161,11 +170,11 @@ extension GameViewController: UIGestureRecognizerDelegate {
         }
     }
 
-    func centerOfCurrentPiece() -> CGFloat {
-        return currentPiece.leftX + ((currentPiece.rightX - currentPiece.leftX) / 2.0)
-    }
-
     func bottomOfScreen() -> CGFloat {
         return (view.frame.size.height / 10) * 9.2
+    }
+
+    func centerOfCurrentPiece() -> CGFloat {
+        return currentPiece.leftX + ((currentPiece.rightX - currentPiece.leftX) / 2.0)
     }
 }

@@ -37,11 +37,13 @@ struct Board {
         insertEmptyRows(count: Board.numRows)
     }
 
-    mutating func insertEmptyRows(count: Int) {
+    private mutating func insertEmptyRows(count: Int) {
         for _ in 0..<count {
             grid.insert([Square?](repeating: nil, count: Board.numCols), at: 0)
         }
     }
+
+    // MARK: - Public
 
     mutating func add(piece: Piece) {
         for square in piece.squares {
@@ -57,7 +59,7 @@ struct Board {
         }
     }
 
-    mutating func killCompletedRows() {
+    mutating func killCompletedRows() -> Int {
         let completedRows = self.completedRows
 
         for row in completedRows.reversed() {
@@ -74,6 +76,8 @@ struct Board {
                 square.moveDown()
             }
         }
+
+        return completedRows.count
     }
 
     func intersects(with piece: Piece) -> Bool {

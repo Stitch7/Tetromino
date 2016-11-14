@@ -23,12 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureWindow() {
         let gameVC = GameViewController()
         let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
-        let longPressGesture = UILongPressGestureRecognizer(target: nil, action: nil)
         tapGesture.delegate = gameVC
-        longPressGesture.delegate = gameVC
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.addGestureRecognizer(tapGesture)
-        window?.addGestureRecognizer(longPressGesture)
         window?.rootViewController = UINavigationController(rootViewController: gameVC)
         window?.makeKeyAndVisible()
     }

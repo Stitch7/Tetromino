@@ -112,14 +112,15 @@ extension Piece {
 
 extension Piece {
     static func random() -> Piece {
-        switch arc4random_uniform(7) {
-        case 0: return O()
-        case 1: return I()
-        case 2: return S()
-        case 3: return Z()
-        case 4: return L()
-        case 5: return J()
-        case 6: return T()
+        let pieceIndex = 1 + ((arc4random_uniform(7) + 1) % 7)
+        switch pieceIndex {
+        case 1: return O()
+        case 2: return I()
+        case 3: return S()
+        case 4: return Z()
+        case 5: return L()
+        case 6: return J()
+        case 7: return T()
         default: fatalError("Piece randomizer out of bounds")
         }
     }
