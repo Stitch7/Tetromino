@@ -20,9 +20,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureWindow() {
-        let gameVC = GameViewController()
+        let tetris = Game(score: Score(userDefaults: UserDefaults.standard))
+        let gameVC = GameViewController(game: tetris)
         let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
-        tapGesture.delegate = gameVC
+        tapGesture.delegate = tetris
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.addGestureRecognizer(tapGesture)
         window?.rootViewController = UINavigationController(rootViewController: gameVC)

@@ -8,28 +8,26 @@
 
 import UIKit
 
-final class GameViewController: UIViewController {
+final class GameViewController: UIViewController, GameDelegate {
 
     // MARK: - Properties
 
-    var board = Board()
-    var score = Score(userDefaults: UserDefaults.standard)
+    var game: Game
+
     let interval: TimeInterval = 0.7
     var timer: Timer?
-    var currentPiece: Piece!
     var musicPlayer = MusicPlayer(music: .techno)
-
-    var gameOver = false {
-        didSet {
-            if gameOver {
-                timer?.invalidate()
-                gameOverView.newHighScore = score.save()
-                view.bringSubview(toFront: gameOverView)
-                gameOverView.isHidden = false
-            }
-        }
-    }
     let gameOverView = GameOverView()
+
+    init(game: Game) {
+        self.game = game
+        super.init(nibName: nil, bundle: nil)
+        game.delegate = self
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
 
     // MARK: - UIViewController
 
@@ -57,7 +55,7 @@ final class GameViewController: UIViewController {
     private func configureNavigationBar() {
         let scoreView = ScoreView()
         navigationItem.titleView = scoreView
-        score.view = scoreView
+        game.score.view = scoreView // TODO
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: LevelView())
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NextPieceView())
@@ -73,101 +71,19 @@ final class GameViewController: UIViewController {
     // MARK: - Main Loop
 
     func mainLoop() {
-        if currentPiece == nil {
-            spawnNewPiece()
-            return
-        }
-
-        if board.intersectsBottom(with: currentPiece) {
-            landPiece()
-            return
-        }
-
-        currentPiece.moveDown()
+        game.tick()
     }
 
-    func spawnNewPiece() {
-        currentPiece = PieceFactory.random()
-        currentPiece.build()
-        for square in currentPiece.squares {
-            view.addSubview(square)
-        }
+    // MARK: - GameDelegate
 
-        if board.intersectsBottom(with: currentPiece) {
-            gameOver = true
-        }
+    func gameOver() {
+        timer?.invalidate()
+        gameOverView.newHighScore = game.score.save()
+        view.bringSubview(toFront: gameOverView)
+        gameOverView.isHidden = false
     }
 
-    func landPiece() {
-        board.add(piece: currentPiece)
-        let killedRows = board.killCompletedRows()
-        score.add(numberOfRows: killedRows)
-        currentPiece = nil
-    }
-}
-
-// MARK: - User Input
-
-extension GameViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard !gameOver, currentPiece != nil else { return false }
-
-        return handleTabGestures(with: touch)
-    }
-
-    func handleTabGestures(with touch: UITouch) -> Bool {
-        let touchLocation = touch.location(in: view)
-
-        if currentPieceIsHit(by: touch) {
-            let rotatedPiece = currentPiece.rotated
-            if board.intersects(with: rotatedPiece) == false {
-                rotate(piece: rotatedPiece)
-            }
-            return false
-        }
-
-        if touchLocation.y > bottomOfScreen() &&
-            board.intersectsBottom(with: currentPiece) == false {
-            currentPiece.moveDown()
-            return false
-        }
-
-        if touchLocation.x > centerOfCurrentPiece() &&
-           board.intersectsRight(with: currentPiece) == false {
-            currentPiece.moveRight()
-            return false
-        }
-
-        if board.intersectsLeft(with: currentPiece) == false {
-            currentPiece.moveLeft()
-        }
-        return false
-    }
-
-    func currentPieceIsHit(by touch: UITouch) -> Bool {
-        for square in currentPiece.squares {
-            if square.isHit(by: touch) {
-                return true
-            }
-        }
-        return false
-    }
-
-    func rotate(piece: Piece) {
-        for square in currentPiece.squares {
-            square.removeFromSuperview()
-        }
-        currentPiece = piece
-        for square in currentPiece.squares {
-            view.addSubview(square)
-        }
-    }
-
-    func bottomOfScreen() -> CGFloat {
-        return (view.frame.size.height / 10) * 9.2
-    }
-
-    func centerOfCurrentPiece() -> CGFloat {
-        return currentPiece.leftX + ((currentPiece.rightX - currentPiece.leftX) / 2.0)
+    func mainView() -> UIView {
+        return view
     }
 }
