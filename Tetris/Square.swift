@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Square: UIView {
+final class Square: UIView {
 
     // MARK: - Properties
 

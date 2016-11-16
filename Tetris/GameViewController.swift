@@ -12,15 +12,18 @@ final class GameViewController: UIViewController, GameDelegate {
 
     // MARK: - Properties
 
-    var game: Game
+    let game: Game
+    let highscore: Highscore
 
-    let interval: TimeInterval = 0.7
     var timer: Timer?
     var musicPlayer = MusicPlayer(music: .techno)
     let gameOverView = GameOverView()
 
-    init(game: Game) {
+    // MARK: - Initializers
+
+    init(game: Game, highscore: Highscore) {
         self.game = game
+        self.highscore = highscore
         super.init(nibName: nil, bundle: nil)
         game.delegate = self
     }
@@ -40,7 +43,7 @@ final class GameViewController: UIViewController, GameDelegate {
 //        musicPlayer.play()
 
         timer = Timer.scheduledTimer(
-            timeInterval: interval,
+            timeInterval: game.level.rawValue,
             target: self,
             selector: #selector(mainLoop),
             userInfo: nil,
@@ -55,7 +58,7 @@ final class GameViewController: UIViewController, GameDelegate {
     private func configureNavigationBar() {
         let scoreView = ScoreView()
         navigationItem.titleView = scoreView
-        game.score.view = scoreView // TODO
+//        game.score.view = scoreView // TODO
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: LevelView())
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NextPieceView())
@@ -78,7 +81,7 @@ final class GameViewController: UIViewController, GameDelegate {
 
     func gameOver() {
         timer?.invalidate()
-        gameOverView.newHighScore = game.score.save()
+        gameOverView.newHighScore = highscore.save(value: game.score.value)
         view.bringSubview(toFront: gameOverView)
         gameOverView.isHidden = false
     }

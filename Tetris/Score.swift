@@ -8,58 +8,35 @@
 
 import Foundation
 
-struct Score {
+protocol ScoreDelegate {
+    func scoreDidUpdate(value: Int)
+}
+
+final class Score {
 
     // MARK: - Properties
 
-    let userDefaults: UserDefaults
-    let key = "highscore"
-
-    var view: ScoreView?
-    var highScore: [Int]
-    var currentScore = 0 {
+    var delegate: ScoreDelegate?
+    var value = 0 {
         didSet {
-            view?.score = currentScore
-
+            self.delegate?.scoreDidUpdate(value: value)
         }
-    }
-    var number1Score: Int {
-        return highScore.sorted(by: { $0 < $1 }).first ?? 0
     }
 
     // MARK: - Initializers
 
-    init(userDefaults: UserDefaults) {
-        self.userDefaults = userDefaults
-        self.highScore = [Int]()
-        if let savedHighScore = userDefaults.array(forKey: key) as? [Int] {
-            self.highScore = savedHighScore
-            self.view?.highscoreValue.text = "\(number1Score)"
-        }
+    convenience init (value: Int) {
+        self.init()
+        self.value = value
     }
 
-    mutating func add(numberOfRows: Int) {
+    // MARK: - Public
+
+    func add(numberOfRows: Int) {
         var score = numberOfRows * 100
         if numberOfRows == 4 {
             score += 100
         }
-        currentScore += score
-    }
-
-    mutating func save() -> Bool {
-        let highscoreNotFull = highScore.count < 10
-        let highscoreEntriesLowerThanCurrentScore = highScore.filter({ $0 < self.currentScore })
-
-        if highscoreNotFull {
-            highScore.append(currentScore)
-            userDefaults.set(highScore, forKey: key)
-            return true
-        } else if highscoreEntriesLowerThanCurrentScore.count > 0 {
-            // TODO delete
-            highScore.append(currentScore)
-            userDefaults.set(highScore, forKey: key)
-            return true
-        }
-        return false
+        value += score
     }
 }

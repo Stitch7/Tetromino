@@ -17,7 +17,8 @@ final class Game: NSObject, UIGestureRecognizerDelegate {
 
     // MARK: - Properties
 
-    var score: Score
+    let score: Score
+    var level: Level
     var delegate: GameDelegate?
 
     private var gameOver = false {
@@ -30,8 +31,11 @@ final class Game: NSObject, UIGestureRecognizerDelegate {
     private var board = Board()
     private var currentPiece: Piece!
 
-    init(score: Score) {
+    // MARK: - Initializers
+
+    init(score: Score, level: Level = .one) {
         self.score = score
+        self.level = level
     }
 
     // MARK: - Public
@@ -70,6 +74,8 @@ final class Game: NSObject, UIGestureRecognizerDelegate {
         score.add(numberOfRows: killedRows)
         currentPiece = nil
     }
+
+    // MARK: - UIGestureRecognizerDelegate
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         guard !gameOver, currentPiece != nil else { return false }
