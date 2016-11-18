@@ -16,9 +16,8 @@ final class Highscore {
     let key = "highscore"
 
     var list = [Int]()
-
     var leader: Int? {
-        return list.sorted(by: { $0 < $1 }).first
+        return list.sorted(by: { $0 > $1 }).first
     }
 
     // MARK: - Initializers
@@ -27,8 +26,6 @@ final class Highscore {
         self.userDefaults = userDefaults
         if let savedHighScore = userDefaults.array(forKey: key) as? [Int] {
             self.list = savedHighScore
-            // TODO
-//            self.view?.highscoreValue.text = "\(leader)"
         }
     }
 

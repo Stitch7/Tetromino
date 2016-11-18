@@ -33,7 +33,7 @@ class GameOverView: UIVisualEffectView {
         super.init(effect: UIBlurEffect(style: .light))
 
         configure()
-        configureGameOverLabel()
+        configureSubviews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +45,7 @@ class GameOverView: UIVisualEffectView {
         isHidden = true
     }
 
-    private func configureGameOverLabel() {
+    private func configureSubviews() {
         let vibrancyView = UIVisualEffectView(effect: effect)
         vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(vibrancyView)

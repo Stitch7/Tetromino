@@ -11,6 +11,7 @@ protocol GameDelegate {
     func display(piece: Piece)
     func remove(piece: Piece)
     func next(piece nextPiece: Piece)
+    func scoreDidUpdate(newScore: Score)
 }
 
 final class Game {
@@ -19,7 +20,7 @@ final class Game {
 
     var board: Board
     var userInput: UserInput
-    let score: Score
+    var score: Score
     var level: Level
     var nextPiece: Piece
     var delegate: GameDelegate?
@@ -85,6 +86,7 @@ final class Game {
         board.add(piece: currentPiece)
         let killedRows = board.killCompletedRows()
         score.add(numberOfRows: killedRows)
+        delegate?.scoreDidUpdate(newScore: score)
         currentPiece = nil
     }
 }

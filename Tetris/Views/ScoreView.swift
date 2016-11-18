@@ -12,9 +12,9 @@ class ScoreView: UIView {
 
     // MARK: - Properties
 
-    var score: Int = 0 {
+    var score: Score {
         didSet {
-            value.text = "\(score)"
+            value.text = "\(score.value)"
         }
     }
 
@@ -52,17 +52,18 @@ class ScoreView: UIView {
 
     // MARK: - Initializers
 
-    init() {
+    init(score: Score) {
+        self.score = score
         super.init(frame: CGRect(x: 0, y: 0, width: 70, height: 44.0))
 
-        configureSubViews()
+        configureSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }
 
-    private func configureSubViews() {
+    private func configureSubviews() {
         addSubview(label)
         addSubview(value)
         addSubview(highscoreLabel)

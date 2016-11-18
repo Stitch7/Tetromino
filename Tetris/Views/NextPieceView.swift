@@ -51,14 +51,14 @@ class NextPieceView: UIView {
         self.piece = piece
         super.init(frame: .zero)
 
-        configureLayout()
+        configureSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }
 
-    private func configureLayout() {
+    private func configureSubviews() {
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
 

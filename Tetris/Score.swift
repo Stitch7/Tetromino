@@ -6,31 +6,19 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-protocol ScoreDelegate {
-    func scoreDidUpdate(value: Int)
-}
-
-final class Score {
+struct Score: ExpressibleByIntegerLiteral {
 
     // MARK: - Properties
 
-    var delegate: ScoreDelegate?
-    var value = 0 {
-        didSet {
-            self.delegate?.scoreDidUpdate(value: value)
-        }
-    }
+    var value: Int
 
-    // MARK: - Initializers
-
-    convenience init (value: Int) {
-        self.init()
+    init(integerLiteral value: Int) {
         self.value = value
     }
 
     // MARK: - Public
 
-    func add(numberOfRows: Int) {
+    mutating func add(numberOfRows: Int) {
         var score = numberOfRows * 100
         if numberOfRows == 4 {
             score += 100

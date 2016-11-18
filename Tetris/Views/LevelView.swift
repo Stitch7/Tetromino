@@ -35,7 +35,7 @@ class LevelView: UIView {
         super.init(frame: .zero)
 
         configure()
-        configureLabel()
+        configureSubviews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -46,7 +46,7 @@ class LevelView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 
-    private func configureLabel() {
+    private func configureSubviews() {
         addSubview(label)
         addSubview(value)
 

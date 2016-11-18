@@ -17,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions) -> Bool {
         let userInput = TouchUserInput()
         let board = Board(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        let game = Game(board: board, userInput: userInput, score: Score())
+        let game = Game(board: board, userInput: userInput, score: 0)
         let highscore = Highscore(userDefaults: UserDefaults.standard)
 
         let gameVC = GameViewController(game: game, userInput: userInput, highscore: highscore)
