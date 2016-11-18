@@ -10,6 +10,7 @@ protocol GameDelegate {
     func gameOver()
     func display(piece: Piece)
     func remove(piece: Piece)
+    func next(piece nextPiece: Piece)
 }
 
 final class Game {
@@ -21,6 +22,7 @@ final class Game {
     var level: Level
     var delegate: GameDelegate?
     var board = Board()
+    var nextPiece: Piece
     var currentPiece: Piece! {
         didSet {
             userInput.piece = currentPiece
@@ -40,11 +42,14 @@ final class Game {
         self.userInput = userInput
         self.score = score
         self.level = level
+        self.nextPiece = PieceFactory.random()
     }
 
     // MARK: - Public
 
     func tick() {
+        if gameOver { return }
+
         if currentPiece == nil {
             spawnNewPiece()
             return
@@ -61,12 +66,16 @@ final class Game {
     // MARK: - Private
 
     private func spawnNewPiece() {
-        currentPiece = PieceFactory.random()
+        currentPiece = nextPiece
         currentPiece.build()
         delegate?.display(piece: currentPiece)
 
         if board.intersectsBottom(with: currentPiece) {
             gameOver = true
+        }
+        else {
+            nextPiece = PieceFactory.random()
+            delegate?.next(piece: nextPiece)
         }
     }
 
@@ -84,7 +93,9 @@ extension Game: UserInputDelegate {
     func rotate() {
         let rotatedPiece = currentPiece.rotated
         if board.intersects(with: rotatedPiece) == false {
-            rotate(piece: rotatedPiece)
+            delegate?.remove(piece: currentPiece)
+            delegate?.display(piece: rotatedPiece)
+            currentPiece = rotatedPiece
         }
     }
 
@@ -104,11 +115,5 @@ extension Game: UserInputDelegate {
         if board.intersectsBottom(with: currentPiece) == false {
             currentPiece.moveDown()
         }
-    }
-
-    func rotate(piece: Piece) {
-        delegate?.remove(piece: currentPiece)
-        delegate?.display(piece: piece)
-        currentPiece = piece
     }
 }

@@ -15,10 +15,25 @@ extension UIView {
                                                       metrics: nil,
                                                       views: views))
     }
+
+    func addHorizontallyCenteredConstraints(forView view: UIView, inSuperView superView: UIView) {
+        let constraints = NSLayoutConstraint.constraints(
+            withVisualFormat: "V:[superview]-(<=1)-[view]",
+            options: .alignAllCenterX,
+            metrics: nil,
+            views: ["superview": self, "view": view]
+        )
+
+        addConstraints(constraints)
+    }
 }
 
 extension UIViewController {
     func addConstraints(format: String, views: [String : Any]) {
         view.addConstraints(format: format, views: views)
+    }
+
+    func addHorizontallyCenterConstraints(forView view: UIView, inSuperView superView: UIView) {
+        view.addHorizontallyCenteredConstraints(forView: view, inSuperView: superView)
     }
 }

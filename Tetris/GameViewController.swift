@@ -18,6 +18,7 @@ final class GameViewController: UIViewController {
 
     var timer: Timer?
     var musicPlayer = MusicPlayer(music: .techno)
+    let nextPieceView: NextPieceView
     let gameOverView = GameOverView()
 
     // MARK: - Initializers
@@ -26,6 +27,7 @@ final class GameViewController: UIViewController {
         self.game = game
         self.highscore = highscore
         self.userInput = userInput
+        self.nextPieceView = NextPieceView(piece: game.nextPiece)
 
         super.init(nibName: nil, bundle: nil)
         game.delegate = self
@@ -66,7 +68,7 @@ final class GameViewController: UIViewController {
 //        game.score.view = scoreView // TODO
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: LevelView())
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: NextPieceView())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextPieceView)
     }
 
     private func configureGameOverView() {
@@ -81,7 +83,6 @@ final class GameViewController: UIViewController {
     func mainLoop() {
         game.tick()
     }
-
 }
 
 // MARK: - GameDelegate
@@ -104,5 +105,9 @@ extension GameViewController: GameDelegate {
         for square in piece.squares {
             square.removeFromSuperview()
         }
+    }
+
+    func next(piece nextPiece: Piece) {
+        nextPieceView.piece = nextPiece
     }
 }
