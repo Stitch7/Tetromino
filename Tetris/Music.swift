@@ -6,8 +6,8 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import Foundation
-import AVFoundation
+import Foundation.NSURL
+import AVFoundation.AVFAudio
 
 enum Music {
     case original
@@ -22,18 +22,22 @@ extension Music {
     var audioFile: URL {
         switch self {
         case .original:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         case .acapella:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         case .techno:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         case .dubstep:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         case .dance:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         case .orchestra:
-            return URL(fileURLWithPath: Bundle.main.path(forResource: "djrush", ofType: "mp3")!)
+            return url(forResource: "djrush")
         }
+    }
+
+    private func url(forResource resource: String) -> URL {
+        return URL(fileURLWithPath: Bundle.main.path(forResource: resource, ofType: "mp3")!)
     }
 }
 

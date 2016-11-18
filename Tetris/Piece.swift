@@ -6,7 +6,8 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics.CGGeometry
+import UIKit.UIColor
 
 typealias Pattern = [[Bool]]
 

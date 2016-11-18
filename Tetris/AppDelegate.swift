@@ -15,19 +15,27 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions) -> Bool {
-        configureWindow()
+        let userInput = TouchUserInput()
+        let tetris = Game(userInput: userInput, score: Score())
+        let highscore = Highscore(userDefaults: UserDefaults.standard)
+
+        let gameVC = GameViewController(game: tetris, userInput: userInput, highscore: highscore)
+        let navigationController = UINavigationController(rootViewController: gameVC)
+        let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
+        let tapGestureDelegate = userInput
+        tapGesture.delegate = tapGestureDelegate
+
+        self.window = configureWindow(rootVC: navigationController, gestureRecognizer: tapGesture)
+
         return true
     }
 
-    private func configureWindow() {
-        let tetris = Game(score: Score())
-        let highscore = Highscore(userDefaults: UserDefaults.standard)
-        let gameVC = GameViewController(game: tetris, highscore: highscore)
-        let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
-        tapGesture.delegate = tetris
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.addGestureRecognizer(tapGesture)
-        window?.rootViewController = UINavigationController(rootViewController: gameVC)
-        window?.makeKeyAndVisible()
+    private func configureWindow(rootVC: UIViewController, gestureRecognizer: UIGestureRecognizer) -> UIWindow {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.addGestureRecognizer(gestureRecognizer)
+        window.rootViewController = rootVC
+        window.makeKeyAndVisible()
+
+        return window
     }
 }

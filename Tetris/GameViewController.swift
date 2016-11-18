@@ -8,12 +8,13 @@
 
 import UIKit
 
-final class GameViewController: UIViewController, GameDelegate {
+final class GameViewController: UIViewController {
 
     // MARK: - Properties
 
     let game: Game
     let highscore: Highscore
+    var userInput: TouchUserInput
 
     var timer: Timer?
     var musicPlayer = MusicPlayer(music: .techno)
@@ -21,11 +22,15 @@ final class GameViewController: UIViewController, GameDelegate {
 
     // MARK: - Initializers
 
-    init(game: Game, highscore: Highscore) {
+    init(game: Game, userInput: TouchUserInput, highscore: Highscore) {
         self.game = game
         self.highscore = highscore
+        self.userInput = userInput
+
         super.init(nibName: nil, bundle: nil)
         game.delegate = self
+        userInput.delegate = game
+        userInput.view = view
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +42,7 @@ final class GameViewController: UIViewController, GameDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureApperance()
+        configureAppearance()
         configureNavigationBar()
         configureGameOverView()
 //        musicPlayer.play()
@@ -51,7 +56,7 @@ final class GameViewController: UIViewController, GameDelegate {
         )
     }
 
-    private func configureApperance() { 
+    private func configureAppearance() {
         view.backgroundColor = .white
     }
 
@@ -77,8 +82,11 @@ final class GameViewController: UIViewController, GameDelegate {
         game.tick()
     }
 
-    // MARK: - GameDelegate
+}
 
+// MARK: - GameDelegate
+
+extension GameViewController: GameDelegate {
     func gameOver() {
         timer?.invalidate()
         gameOverView.newHighScore = highscore.save(value: game.score.value)
@@ -86,7 +94,15 @@ final class GameViewController: UIViewController, GameDelegate {
         gameOverView.isHidden = false
     }
 
-    func mainView() -> UIView {
-        return view
+    func display(piece: Piece) {
+        for square in piece.squares {
+            view.addSubview(square)
+        }
+    }
+
+    func remove(piece: Piece) {
+        for square in piece.squares {
+            square.removeFromSuperview()
+        }
     }
 }

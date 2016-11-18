@@ -6,7 +6,7 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import Foundation
+import Foundation.NSDate
 
 enum Level: TimeInterval {
     case one = 0.7

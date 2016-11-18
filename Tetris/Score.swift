@@ -6,8 +6,6 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import Foundation
-
 protocol ScoreDelegate {
     func scoreDidUpdate(value: Int)
 }

@@ -6,34 +6,38 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
-
 protocol GameDelegate {
     func gameOver()
-    func mainView() -> UIView
+    func display(piece: Piece)
+    func remove(piece: Piece)
 }
 
-final class Game: NSObject, UIGestureRecognizerDelegate {
+final class Game {
 
     // MARK: - Properties
 
+    var userInput: UserInput
     let score: Score
     var level: Level
     var delegate: GameDelegate?
-
-    private var gameOver = false {
+    var board = Board()
+    var currentPiece: Piece! {
+        didSet {
+            userInput.piece = currentPiece
+        }
+    }
+    var gameOver = false {
         didSet {
             if gameOver {
                 delegate?.gameOver()
             }
         }
     }
-    private var board = Board()
-    private var currentPiece: Piece!
 
     // MARK: - Initializers
 
-    init(score: Score, level: Level = .one) {
+    init(userInput: UserInput, score: Score, level: Level = .one) {
+        self.userInput = userInput
         self.score = score
         self.level = level
     }
@@ -59,9 +63,7 @@ final class Game: NSObject, UIGestureRecognizerDelegate {
     private func spawnNewPiece() {
         currentPiece = PieceFactory.random()
         currentPiece.build()
-        for square in currentPiece.squares {
-            delegate?.mainView().addSubview(square)
-        }
+        delegate?.display(piece: currentPiece)
 
         if board.intersectsBottom(with: currentPiece) {
             gameOver = true
@@ -74,69 +76,39 @@ final class Game: NSObject, UIGestureRecognizerDelegate {
         score.add(numberOfRows: killedRows)
         currentPiece = nil
     }
+}
 
-    // MARK: - UIGestureRecognizerDelegate
+// MARK: - UserInputDelegate
 
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard !gameOver, currentPiece != nil else { return false }
-
-        return handleTabGestures(with: touch)
+extension Game: UserInputDelegate {
+    func rotate() {
+        let rotatedPiece = currentPiece.rotated
+        if board.intersects(with: rotatedPiece) == false {
+            rotate(piece: rotatedPiece)
+        }
     }
 
-    private func handleTabGestures(with touch: UITouch) -> Bool {
-        let touchLocation = touch.location(in: delegate?.mainView())
-
-        if currentPieceIsHit(by: touch) {
-            let rotatedPiece = currentPiece.rotated
-            if board.intersects(with: rotatedPiece) == false {
-                rotate(piece: rotatedPiece)
-            }
-            return false
-        }
-
-        if touchLocation.y > bottomOfScreen() &&
-            board.intersectsBottom(with: currentPiece) == false {
-            currentPiece.moveDown()
-            return false
-        }
-
-        if touchLocation.x > centerOfCurrentPiece() &&
-            board.intersectsRight(with: currentPiece) == false {
-            currentPiece.moveRight()
-            return false
-        }
-
+    func moveLeft() {
         if board.intersectsLeft(with: currentPiece) == false {
             currentPiece.moveLeft()
         }
-        return false
     }
 
-    private func currentPieceIsHit(by touch: UITouch) -> Bool {
-        for square in currentPiece.squares {
-            if square.isHit(by: touch) {
-                return true
-            }
+    func moveRight() {
+        if board.intersectsRight(with: currentPiece) == false {
+            currentPiece.moveRight()
         }
-        return false
     }
 
-    private func rotate(piece: Piece) {
-        for square in currentPiece.squares {
-            square.removeFromSuperview()
+    func moveDown() {
+        if board.intersectsBottom(with: currentPiece) == false {
+            currentPiece.moveDown()
         }
+    }
+
+    func rotate(piece: Piece) {
+        delegate?.remove(piece: currentPiece)
+        delegate?.display(piece: piece)
         currentPiece = piece
-        for square in currentPiece.squares {
-            delegate?.mainView().addSubview(square)
-        }
-    }
-
-    private func bottomOfScreen() -> CGFloat {
-        guard let screenHeight = delegate?.mainView().frame.size.height else { return 0 }
-        return (screenHeight / 10) * 9.2
-    }
-
-    private func centerOfCurrentPiece() -> CGFloat {
-        return currentPiece.leftX + ((currentPiece.rightX - currentPiece.leftX) / 2.0)
     }
 }
