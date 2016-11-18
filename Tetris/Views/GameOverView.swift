@@ -21,6 +21,13 @@ class GameOverView: UIVisualEffectView {
         return label
     }()
 
+    var newGameButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("New Game", for: .normal)
+        return button
+    }()
+
     var newHighScore = false {
         didSet {
 
@@ -53,9 +60,17 @@ class GameOverView: UIVisualEffectView {
         contentView.addConstraints(format: "V:|[vibrancyView]|", views: vibrancyViews)
         contentView.addConstraints(format: "H:|[vibrancyView]|", views: vibrancyViews)
 
-        vibrancyView.contentView.addSubview(gameOverLabel)
-        let vibrancySubViews =  ["gameOverLabel": gameOverLabel]
-        vibrancyView.contentView.addConstraints(format: "V:|[gameOverLabel]|", views: vibrancySubViews)
-        vibrancyView.contentView.addConstraints(format: "H:|[gameOverLabel]|", views: vibrancySubViews)
+        let vibrancyContentView = vibrancyView.contentView
+        vibrancyContentView.addSubview(gameOverLabel)
+        vibrancyContentView.addSubview(newGameButton)
+
+        let vibrancySubViews: [String: Any] = [
+            "gameOverLabel": gameOverLabel,
+            "newGameButton": newGameButton
+        ]
+        vibrancyContentView.addVerticallyCenteredConstraints(forView: gameOverLabel, inSuperView: vibrancyContentView)
+        vibrancyContentView.addConstraints(format: "V:[gameOverLabel]-5-[newGameButton]", views: vibrancySubViews)
+        vibrancyContentView.addHorizontallyCenteredConstraints(forView: gameOverLabel, inSuperView: vibrancyContentView)
+        vibrancyContentView.addHorizontallyCenteredConstraints(forView: newGameButton, inSuperView: vibrancyContentView)
     }
 }

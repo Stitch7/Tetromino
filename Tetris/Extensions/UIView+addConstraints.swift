@@ -26,6 +26,17 @@ extension UIView {
 
         addConstraints(constraints)
     }
+
+    func addVerticallyCenteredConstraints(forView view: UIView, inSuperView superView: UIView) {
+        let constraints = NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[superview]-(<=1)-[view]",
+            options: .alignAllCenterY,
+            metrics: nil,
+            views: ["superview": self, "view": view]
+        )
+
+        addConstraints(constraints)
+    }
 }
 
 extension UIViewController {
@@ -35,5 +46,9 @@ extension UIViewController {
 
     func addHorizontallyCenterConstraints(forView view: UIView, inSuperView superView: UIView) {
         view.addHorizontallyCenteredConstraints(forView: view, inSuperView: superView)
+    }
+
+    func addVerticallyCenteredConstraints(forView view: UIView, inSuperView superView: UIView) {
+        view.addVerticallyCenteredConstraints(forView: view, inSuperView: superView)
     }
 }

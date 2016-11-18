@@ -29,7 +29,7 @@ final class GameViewController: UIViewController {
         self.game = game
         self.highscore = highscore
         self.userInput = userInput
-        self.scoreView = ScoreView(score: game.score)
+        self.scoreView = ScoreView(score: game.score, highscore: highscore)
         self.nextPieceView = NextPieceView(piece: game.nextPiece)
         self.gameOverView = GameOverView()
 
@@ -53,16 +53,7 @@ final class GameViewController: UIViewController {
         configureGameOverView()
 //        musicPlayer.play()
 
-
-        scoreView.highscoreValue.text = "\(highscore.leader!)"
-
-        timer = Timer.scheduledTimer(
-            timeInterval: game.level.rawValue,
-            target: self,
-            selector: #selector(mainLoop),
-            userInfo: nil,
-            repeats: true
-        )
+        newGame()
     }
 
     private func configureAppearance() {
@@ -80,12 +71,29 @@ final class GameViewController: UIViewController {
         let views =  ["gameOverView": gameOverView]
         addConstraints(format: "V:|[gameOverView]|", views: views)
         addConstraints(format: "H:|[gameOverView]|", views: views)
+
+        gameOverView.newGameButton.addTarget(self, action: #selector(newGame), for: .touchUpInside)
     }
 
     // MARK: - Main Loop
 
     func mainLoop() {
         game.tick()
+    }
+
+    func newGame() {
+        game.new()
+        scoreView.score = game.score
+        scoreView.highscore = highscore
+
+        timer = Timer.scheduledTimer(
+            timeInterval: game.level.rawValue,
+            target: self,
+            selector: #selector(mainLoop),
+            userInfo: nil,
+            repeats: true
+        )
+        gameOverView.isHidden = true
     }
 }
 

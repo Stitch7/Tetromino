@@ -50,6 +50,13 @@ final class Game {
 
     // MARK: - Public
 
+    func new() {
+        board.reset()
+        level = .one
+        score = 0
+        gameOver = false
+    }
+
     func tick() {
         if gameOver { return }
 

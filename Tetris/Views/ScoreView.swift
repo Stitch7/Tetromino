@@ -18,6 +18,12 @@ class ScoreView: UIView {
         }
     }
 
+    var highscore: Highscore {
+        didSet {
+            highscoreValue.text = "\(highscore.leader!)"
+        }
+    }
+
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +35,6 @@ class ScoreView: UIView {
     var value: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "0"
         label.font = UIFont.systemFont(ofSize: 22.0, weight: UIFontWeightThin)
         return label
     }()
@@ -45,15 +50,15 @@ class ScoreView: UIView {
     var highscoreValue: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "42000"
         label.font = UIFont.systemFont(ofSize: 9.0, weight: UIFontWeightRegular)
         return label
     }()
 
     // MARK: - Initializers
 
-    init(score: Score) {
+    init(score: Score, highscore: Highscore) {
         self.score = score
+        self.highscore = highscore
         super.init(frame: CGRect(x: 0, y: 0, width: 70, height: 44.0))
 
         configureSubviews()

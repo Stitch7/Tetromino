@@ -19,7 +19,7 @@ struct Board {
 
     var squareWidth: CGFloat
     var squareHeight: CGFloat
-    var grid: [[Square?]]
+    var grid = [[Square?]]()
 
     var completedRows: [Int] {
         var rows = [Int]()
@@ -39,8 +39,7 @@ struct Board {
         self.height = height
         squareWidth = width / CGFloat(numCols)
         squareHeight = height / CGFloat(numRows)
-        grid = [[Square?]]()
-        insertEmptyRows(count: numRows)
+        reset()
     }
 
     private mutating func insertEmptyRows(count: Int) {
@@ -50,6 +49,18 @@ struct Board {
     }
 
     // MARK: - Public
+
+    mutating func reset() {
+        if grid.count > 0 {
+            walkAllSlots { row, col in
+                if let square = grid[row][col] {
+                    square.removeFromSuperview()
+                }
+            }
+        }
+        grid = [[Square?]]()
+        insertEmptyRows(count: numRows)
+    }
 
     mutating func add(piece: Piece) {
         for square in piece.squares {
