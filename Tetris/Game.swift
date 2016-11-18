@@ -25,7 +25,7 @@ final class Game {
     var nextPiece: Piece
     var delegate: GameDelegate?
 
-    var currentPiece: Piece! {
+    var currentPiece: Piece? {
         didSet {
             userInput.piece = currentPiece
         }
@@ -70,15 +70,15 @@ final class Game {
             return
         }
 
-        currentPiece.moveDown()
+        currentPiece?.moveDown()
     }
 
     // MARK: - Private
 
     private func spawnNewPiece() {
+        nextPiece.build(width: board.squareWidth, height: board.squareHeight)
+        delegate?.display(piece: nextPiece)
         currentPiece = nextPiece
-        currentPiece.build(width: board.squareWidth, height: board.squareHeight)
-        delegate?.display(piece: currentPiece)
 
         if board.intersectsBottom(with: currentPiece) {
             gameOver = true
@@ -90,11 +90,13 @@ final class Game {
     }
 
     private func landPiece() {
+        guard let currentPiece = self.currentPiece else { return }
+
         board.add(piece: currentPiece)
         let killedRows = board.killCompletedRows()
         score.add(numberOfRows: killedRows)
         delegate?.scoreDidUpdate(newScore: score)
-        currentPiece = nil
+        self.currentPiece = nil
     }
 }
 
@@ -102,29 +104,31 @@ final class Game {
 
 extension Game: UserInputDelegate {
     func rotate() {
+        guard let currentPiece = self.currentPiece else { return }
+
         let rotatedPiece = currentPiece.rotated
         if board.intersects(with: rotatedPiece) == false {
             delegate?.remove(piece: currentPiece)
             delegate?.display(piece: rotatedPiece)
-            currentPiece = rotatedPiece
+            self.currentPiece = rotatedPiece
         }
     }
 
     func moveLeft() {
         if board.intersectsLeft(with: currentPiece) == false {
-            currentPiece.moveLeft()
+            currentPiece?.moveLeft()
         }
     }
 
     func moveRight() {
         if board.intersectsRight(with: currentPiece) == false {
-            currentPiece.moveRight()
+            currentPiece?.moveRight()
         }
     }
 
     func moveDown() {
         if board.intersectsBottom(with: currentPiece) == false {
-            currentPiece.moveDown()
+            currentPiece?.moveDown()
         }
     }
 }

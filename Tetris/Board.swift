@@ -101,13 +101,16 @@ struct Board {
         return completedRows.count
     }
 
-    func intersects(with piece: Piece) -> Bool {
+    func intersects(with piece: Piece?) -> Bool {
+        guard let piece = piece else { return false }
         return intersectsLeft(with: piece)
             || intersectsRight(with: piece)
             || intersectsBottom(with: piece)
     }
 
-    func intersectsLeft(with piece: Piece) -> Bool {
+    func intersectsLeft(with piece: Piece?) -> Bool {
+        guard let piece = piece else { return false }
+
         for square in piece.squares {
             if square.col == 0 {
                 return true
@@ -124,7 +127,9 @@ struct Board {
         return false
     }
 
-    func intersectsRight(with piece: Piece) -> Bool {
+    func intersectsRight(with piece: Piece?) -> Bool {
+        guard let piece = piece else { return false }
+
         for square in piece.squares {
             if square.col == numCols - 1 {
                 return true
@@ -141,7 +146,9 @@ struct Board {
         return false
     }
 
-    func intersectsBottom(with piece: Piece) -> Bool {
+    func intersectsBottom(with piece: Piece?) -> Bool {
+        guard let piece = piece else { return false }
+        
         for square in piece.squares {
             if square.row == numRows - 1 {
                 return true
