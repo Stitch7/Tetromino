@@ -13,8 +13,8 @@ final class GameViewController: UIViewController {
     // MARK: - Properties
 
     let game: Game
+    let userInput: TouchUserInput
     let highscore: Highscore
-    var userInput: TouchUserInput
 
     var timer: Timer?
     var musicPlayer = MusicPlayer(music: .techno)

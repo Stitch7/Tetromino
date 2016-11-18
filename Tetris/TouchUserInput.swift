@@ -6,7 +6,7 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit.UIGestureRecognizer
+import UIKit
 
 final class TouchUserInput: NSObject, UserInput, UIGestureRecognizerDelegate {
 

@@ -16,14 +16,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: LaunchOptions) -> Bool {
         let userInput = TouchUserInput()
-        let tetris = Game(userInput: userInput, score: Score())
+        let board = Board(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let game = Game(board: board, userInput: userInput, score: Score())
         let highscore = Highscore(userDefaults: UserDefaults.standard)
 
-        let gameVC = GameViewController(game: tetris, userInput: userInput, highscore: highscore)
+        let gameVC = GameViewController(game: game, userInput: userInput, highscore: highscore)
         let navigationController = UINavigationController(rootViewController: gameVC)
+
         let tapGesture = UITapGestureRecognizer(target: nil, action: nil)
-        let tapGestureDelegate = userInput
-        tapGesture.delegate = tapGestureDelegate
+        tapGesture.delegate = userInput
 
         self.window = configureWindow(rootVC: navigationController, gestureRecognizer: tapGesture)
 

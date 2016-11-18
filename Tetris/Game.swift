@@ -17,12 +17,13 @@ final class Game {
 
     // MARK: - Properties
 
+    var board: Board
     var userInput: UserInput
     let score: Score
     var level: Level
-    var delegate: GameDelegate?
-    var board = Board()
     var nextPiece: Piece
+    var delegate: GameDelegate?
+
     var currentPiece: Piece! {
         didSet {
             userInput.piece = currentPiece
@@ -38,7 +39,8 @@ final class Game {
 
     // MARK: - Initializers
 
-    init(userInput: UserInput, score: Score, level: Level = .one) {
+    init(board: Board, userInput: UserInput, score: Score, level: Level = .one) {
+        self.board = board
         self.userInput = userInput
         self.score = score
         self.level = level
@@ -67,7 +69,7 @@ final class Game {
 
     private func spawnNewPiece() {
         currentPiece = nextPiece
-        currentPiece.build()
+        currentPiece.build(width: board.squareWidth, height: board.squareHeight)
         delegate?.display(piece: currentPiece)
 
         if board.intersectsBottom(with: currentPiece) {

@@ -28,9 +28,9 @@ class BoardTests: XCTestCase {
     func test4PiecesInARowGetKilled() {
         let numRows = 4
 
-        var board = Board()
+        var board = Board(width: 0, height: 0)
         // complete the last 4 rows by placing squares in all cols
-        let last4Rows = Board.numRows-numRows..<Board.numRows
+        let last4Rows = board.numRows-numRows..<board.numRows
         board.walkSlots(last4Rows) { row, col in
             board.grid[row][col] = Square(row: row, col: col)
         }
@@ -52,10 +52,10 @@ class BoardTests: XCTestCase {
     }
 
     func testRemainingRowsWillMoveDownAfterKillCompletedRows() {
-        var board = Board()
-        let last4Rows = Board.numRows-5..<Board.numRows
+        var board = Board(width: 0, height: 0)
+        let last4Rows = board.numRows-5..<board.numRows
         board.walkSlots(last4Rows) { row, col in
-            if row == Board.numRows-5 && col == 0 { return }
+            if row == board.numRows-5 && col == 0 { return }
             board.grid[row][col] = Square(row: row, col: col)
         }
         assert(board.completedRows.count == 4)
@@ -64,7 +64,7 @@ class BoardTests: XCTestCase {
         assert(board.completedRows.count == 0)
 
         var noSquaresFoundInLastRow = true
-        let lastRow: CountableRange<Int> = Board.numRows-1..<Board.numRows
+        let lastRow: CountableRange<Int> = board.numRows-1..<board.numRows
         board.walkSlots(lastRow) { row, col in
             if col == 0 { return }
             noSquaresFoundInLastRow = board.grid[row][col] == nil
@@ -77,7 +77,7 @@ class BoardTests: XCTestCase {
 
     func testIntersectsRightWithBorder() {
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
@@ -86,33 +86,33 @@ class BoardTests: XCTestCase {
         }
 
         XCTAssertTrue(
-            Board().intersectsRight(with: piece),
+            Board(width: 0, height: 0).intersectsRight(with: piece),
             "Piece I on last col does not intersect with right border"
         )
     }
 
     func testNotIntersectsRightWithBorder() {
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
 
         XCTAssertFalse(
-            Board().intersectsRight(with: piece),
+            Board(width: 0, height: 0).intersectsRight(with: piece),
             "Piece I intersects right on empty board from middle of screen"
         )
     }
 
     func testIntersectsRightWithSquaresOnBoard() {
-        var board = Board()
-        board.walkSlots { row, col in
+        var board = Board(width: 0, height: 0)
+        board.walkAllSlots { row, col in
             if col != 5 { return }
             board.grid[row][col] = Square(row: row, col: col)
         }
 
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         board.add(piece: piece)
         for _ in 0..<5 {
             piece.moveDown()
@@ -126,7 +126,7 @@ class BoardTests: XCTestCase {
 
     func testIntersectsLeftWithBorder() {
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
@@ -135,33 +135,33 @@ class BoardTests: XCTestCase {
         }
 
         XCTAssertTrue(
-            Board().intersectsLeft(with: piece),
+            Board(width: 0, height: 0).intersectsLeft(with: piece),
             "Piece I on first col does not intersect with left border"
         )
     }
 
     func testNotIntersectsLeftWithBorder() {
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
 
         XCTAssertFalse(
-            Board().intersectsLeft(with: piece),
+            Board(width: 0, height: 0).intersectsLeft(with: piece),
             "Piece I intersects left on empty board from middle of screen"
         )
     }
 
     func testIntersectsLeftWithSquaresOnBoard() {
-        var board = Board()
-        board.walkSlots { row, col in
+        var board = Board(width: 0, height: 0)
+        board.walkAllSlots { row, col in
             if col != 3 { return }
             board.grid[row][col] = Square(row: row, col: col)
         }
 
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
@@ -174,25 +174,25 @@ class BoardTests: XCTestCase {
 
     func testIntersectsBottomWithBorder() {
         var piece = O()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<17 {
             piece.moveDown()
         }
 
         XCTAssertTrue(
-            Board().intersectsBottom(with: piece),
+            Board(width: 0, height: 0).intersectsBottom(with: piece),
             "Piece O does not intersect to bottom on last row on empty board"
         )
     }
 
     func testIntersectsBottomWithSquaresOnBoard() {
-        var board = Board()
-        board.walkSlots(15..<Board.numRows) { row, col in
+        var board = Board(width: 0, height: 0)
+        board.walkSlots(15..<board.numRows) { row, col in
             board.grid[row][col] = Square(row: row, col: col)
         }
 
         var piece = O()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<12 {
             piece.moveDown()
         }
@@ -204,14 +204,14 @@ class BoardTests: XCTestCase {
     }
 
     func testIntersectsRight() {
-        var board = Board()
-        board.walkSlots { row, col in
+        var board = Board(width: 0, height: 0)
+        board.walkAllSlots { row, col in
             if col != 5 { return }
             board.grid[row][col] = Square(row: row, col: col)
         }
 
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }
@@ -223,14 +223,14 @@ class BoardTests: XCTestCase {
     }
 
     func testIntersectsLeft() {
-        var board = Board()
-        board.walkSlots { row, col in
+        var board = Board(width: 0, height: 0)
+        board.walkAllSlots { row, col in
             if col != 3 { return }
             board.grid[row][col] = Square(row: row, col: col)
         }
 
         var piece = I()
-        piece.build()
+        piece.build(width: 0, height: 0)
         for _ in 0..<5 {
             piece.moveDown()
         }

@@ -23,7 +23,7 @@ protocol Piece {
     var leftX: CGFloat { get }
     var rightX: CGFloat { get }
 
-    mutating func build()
+    mutating func build(width: CGFloat, height: CGFloat)
     mutating func moveLeft()
     mutating func moveRight()
     mutating func moveDown()
@@ -52,11 +52,11 @@ extension Piece {
             [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
             [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
         ]
-        rotated.build()
+        rotated.build(width: squares.first!.frame.width, height: squares.first!.frame.height)
         return rotated
     }
 
-    mutating func build() {
+    mutating func build(width: CGFloat, height: CGFloat) {
         squares = [Square]()
         let rowCount = 4
         let colCount = 4
@@ -67,10 +67,10 @@ extension Piece {
                 let row = currentRow + rowNo
                 let col = currentCol + colNo
                 let frame = CGRect(
-                    x: CGFloat(currentCol) * Board.squareWidth + CGFloat(colNo) * Board.squareWidth,
-                    y: CGFloat(currentRow) * Board.squareHeight + CGFloat(rowNo) * Board.squareHeight,
-                    width: Board.squareWidth,
-                    height: Board.squareHeight
+                    x: CGFloat(currentCol) * width + CGFloat(colNo) * width,
+                    y: CGFloat(currentRow) * height + CGFloat(rowNo) * height,
+                    width: width,
+                    height: height
                 )
                 let square = Square(row: row, col: col, frame: frame)
                 square.backgroundColor = color
@@ -84,7 +84,7 @@ extension Piece {
         for square in squares {
             square.col -= 1
             var newFrame = square.frame
-            newFrame.origin.x = newFrame.origin.x - Board.squareWidth
+            newFrame.origin.x = newFrame.origin.x - newFrame.size.width
             square.frame = newFrame
         }
     }
@@ -94,7 +94,7 @@ extension Piece {
         for square in squares {
             square.col += 1
             var newFrame = square.frame
-            newFrame.origin.x = newFrame.origin.x + Board.squareWidth
+            newFrame.origin.x = newFrame.origin.x + newFrame.size.width
             square.frame = newFrame
         }
     }

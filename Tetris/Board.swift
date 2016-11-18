@@ -6,19 +6,19 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 struct Board {
 
     // MARK: - Properties
 
-    static let width = UIScreen.main.bounds.width
-    static let height = UIScreen.main.bounds.height
-    static let squareWidth = Board.width / CGFloat(Board.numCols)
-    static let squareHeight = Board.height / CGFloat(Board.numRows)
-    static let numRows = 20
-    static let numCols = 10
+    let width: CGFloat
+    let height: CGFloat
+    let numRows = 20
+    let numCols = 10
 
+    var squareWidth: CGFloat
+    var squareHeight: CGFloat
     var grid: [[Square?]]
 
     var completedRows: [Int] {
@@ -34,14 +34,18 @@ struct Board {
 
     // MARK: - Initializers
 
-    init() {
+    init(width: CGFloat, height: CGFloat) {
+        self.width = width
+        self.height = height
+        squareWidth = width / CGFloat(numCols)
+        squareHeight = height / CGFloat(numRows)
         grid = [[Square?]]()
-        insertEmptyRows(count: Board.numRows)
+        insertEmptyRows(count: numRows)
     }
 
     private mutating func insertEmptyRows(count: Int) {
         for _ in 0..<count {
-            grid.insert([Square?](repeating: nil, count: Board.numCols), at: 0)
+            grid.insert([Square?](repeating: nil, count: numCols), at: 0)
         }
     }
 
@@ -53,12 +57,16 @@ struct Board {
         }
     }
 
-    func walkSlots(_ range: CountableRange<Int> = 0..<Board.numRows, completion: ((Int, Int) -> Void)) {
+    func walkSlots(_ range: CountableRange<Int>, completion: ((Int, Int) -> Void)) {
         for row in range {
-            for col in 0..<Board.numCols {
+            for col in 0..<numCols {
                 completion(row, col)
             }
         }
+    }
+
+    func walkAllSlots(completion: ((Int, Int) -> Void)) {
+        walkSlots(0..<numRows, completion: completion)
     }
 
     mutating func killCompletedRows() -> Int {
@@ -72,7 +80,7 @@ struct Board {
         }
         insertEmptyRows(count: completedRows.count)
 
-        walkSlots { row, col in
+        walkAllSlots { row, col in
             guard let square = grid[row][col] else { return }
             for _ in 0..<row - square.row {
                 square.moveDown()
@@ -107,7 +115,7 @@ struct Board {
 
     func intersectsRight(with piece: Piece) -> Bool {
         for square in piece.squares {
-            if square.col == Board.numCols - 1 {
+            if square.col == numCols - 1 {
                 return true
             }
 
@@ -124,7 +132,7 @@ struct Board {
 
     func intersectsBottom(with piece: Piece) -> Bool {
         for square in piece.squares {
-            if square.row == Board.numRows - 1 {
+            if square.row == numRows - 1 {
                 return true
             }
 
