@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIColor {
-
     class func hsb(_ h: CGFloat, _ s: CGFloat, _ b: CGFloat) -> UIColor {
         return UIColor(
             hue: h / 360.0,

@@ -122,6 +122,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3008863B1DDFBFCD002C5C21 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				304800261DD8A03F002D6CFF /* Pieces */,
+				9DE354AF1DCAA9660041DADF /* Board.swift */,
+				304D428D1DDA868100793273 /* Game.swift */,
+				9D9985441DDAA52D00C259CE /* Highscore.swift */,
+				9D9985461DDAA78C00C259CE /* Level.swift */,
+				30C325CF1DD946E70027943B /* Music.swift */,
+				9DE354AD1DCAA9360041DADF /* Piece.swift */,
+				30C325CD1DD8ECFF0027943B /* Score.swift */,
+				9DE354AB1DCAA92F0041DADF /* Square.swift */,
+				306FC1FF1DDD1D8300D133D9 /* TouchUserInput.swift */,
+				306FC1FD1DDD176600D133D9 /* UserInput.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		3008863C1DDFBFEE002C5C21 /* Controllera */ = {
+			isa = PBXGroup;
+			children = (
+				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
+			);
+			path = Controllera;
+			sourceTree = "<group>";
+		};
 		304800261DD8A03F002D6CFF /* Pieces */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,18 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
-				9DE354AF1DCAA9660041DADF /* Board.swift */,
-				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
-				306FC1FD1DDD176600D133D9 /* UserInput.swift */,
-				306FC1FF1DDD1D8300D133D9 /* TouchUserInput.swift */,
-				304D428D1DDA868100793273 /* Game.swift */,
-				9D9985461DDAA78C00C259CE /* Level.swift */,
-				30C325CF1DD946E70027943B /* Music.swift */,
-				9DE354AD1DCAA9360041DADF /* Piece.swift */,
-				30C325CD1DD8ECFF0027943B /* Score.swift */,
-				9D9985441DDAA52D00C259CE /* Highscore.swift */,
-				9DE354AB1DCAA92F0041DADF /* Square.swift */,
-				304800261DD8A03F002D6CFF /* Pieces */,
+				3008863B1DDFBFCD002C5C21 /* Game */,
+				3008863C1DDFBFEE002C5C21 /* Controllera */,
 				30C325CC1DD8D2B50027943B /* Views */,
 				9DAE50101DCE476B006FA86A /* Extensions */,
 				9D0F82AB1DCE0A4F00AC68F1 /* Supporting Files */,

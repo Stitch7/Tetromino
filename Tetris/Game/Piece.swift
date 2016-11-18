@@ -27,7 +27,6 @@ protocol Piece {
     mutating func moveLeft()
     mutating func moveRight()
     mutating func moveDown()
-    mutating func fallDown()
 }
 
 // MARK: Piece Implementation
@@ -104,10 +103,6 @@ extension Piece {
         for square in squares {
             square.moveDown()
         }
-    }
-
-    mutating func fallDown() {
-        print("FALLING DOWN")
     }
 }
 

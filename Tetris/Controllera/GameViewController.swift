@@ -15,13 +15,12 @@ final class GameViewController: UIViewController {
     let game: Game
     let userInput: TouchUserInput
     let highscore: Highscore
-
-    var timer: Timer?
-    var musicPlayer = MusicPlayer(music: .techno)
-
     let scoreView: ScoreView
     let nextPieceView: NextPieceView
     let gameOverView: GameOverView
+
+    var musicPlayer = MusicPlayer(music: .techno)
+    var timer: Timer?
 
     // MARK: - Initializers
 
