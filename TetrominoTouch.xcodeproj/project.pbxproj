@@ -138,12 +138,12 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		3008863C1DDFBFEE002C5C21 /* Controllera */ = {
+		3008863C1DDFBFEE002C5C21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				9DE3547F1DCAA4AF0041DADF /* GameViewController.swift */,
 			);
-			path = Controllera;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		304800261DD8A03F002D6CFF /* Pieces */ = {
@@ -204,8 +204,8 @@
 			children = (
 				9DE3547B1DCAA4AF0041DADF /* Products */,
 				9DE3547C1DCAA4AF0041DADF /* TetrominoTouch */,
-				9DE354911DCAA4AF0041DADF /* TetrominoTouch Tests */,
-				9DE3549C1DCAA4AF0041DADF /* TetrominoTouch UITests */,
+				9DE354911DCAA4AF0041DADF /* TetrominoTouchTests */,
+				9DE3549C1DCAA4AF0041DADF /* TetrominoTouchUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,7 +224,7 @@
 			children = (
 				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
 				3008863B1DDFBFCD002C5C21 /* Game */,
-				3008863C1DDFBFEE002C5C21 /* Controllera */,
+				3008863C1DDFBFEE002C5C21 /* Controllers */,
 				30C325CC1DD8D2B50027943B /* Views */,
 				9DAE50101DCE476B006FA86A /* Extensions */,
 				9D0F82AB1DCE0A4F00AC68F1 /* Supporting Files */,
@@ -232,23 +232,21 @@
 			path = TetrominoTouch;
 			sourceTree = "<group>";
 		};
-		9DE354911DCAA4AF0041DADF /* TetrominoTouch Tests */ = {
+		9DE354911DCAA4AF0041DADF /* TetrominoTouchTests */ = {
 			isa = PBXGroup;
 			children = (
 				30BE10061DD7442500E5559D /* BoardTests.swift */,
 				9DE354941DCAA4AF0041DADF /* Info.plist */,
 			);
-			name = "TetrominoTouch Tests";
 			path = TetrominoTouchTests;
 			sourceTree = "<group>";
 		};
-		9DE3549C1DCAA4AF0041DADF /* TetrominoTouch UITests */ = {
+		9DE3549C1DCAA4AF0041DADF /* TetrominoTouchUITests */ = {
 			isa = PBXGroup;
 			children = (
 				9DE3549F1DCAA4AF0041DADF /* Info.plist */,
 				9DE3549D1DCAA4AF0041DADF /* TetrominoTouchUITests.swift */,
 			);
-			name = "TetrominoTouch UITests";
 			path = TetrominoTouchUITests;
 			sourceTree = "<group>";
 		};
@@ -586,7 +584,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = J8XDHCNJQA;
-				INFOPLIST_FILE = TetrominoTouch/Info.plist;
+				INFOPLIST_FILE = TetrominoTouchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,7 +599,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = J8XDHCNJQA;
-				INFOPLIST_FILE = TetrominoTouch/Info.plist;
+				INFOPLIST_FILE = TetrominoTouchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
