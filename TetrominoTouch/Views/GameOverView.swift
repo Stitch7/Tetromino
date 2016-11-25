@@ -25,12 +25,13 @@ class GameOverView: UIVisualEffectView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("New Game", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         return button
     }()
 
     var newHighScore = false {
         didSet {
-
+            // TODO: launch the rocket
         }
     }
 
