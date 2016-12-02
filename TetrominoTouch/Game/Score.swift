@@ -11,6 +11,7 @@ struct Score: ExpressibleByIntegerLiteral {
     // MARK: - Properties
 
     var value: Int
+    var rowsCompleted = 0
 
     init(integerLiteral value: Int) {
         self.value = value
@@ -18,11 +19,23 @@ struct Score: ExpressibleByIntegerLiteral {
 
     // MARK: - Public
 
-    mutating func add(numberOfRows: Int) {
-        var score = numberOfRows * 100
-        if numberOfRows == 4 {
-            score += 100
+    mutating func add(numberOfRows: Int, level: Level) {
+        var newScore = 0
+        switch numberOfRows {
+        case 1:
+            newScore += 40
+        case 2:
+            newScore += 100
+        case 3:
+            newScore += 300
+        case 4:
+            newScore += 1200
+        default:
+            break
         }
-        value += score
+
+        newScore *= level.rawValue + 1
+        value += newScore
+        rowsCompleted += numberOfRows
     }
 }

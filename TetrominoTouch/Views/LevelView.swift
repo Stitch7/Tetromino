@@ -12,6 +12,12 @@ class LevelView: UIView {
 
     // MARK: - Properties
 
+    var level: Level = .one {
+        didSet {
+            value.text = "\(level.number)"
+        }
+    }
+
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +29,6 @@ class LevelView: UIView {
     var value: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1"
         label.font = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightLight)
         return label
     }()

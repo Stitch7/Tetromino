@@ -16,6 +16,7 @@ final class GameViewController: UIViewController {
     let userInput: TouchUserInput
     let highscore: Highscore
     let scoreView: ScoreView
+    let levelView: LevelView
     let nextPieceView: NextPieceView
     let gameOverView: GameOverView
 
@@ -29,6 +30,7 @@ final class GameViewController: UIViewController {
         self.highscore = highscore
         self.userInput = userInput
         self.scoreView = ScoreView(score: game.score, highscore: highscore)
+        self.levelView = LevelView()
         self.nextPieceView = NextPieceView(piece: game.nextPiece)
         self.gameOverView = GameOverView()
 
@@ -60,7 +62,7 @@ final class GameViewController: UIViewController {
     }
 
     private func configureNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: LevelView())
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: levelView)
         navigationItem.titleView = scoreView
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: nextPieceView)
     }
@@ -74,24 +76,32 @@ final class GameViewController: UIViewController {
         gameOverView.newGameButton.addTarget(self, action: #selector(newGame), for: .touchUpInside)
     }
 
-    // MARK: - Main Loop
+    // MARK: - Interval
 
-    func mainLoop() {
+    func disableInterval() {
+        timer?.invalidate()
+    }
+
+    func newInterval(level: Level) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(
+            timeInterval: level.speed,
+            target: self,
+            selector: #selector(interval),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+
+    func interval() {
         game.tick()
     }
 
     func newGame() {
         game.new()
+        levelChanged(to: game.level)
         scoreView.score = game.score
         scoreView.highscore = highscore
-
-        timer = Timer.scheduledTimer(
-            timeInterval: game.level.rawValue,
-            target: self,
-            selector: #selector(mainLoop),
-            userInfo: nil,
-            repeats: true
-        )
         gameOverView.isHidden = true
     }
 }
@@ -100,7 +110,7 @@ final class GameViewController: UIViewController {
 
 extension GameViewController: GameDelegate {
     func gameOver() {
-        timer?.invalidate()
+        disableInterval()
         gameOverView.newHighScore = highscore.save(value: game.score.value)
         view.bringSubview(toFront: gameOverView)
         gameOverView.isHidden = false
@@ -124,5 +134,10 @@ extension GameViewController: GameDelegate {
 
     func scoreDidUpdate(newScore: Score) {
         scoreView.score = newScore
+    }
+
+    func levelChanged(to newLevel: Level) {
+        newInterval(level: newLevel)
+        levelView.level = newLevel
     }
 }

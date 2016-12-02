@@ -34,12 +34,12 @@ protocol Piece {
 extension Piece {
 
     var leftX: CGFloat {
-        let leftSquare = squares.sorted(by: {$0.col < $1.col }).first!
+        let leftSquare = squares.sorted(by: { $0.col < $1.col }).first!
         return leftSquare.frame.origin.x
     }
 
     var rightX: CGFloat {
-        let rightSquare = squares.sorted(by: {$0.col < $1.col }).last!
+        let rightSquare = squares.sorted(by: { $0.col < $1.col }).last!
         return rightSquare.frame.origin.x + rightSquare.frame.size.width
     }
 

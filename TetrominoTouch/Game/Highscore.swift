@@ -33,15 +33,16 @@ final class Highscore {
 
     func save(value: Int) -> Bool {
         let highscoreNotFull = list.count < 10
-        let highscoreEntriesLowerThanCurrentScore = list.filter({ $0 < value })
+        let highscoreEntriesLowerThanCurrentScore = list.filter({ $0 < value }).count > 0
 
         if highscoreNotFull {
             list.append(value)
             userDefaults.set(list, forKey: key)
             return true
         }
-        else if highscoreEntriesLowerThanCurrentScore.count > 0 {
-            // TODO delete
+
+        if highscoreEntriesLowerThanCurrentScore {
+            // TODO: delete pending > 10
             list.append(value)
             userDefaults.set(list, forKey: key)
             return true

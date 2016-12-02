@@ -12,6 +12,7 @@ protocol GameDelegate {
     func remove(piece: Piece)
     func next(piece nextPiece: Piece)
     func scoreDidUpdate(newScore: Score)
+    func levelChanged(to newLevel: Level)
 }
 
 final class Game {
@@ -21,15 +22,23 @@ final class Game {
     var board: Board
     var userInput: UserInput
     var score: Score
-    var level: Level
     var nextPiece: Piece
     var delegate: GameDelegate?
+
+    var level: Level {
+        willSet {
+            if level != newValue {
+                delegate?.levelChanged(to: newValue)
+            }
+        }
+    }
 
     var currentPiece: Piece? {
         didSet {
             userInput.piece = currentPiece
         }
     }
+
     var gameOver = false {
         didSet {
             if gameOver {
@@ -94,9 +103,24 @@ final class Game {
 
         board.add(piece: currentPiece)
         let killedRows = board.killCompletedRows()
-        score.add(numberOfRows: killedRows)
+        score.add(numberOfRows: killedRows, level: level)
+        updateLevel()
         delegate?.scoreDidUpdate(newScore: score)
         self.currentPiece = nil
+    }
+
+    private func updateLevel() {
+        var newLevel: Level?
+        if score.rowsCompleted >= 91 {
+            newLevel = .nine
+        }
+        else if score.rowsCompleted >= 1 {
+            newLevel = Level(rawValue: 1 + ((score.rowsCompleted - 1) / 10))
+        }
+
+        if let level = newLevel {
+            self.level = level
+        }
     }
 }
 

@@ -8,13 +8,40 @@
 
 import Foundation.NSDate
 
-enum Level: TimeInterval {
-    case one = 0.7
-    case two = 0.6
-    case three = 0.5
-    case four = 0.4
-    case five = 0.35
-    case sixth = 0.3
-    case seven = 0.25
-    case nine = 0.2
+enum Level: Int {
+    case one
+    case two
+    case three
+    case four
+    case five
+    case sixth
+    case seven
+    case nine
+}
+
+extension Level {
+    var number: Int {
+        return self.rawValue + 1
+    }
+
+    var speed: TimeInterval {
+        switch self {
+        case .one:
+            return 0.7
+        case .two:
+            return 0.6
+        case .three:
+            return 0.5
+        case .four:
+            return 0.4
+        case .five:
+            return 0.35
+        case .sixth:
+            return 0.3
+        case .seven:
+            return 0.25
+        case .nine:
+            return 0.2
+        }
+    }
 }

@@ -42,6 +42,7 @@ extension Music {
 }
 
 final class MusicPlayer {
+    
     var music: Music
     private var audioPlayer = AVAudioPlayer()
 
