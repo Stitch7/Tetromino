@@ -14,13 +14,41 @@ class ScoreView: UIView {
 
     var score: Score {
         didSet {
-            value.text = "\(score.value)"
+            let labelText = NSMutableAttributedString(
+                string: "Score",
+                attributes: [
+                    NSFontAttributeName: label.font
+                ]
+            )
+            let valueText = NSAttributedString(
+                string: " \(score.value)",
+                attributes: [
+                    NSFontAttributeName: UIFont.systemFont(ofSize: label.font.pointSize, weight: UIFontWeightThin)
+                ]
+            )
+            labelText.append(valueText)
+
+            label.attributedText = labelText
         }
     }
 
     var highscore: Highscore {
         didSet {
-            highscoreValue.text = "\(highscore.leader)"
+            let labelText = NSMutableAttributedString(
+                string: "Highscore",
+                attributes: [
+                    NSFontAttributeName: highscoreLabel.font
+                ]
+            )
+            let valueText = NSAttributedString(
+                string: " \(highscore.leader)",
+                attributes: [
+                    NSFontAttributeName: UIFont.systemFont(ofSize: highscoreLabel.font.pointSize, weight: UIFontWeightRegular)
+                ]
+            )
+            labelText.append(valueText)
+
+            highscoreLabel.attributedText = labelText
         }
     }
 
@@ -29,13 +57,7 @@ class ScoreView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Score"
         label.font = UIFont.systemFont(ofSize: 22.0, weight: UIFontWeightThin)
-        return label
-    }()
-
-    var value: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22.0, weight: UIFontWeightThin)
+        label.textAlignment = .center
         return label
     }()
 
@@ -44,13 +66,7 @@ class ScoreView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Highscore"
         label.font = UIFont.systemFont(ofSize: 9.0, weight: UIFontWeightLight)
-        return label
-    }()
-
-    var highscoreValue: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 9.0, weight: UIFontWeightRegular)
+        label.textAlignment = .center
         return label
     }()
 
@@ -70,20 +86,14 @@ class ScoreView: UIView {
 
     private func configureSubviews() {
         addSubview(label)
-        addSubview(value)
         addSubview(highscoreLabel)
-        addSubview(highscoreValue)
 
         let views: [String: Any]  =  [
             "label": label,
-            "value": value,
-            "highscoreLabel": highscoreLabel,
-            "highscoreValue": highscoreValue
+            "highscoreLabel": highscoreLabel
         ]
         addConstraints(format: "V:|[label][highscoreLabel]", views: views)
-        addConstraints(format: "V:|[label][highscoreValue]", views: views)
-        addConstraints(format: "V:|[value]", views: views)
-        addConstraints(format: "H:|[label]-5-[value]", views: views)
-        addConstraints(format: "H:|[highscoreLabel]-2-[highscoreValue]", views: views)
+        addHorizontallyCenteredConstraints(forView: label, inSuperView: self)
+        addHorizontallyCenteredConstraints(forView: highscoreLabel, inSuperView: self)
     }
 }
