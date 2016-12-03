@@ -29,8 +29,8 @@ final class Square: UIView {
 
     // MARK: - Public
 
-    func isHit(by touch: UITouch) -> Bool {
-        return hitTest(touch.location(in: self), with: nil) != nil
+    func isHit(by gesture: UITapGestureRecognizer) -> Bool {
+        return hitTest(gesture.location(in: self), with: nil) != nil
     }
 
     func moveDown() {

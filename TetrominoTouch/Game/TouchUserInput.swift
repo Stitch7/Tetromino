@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TouchUserInput: NSObject, UserInput, UIGestureRecognizerDelegate {
+final class TouchUserInput: UserInput {
 
     // MARK: - Properties
 
@@ -19,17 +19,12 @@ final class TouchUserInput: NSObject, UserInput, UIGestureRecognizerDelegate {
     var piece: Piece?
     var delegate: UserInputDelegate?
 
-    // MARK: - UIGestureRecognizerDelegate
+    // MARK: - EventHandler
 
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        handleTabGestures(with: touch)
-        return false
-    }
+    @objc func handleTabGestures(sender: UITapGestureRecognizer) {
+        let touchLocation = sender.location(in: view)
 
-    private func handleTabGestures(with touch: UITouch) {
-        let touchLocation = touch.location(in: view)
-
-        if pieceIsHit(by: touch) {
+        if pieceIsHit(by: sender) {
             delegate?.rotate()
         }
         else if touchLocation.y > bottomOfScreen() {
@@ -43,10 +38,20 @@ final class TouchUserInput: NSObject, UserInput, UIGestureRecognizerDelegate {
         }
     }
 
-    private func pieceIsHit(by touch: UITouch) -> Bool {
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+        guard sender.state == .ended else { return }
+
+        if sender.location(in: view).y > bottomOfScreen() {
+            delegate?.dropDown()
+        }
+    }
+
+    // MARK: - Helper
+
+    private func pieceIsHit(by gesture: UITapGestureRecognizer) -> Bool {
         guard let piece = self.piece else { return false }
         for square in piece.squares {
-            if square.isHit(by: touch) {
+            if square.isHit(by: gesture) {
                 return true
             }
         }

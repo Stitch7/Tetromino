@@ -29,19 +29,33 @@ final class GameViewController: UIViewController {
         self.game = game
         self.highscore = highscore
         self.userInput = userInput
-        self.scoreView = ScoreView(score: game.score, highscore: highscore)
-        self.levelView = LevelView()
-        self.nextPieceView = NextPieceView(piece: game.nextPiece)
-        self.gameOverView = GameOverView()
+        scoreView = ScoreView(score: game.score, highscore: highscore)
+        levelView = LevelView()
+        nextPieceView = NextPieceView(piece: game.nextPiece)
+        gameOverView = GameOverView()
 
         super.init(nibName: nil, bundle: nil)
         game.delegate = self
-        userInput.delegate = game
-        userInput.view = view
+        configureUserInput()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) is not supported")
+    }
+
+    func configureUserInput() {
+        
+        userInput.view = view
+
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.addTarget(userInput, action: #selector(userInput.handleTabGestures(sender:)))
+
+        let longPressGesture = UILongPressGestureRecognizer()
+        longPressGesture.addTarget(userInput, action: #selector(userInput.handleLongPress(sender:)))
+        longPressGesture.minimumPressDuration = 0.3
+
+        view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(longPressGesture)
     }
 
     // MARK: - UIViewController

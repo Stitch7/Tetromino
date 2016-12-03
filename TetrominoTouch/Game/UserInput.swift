@@ -16,4 +16,5 @@ protocol UserInputDelegate {
     func moveLeft()
     func moveRight()
     func moveDown()
+    func dropDown()
 }

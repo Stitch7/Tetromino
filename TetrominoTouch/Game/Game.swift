@@ -20,7 +20,11 @@ final class Game {
     // MARK: - Properties
 
     var board: Board
-    var userInput: UserInput
+    var userInput: UserInput {
+        didSet {
+            userInput.delegate = self
+        }
+    }
     var score: Score
     var nextPiece: Piece
     var delegate: GameDelegate?
@@ -33,7 +37,7 @@ final class Game {
         }
     }
 
-    var currentPiece: Piece? {
+    fileprivate var currentPiece: Piece? {
         didSet {
             userInput.piece = currentPiece
         }
@@ -154,5 +158,18 @@ extension Game: UserInputDelegate {
         if board.intersectsBottom(with: currentPiece) == false {
             currentPiece?.moveDown()
         }
+    }
+
+    func dropDown() {
+        guard let currentPiece = self.currentPiece else { return }
+
+        let piece = currentPiece
+        while board.intersectsBottom(with: piece) == false {
+            self.currentPiece?.moveDown()
+        }
+
+        delegate?.remove(piece: currentPiece)
+        delegate?.display(piece: piece)
+        self.currentPiece = piece
     }
 }
