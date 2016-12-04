@@ -19,16 +19,14 @@ final class GameViewController: UIViewController {
     let levelView: LevelView
     let nextPieceView: NextPieceView
     let gameOverView: GameOverView
-
-    var musicPlayer = MusicPlayer(music: .techno)
     var timer: Timer?
 
     // MARK: - Initializers
 
     init(game: Game, userInput: TouchUserInput, highscore: Highscore) {
         self.game = game
-        self.highscore = highscore
         self.userInput = userInput
+        self.highscore = highscore
         scoreView = ScoreView(score: game.score, highscore: highscore)
         levelView = LevelView()
         nextPieceView = NextPieceView(piece: game.nextPiece)

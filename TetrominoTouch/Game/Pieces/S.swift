@@ -1,15 +1,13 @@
 //
 //  S.swift
-//  TetrominoTouch
+//  Tetromino
 //
 //  Created by Christopher Reitz on 13/11/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
-
 struct S: Piece {
-    let color = UIColor.flatMint
+    let color = Color.cyan
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3

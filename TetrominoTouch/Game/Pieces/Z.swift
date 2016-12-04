@@ -1,15 +1,13 @@
 //
 //  Z.swift
-//  TetrominoTouch
+//  Tetromino
 //
 //  Created by Christopher Reitz on 13/11/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
-
 struct Z: Piece {
-    let color = UIColor.flatOrange
+    let color = Color.orange
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3

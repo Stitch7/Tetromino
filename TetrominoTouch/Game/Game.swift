@@ -1,6 +1,6 @@
 //
 //  Game.swift
-//  TetrominoTouch
+//  Tetromino
 //
 //  Created by Christopher Reitz on 15/11/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
@@ -22,7 +22,7 @@ final class Game {
     var board: Board
     var userInput: UserInput {
         didSet {
-            userInput.delegate = self
+            userInput.userInputDelegate = self
         }
     }
     var score: Score
@@ -53,7 +53,7 @@ final class Game {
 
     // MARK: - Initializers
 
-    init(board: Board, userInput: UserInput, score: Score, level: Level = .one) {
+    init(board: Board, userInput: UserInput, score: Score = 0, level: Level = .one) {
         self.board = board
         self.userInput = userInput
         self.score = score

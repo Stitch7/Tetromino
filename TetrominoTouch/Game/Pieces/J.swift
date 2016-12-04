@@ -1,15 +1,13 @@
 //
 //  J.swift
-//  TetrominoTouch
+//  Tetromino
 //
 //  Created by Christopher Reitz on 13/11/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import UIKit
-
 struct J: Piece {
-    let color = UIColor.flatPurple
+    let color = Color.purple
     var squares = [Square]()
     var currentRow = 0
     var currentCol = 3

@@ -1,20 +1,19 @@
 //
 //  Tetrimino.swift
-//  TetrominoTouch
+//  Tetromino
 //
 //  Created by Christopher Reitz on 03/11/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import CoreGraphics.CGGeometry
-import UIKit.UIColor
+import CoreGraphics
 
 typealias Pattern = [[Bool]]
 
 // MARK: Piece
 
 protocol Piece {
-    var color: UIColor { get }
+    var color: Color { get }
     var pattern: Pattern { get set }
     var squares: [Square] { get set }
     var currentRow: Int { get set }
@@ -71,8 +70,7 @@ extension Piece {
                     width: width,
                     height: height
                 )
-                let square = Square(row: row, col: col, frame: frame)
-                square.backgroundColor = color
+                let square = Square(color: color, row: row, col: col, frame: frame)
                 squares.append(square)
             }
         }

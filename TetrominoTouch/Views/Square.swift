@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class Square: UIView {
+class Square: UIView {
 
     // MARK: - Properties
 
@@ -17,10 +17,12 @@ final class Square: UIView {
 
     // MARK: - Initializers
 
-    init(row: Int, col: Int, frame: CGRect = .zero) {
+    init(color: Color, row: Int, col: Int, frame: CGRect = .zero) {
         self.row = row
         self.col = col
         super.init(frame: frame)
+
+        backgroundColor = color.uiColor
     }
 
     required init?(coder aDecoder: NSCoder) {

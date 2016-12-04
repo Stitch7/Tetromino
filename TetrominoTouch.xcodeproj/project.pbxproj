@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		304800171DD89785002D6CFF /* UIColor+flatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304800161DD89785002D6CFF /* UIColor+flatColors.swift */; };
 		304800191DD8A00C002D6CFF /* O.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304800181DD8A00C002D6CFF /* O.swift */; };
 		3048001B1DD8A013002D6CFF /* I.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048001A1DD8A013002D6CFF /* I.swift */; };
 		3048001D1DD8A01D002D6CFF /* S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048001C1DD8A01D002D6CFF /* S.swift */; };
@@ -24,8 +23,9 @@
 		30C325C91DD8CD530027943B /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325C81DD8CD530027943B /* LevelView.swift */; };
 		30C325CB1DD8CDDB0027943B /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CA1DD8CDDB0027943B /* NextPieceView.swift */; };
 		30C325CE1DD8ECFF0027943B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CD1DD8ECFF0027943B /* Score.swift */; };
-		30C325D01DD946E70027943B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C325CF1DD946E70027943B /* Music.swift */; };
 		30F50C231DCEAE6A002A92C7 /* djrush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 30F50C221DCEAE6A002A92C7 /* djrush.mp3 */; };
+		30FADE941DF45F0E004B1440 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FADE921DF45F0E004B1440 /* Color.swift */; };
+		30FADE951DF45F0E004B1440 /* Color+uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FADE931DF45F0E004B1440 /* Color+uiColor.swift */; };
 		9D9985451DDAA52D00C259CE /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9985441DDAA52D00C259CE /* Highscore.swift */; };
 		9D9985471DDAA78C00C259CE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9985461DDAA78C00C259CE /* Level.swift */; };
 		9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */; };
@@ -57,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		304800161DD89785002D6CFF /* UIColor+flatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+flatColors.swift"; sourceTree = "<group>"; };
 		304800181DD8A00C002D6CFF /* O.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = O.swift; sourceTree = "<group>"; };
 		3048001A1DD8A013002D6CFF /* I.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = I.swift; sourceTree = "<group>"; };
 		3048001C1DD8A01D002D6CFF /* S.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S.swift; sourceTree = "<group>"; };
@@ -74,8 +73,9 @@
 		30C325C81DD8CD530027943B /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 		30C325CA1DD8CDDB0027943B /* NextPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
 		30C325CD1DD8ECFF0027943B /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		30C325CF1DD946E70027943B /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		30F50C221DCEAE6A002A92C7 /* djrush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = djrush.mp3; sourceTree = "<group>"; };
+		30FADE921DF45F0E004B1440 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		30FADE931DF45F0E004B1440 /* Color+uiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+uiColor.swift"; sourceTree = "<group>"; };
 		9D9985441DDAA52D00C259CE /* Highscore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
 		9D9985461DDAA78C00C259CE /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
@@ -125,14 +125,12 @@
 			children = (
 				304800261DD8A03F002D6CFF /* Pieces */,
 				9DE354AF1DCAA9660041DADF /* Board.swift */,
+				30FADE921DF45F0E004B1440 /* Color.swift */,
 				304D428D1DDA868100793273 /* Game.swift */,
 				9D9985441DDAA52D00C259CE /* Highscore.swift */,
 				9D9985461DDAA78C00C259CE /* Level.swift */,
-				30C325CF1DD946E70027943B /* Music.swift */,
 				9DE354AD1DCAA9360041DADF /* Piece.swift */,
 				30C325CD1DD8ECFF0027943B /* Score.swift */,
-				9DE354AB1DCAA92F0041DADF /* Square.swift */,
-				306FC1FF1DDD1D8300D133D9 /* TouchUserInput.swift */,
 				306FC1FD1DDD176600D133D9 /* UserInput.swift */,
 			);
 			path = Game;
@@ -167,6 +165,7 @@
 				30C325C81DD8CD530027943B /* LevelView.swift */,
 				30C325CA1DD8CDDB0027943B /* NextPieceView.swift */,
 				30C325C61DD8C89B0027943B /* ScoreView.swift */,
+				9DE354AB1DCAA92F0041DADF /* Square.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +192,7 @@
 		9DAE50101DCE476B006FA86A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				304800161DD89785002D6CFF /* UIColor+flatColors.swift */,
+				30FADE931DF45F0E004B1440 /* Color+uiColor.swift */,
 				9DAE500E1DCE3420006FA86A /* UIView+addConstraints.swift */,
 			);
 			path = Extensions;
@@ -222,8 +221,9 @@
 		9DE3547C1DCAA4AF0041DADF /* TetrominoTouch */ = {
 			isa = PBXGroup;
 			children = (
-				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
 				3008863B1DDFBFCD002C5C21 /* Game */,
+				9DE3547D1DCAA4AF0041DADF /* AppDelegate.swift */,
+				306FC1FF1DDD1D8300D133D9 /* TouchUserInput.swift */,
 				3008863C1DDFBFEE002C5C21 /* Controllers */,
 				30C325CC1DD8D2B50027943B /* Views */,
 				9DAE50101DCE476B006FA86A /* Extensions */,
@@ -395,7 +395,6 @@
 				3048001F1DD8A023002D6CFF /* Z.swift in Sources */,
 				9DE354AC1DCAA92F0041DADF /* Square.swift in Sources */,
 				3048001B1DD8A013002D6CFF /* I.swift in Sources */,
-				30C325D01DD946E70027943B /* Music.swift in Sources */,
 				306FC2001DDD1D8300D133D9 /* TouchUserInput.swift in Sources */,
 				9D9985471DDAA78C00C259CE /* Level.swift in Sources */,
 				9D9985451DDAA52D00C259CE /* Highscore.swift in Sources */,
@@ -403,7 +402,8 @@
 				304800231DD8A032002D6CFF /* J.swift in Sources */,
 				304800211DD8A02C002D6CFF /* L.swift in Sources */,
 				30C325CB1DD8CDDB0027943B /* NextPieceView.swift in Sources */,
-				304800171DD89785002D6CFF /* UIColor+flatColors.swift in Sources */,
+				30FADE941DF45F0E004B1440 /* Color.swift in Sources */,
+				30FADE951DF45F0E004B1440 /* Color+uiColor.swift in Sources */,
 				30C325C51DD8A42A0027943B /* GameOverView.swift in Sources */,
 				30C325CE1DD8ECFF0027943B /* Score.swift in Sources */,
 				9DAE500F1DCE3420006FA86A /* UIView+addConstraints.swift in Sources */,

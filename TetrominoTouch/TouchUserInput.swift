@@ -17,7 +17,7 @@ final class TouchUserInput: UserInput {
     // MARK: - UserInput
 
     var piece: Piece?
-    var delegate: UserInputDelegate?
+    var userInputDelegate: UserInputDelegate?
 
     // MARK: - EventHandler
 
@@ -25,16 +25,16 @@ final class TouchUserInput: UserInput {
         let touchLocation = sender.location(in: view)
 
         if pieceIsHit(by: sender) {
-            delegate?.rotate()
+            userInputDelegate?.rotate()
         }
         else if touchLocation.y > bottomOfScreen() {
-            delegate?.moveDown()
+            userInputDelegate?.moveDown()
         }
         else if touchLocation.x > centerOfCurrentPiece() {
-            delegate?.moveRight()
+            userInputDelegate?.moveRight()
         }
         else {
-            delegate?.moveLeft()
+            userInputDelegate?.moveLeft()
         }
     }
 
@@ -42,7 +42,7 @@ final class TouchUserInput: UserInput {
         guard sender.state == .ended else { return }
 
         if sender.location(in: view).y > bottomOfScreen() {
-            delegate?.dropDown()
+            userInputDelegate?.dropDown()
         }
     }
 
