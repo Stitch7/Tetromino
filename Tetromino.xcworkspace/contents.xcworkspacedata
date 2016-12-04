@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TetrominoCoreMac/TetrominoCoreMac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoCoreIOS/TetrominoCoreIOS.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:TetrominoCore"
+      name = "TetrominoCore">
+      <FileRef
+         location = "group:Board.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Color.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Game.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Highscore.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Level.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Piece.swift">
+      </FileRef>
+      <Group
+         location = "group:Pieces"
+         name = "Pieces">
+         <FileRef
+            location = "group:I.swift">
+         </FileRef>
+         <FileRef
+            location = "group:J.swift">
+         </FileRef>
+         <FileRef
+            location = "group:L.swift">
+         </FileRef>
+         <FileRef
+            location = "group:O.swift">
+         </FileRef>
+         <FileRef
+            location = "group:S.swift">
+         </FileRef>
+         <FileRef
+            location = "group:T.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Z.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Score.swift">
+      </FileRef>
+      <FileRef
+         location = "group:UserInput.swift">
+      </FileRef>
+   </Group>
+</Workspace>
