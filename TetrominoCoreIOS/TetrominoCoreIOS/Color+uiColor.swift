@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TetrominoCoreIOS
 
 extension Color {
     var uiColor: UIColor {
