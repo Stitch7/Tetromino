@@ -21,20 +21,20 @@ class NextPieceView: UIView {
         }
     }
     
-    var piece: Piece {
-        didSet {
-            switch piece {
-            case _ as I: self.image = UIImage(named: "I")!
-            case _ as J: self.image = UIImage(named: "J")!
-            case _ as L: self.image = UIImage(named: "L")!
-            case _ as O: self.image = UIImage(named: "O")!
-            case _ as S: self.image = UIImage(named: "S")!
-            case _ as T: self.image = UIImage(named: "T")!
-            case _ as Z: self.image = UIImage(named: "Z")!
-            default: break
-            }
-        }
-    }
+//    var piece: Piece<SquareView> {
+//        didSet {
+//            switch piece {
+//            case _ as I<SquareView>: self.image = UIImage(named: "I")!
+//            case _ as J<SquareView>: self.image = UIImage(named: "J")!
+//            case _ as L<SquareView>: self.image = UIImage(named: "L")!
+//            case _ as O<SquareView>: self.image = UIImage(named: "O")!
+//            case _ as S<SquareView>: self.image = UIImage(named: "S")!
+//            case _ as T<SquareView>: self.image = UIImage(named: "T")!
+//            case _ as Z<SquareView>: self.image = UIImage(named: "Z")!
+//            default: break
+//            }
+//        }
+//    }
 
     var label: UILabel = {
         let label = UILabel()
@@ -47,9 +47,10 @@ class NextPieceView: UIView {
 
     // MARK: - Initializers
 
-    init(piece: Piece) {
+//    init(piece: Piece<SquareView>) {
+    init() {
         self.imageView = UIImageView(image: nil)
-        self.piece = piece
+//        self.piece = piece
         super.init(frame: .zero)
 
         configureSubviews()

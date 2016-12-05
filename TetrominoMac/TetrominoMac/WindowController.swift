@@ -37,20 +37,20 @@ class WindowController: NSWindowController {
         }
     }
 
-    var piece: Piece? {
-        didSet {
-            switch piece {
-            case _ as I: nextPieceToolbarItem.image = NSImage(named: "I")!
-            case _ as J: nextPieceToolbarItem.image = NSImage(named: "J")!
-            case _ as L: nextPieceToolbarItem.image = NSImage(named: "L")!
-            case _ as O: nextPieceToolbarItem.image = NSImage(named: "O")!
-            case _ as S: nextPieceToolbarItem.image = NSImage(named: "S")!
-            case _ as T: nextPieceToolbarItem.image = NSImage(named: "T")!
-            case _ as Z: nextPieceToolbarItem.image = NSImage(named: "Z")!
-            default: break
-            }
-        }
-    }
+//    var piece: Piece<T>? {
+//        didSet {
+//            switch piece {
+//            case _ as I: nextPieceToolbarItem.image = NSImage(named: "I")!
+//            case _ as J: nextPieceToolbarItem.image = NSImage(named: "J")!
+//            case _ as L: nextPieceToolbarItem.image = NSImage(named: "L")!
+//            case _ as O: nextPieceToolbarItem.image = NSImage(named: "O")!
+//            case _ as S: nextPieceToolbarItem.image = NSImage(named: "S")!
+//            case _ as T: nextPieceToolbarItem.image = NSImage(named: "T")!
+//            case _ as Z: nextPieceToolbarItem.image = NSImage(named: "Z")!
+//            default: break
+//            }
+//        }
+//    }
 
     override func windowDidLoad() {
         super.windowDidLoad()

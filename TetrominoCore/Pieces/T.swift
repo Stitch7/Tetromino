@@ -6,15 +6,15 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-public struct T: Piece {
-    public let color = Color.yellow
-    public var squares = [Square]()
-    public var currentRow = 0
-    public var currentCol = 3
-    public var pattern: Pattern = [
-        [true, true, true, false],
-        [false, true, false, false],
-        [false, false, false, false],
-        [false, false, false, false],
-    ]
+public class T<T: SquareViewType>: Piece<T> {
+    override init() {
+        super.init()
+        color = .yellow
+        pattern = [
+            [true, true, true, false],
+            [false, true, false, false],
+            [false, false, false, false],
+            [false, false, false, false],
+        ]
+    }
 }

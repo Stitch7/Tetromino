@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import TetrominoCoreMac
 
 extension Color {
     var nsColor: NSColor {

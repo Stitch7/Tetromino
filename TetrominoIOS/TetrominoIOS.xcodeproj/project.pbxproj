@@ -22,6 +22,8 @@
 		3029DDBA1DF47944004F6B25 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DD9D1DF47944004F6B25 /* ScoreView.swift */; };
 		3032B4871DF4D1F20094512C /* TetrominoCoreIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */; };
 		3032B4881DF4D1F20094512C /* TetrominoCoreIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30D76A631DF6050300595FBD /* Color+uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A621DF6050300595FBD /* Color+uiColor.swift */; };
+		30D76A651DF6050E00595FBD /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A641DF6050E00595FBD /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		3029DD9C1DF47944004F6B25 /* NextPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
 		3029DD9D1DF47944004F6B25 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoCoreIOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-ggfcitwqllqrabesfoqyjomlirng/Build/Products/Debug-iphonesimulator/TetrominoCoreIOS.framework"; sourceTree = "<group>"; };
+		30D76A621DF6050300595FBD /* Color+uiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+uiColor.swift"; sourceTree = "<group>"; };
+		30D76A641DF6050E00595FBD /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 		3029DD7D1DF47944004F6B25 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				30D76A621DF6050300595FBD /* Color+uiColor.swift */,
 				3029DD7F1DF47944004F6B25 /* UIView+addConstraints.swift */,
 			);
 			path = Extensions;
@@ -200,6 +205,7 @@
 				3029DD9B1DF47944004F6B25 /* LevelView.swift */,
 				3029DD9C1DF47944004F6B25 /* NextPieceView.swift */,
 				3029DD9D1DF47944004F6B25 /* ScoreView.swift */,
+				30D76A641DF6050E00595FBD /* SquareView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,10 +354,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D76A651DF6050E00595FBD /* SquareView.swift in Sources */,
 				3029DDA01DF47944004F6B25 /* GameViewController.swift in Sources */,
 				3029DDB81DF47944004F6B25 /* LevelView.swift in Sources */,
 				3029DDB71DF47944004F6B25 /* GameOverView.swift in Sources */,
 				3029DDB61DF47944004F6B25 /* TouchUserInput.swift in Sources */,
+				30D76A631DF6050300595FBD /* Color+uiColor.swift in Sources */,
 				3029DD9F1DF47944004F6B25 /* AppDelegate.swift in Sources */,
 				3029DDA21DF47944004F6B25 /* UIView+addConstraints.swift in Sources */,
 				3029DDBA1DF47944004F6B25 /* ScoreView.swift in Sources */,

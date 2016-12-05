@@ -14,10 +14,10 @@ final class TouchUserInput: UserInput {
     // MARK: - Properties
 
     var view: UIView?
+    var squares = [UIView]()
 
     // MARK: - UserInput
 
-    var piece: Piece?
     var userInputDelegate: UserInputDelegate?
 
     // MARK: - EventHandler
@@ -50,9 +50,8 @@ final class TouchUserInput: UserInput {
     // MARK: - Helper
 
     private func pieceIsHit(by gesture: UITapGestureRecognizer) -> Bool {
-        guard let piece = self.piece else { return false }
-        for square in piece.squares {
-            if square.view.isHit(by: gesture) {
+        for square in squares {
+            if (square as! SquareView).isHit(by: gesture) {
                 return true
             }
         }
@@ -66,13 +65,11 @@ final class TouchUserInput: UserInput {
     }
 
     private func centerOfCurrentPiece() -> CGFloat {
-        guard let piece = self.piece else { return 0.0 }
+        let leftSquare = squares.map({ $0 as! SquareView }).sorted(by: { $0.col < $1.col }).first!
+        let leftX = leftSquare.frame.origin.x
 
-        let leftSquare = piece.squares.sorted(by: { $0.col < $1.col }).first!
-        let leftX = leftSquare.view.frame.origin.x
-
-        let rightSquare = piece.squares.sorted(by: { $0.col < $1.col }).last!
-        let rightX = rightSquare.view.frame.origin.x + rightSquare.view.frame.size.width
+        let rightSquare = squares.map({ $0 as! SquareView }).sorted(by: { $0.col < $1.col }).last!
+        let rightX = rightSquare.frame.origin.x + rightSquare.frame.size.width
 
         return leftX + ((rightX - leftX) / 2.0)
     }

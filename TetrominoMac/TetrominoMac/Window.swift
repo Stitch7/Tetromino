@@ -13,7 +13,6 @@ class Window: NSWindow, UserInput {
 
     // MARK: - UserInput
 
-    var piece: Piece?
     var userInputDelegate: UserInputDelegate?
 
     override func keyUp(with event: NSEvent) {

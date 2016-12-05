@@ -11,12 +11,11 @@ import TetrominoCoreMac
 
 class GameViewController: NSViewController {
 
-    var board: Board?
-    var game: Game?
+    var board: Board<SquareView>?
+    var game: Game<SquareView>?
     var highscore = Highscore(userDefaults: UserDefaults.standard)
     var windowController: WindowController?
     var gameOverView = GameOverView()
-
     var timer: Timer?
 
     override func viewDidLoad() {
@@ -94,20 +93,31 @@ extension GameViewController: GameDelegate {
         gameOverView.isHidden = false
     }
 
-    func display(piece: Piece) {
+    func display<SquareView>(piece: Piece<SquareView>) {
         for square in piece.squares {
-            view.addSubview(square.view)
+            view.addSubview(square.view as! NSView)
         }
     }
 
-    func remove(piece: Piece) {
+    func remove<SquareView>(piece: Piece<SquareView>) {
         for square in piece.squares {
             square.remove()
         }
     }
 
-    func next(piece nextPiece: Piece) {
-        windowController?.piece = nextPiece
+    func next<SquareView>(piece nextPiece: Piece<SquareView>) {
+        guard let nextPieceToolbarItem = windowController?.nextPieceToolbarItem else { return }
+
+        switch nextPiece {
+        case _ as I<SquareView>: nextPieceToolbarItem.image = NSImage(named: "I")!
+        case _ as J<SquareView>: nextPieceToolbarItem.image = NSImage(named: "J")!
+        case _ as L<SquareView>: nextPieceToolbarItem.image = NSImage(named: "L")!
+        case _ as O<SquareView>: nextPieceToolbarItem.image = NSImage(named: "O")!
+        case _ as S<SquareView>: nextPieceToolbarItem.image = NSImage(named: "S")!
+        case _ as T<SquareView>: nextPieceToolbarItem.image = NSImage(named: "T")!
+        case _ as Z<SquareView>: nextPieceToolbarItem.image = NSImage(named: "Z")!
+        default: break
+        }
     }
 
     func scoreDidUpdate(newScore: Score) {

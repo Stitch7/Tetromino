@@ -13,7 +13,7 @@ final class GameViewController: UIViewController {
 
     // MARK: - Properties
 
-    let game: Game
+    let game: Game<SquareView>
     let userInput: TouchUserInput
     let highscore: Highscore
     let scoreView: ScoreView
@@ -24,13 +24,13 @@ final class GameViewController: UIViewController {
 
     // MARK: - Initializers
 
-    init(game: Game, userInput: TouchUserInput, highscore: Highscore) {
+    init(game: Game<SquareView>, userInput: TouchUserInput, highscore: Highscore) {
         self.game = game
         self.userInput = userInput
         self.highscore = highscore
         scoreView = ScoreView(score: game.score, highscore: highscore)
         levelView = LevelView()
-        nextPieceView = NextPieceView(piece: game.nextPiece)
+        nextPieceView = NextPieceView()
         gameOverView = GameOverView()
 
         super.init(nibName: nil, bundle: nil)
@@ -43,7 +43,6 @@ final class GameViewController: UIViewController {
     }
 
     func configureUserInput() {
-        
         userInput.view = view
 
         let tapGesture = UITapGestureRecognizer()
@@ -129,20 +128,30 @@ extension GameViewController: GameDelegate {
         gameOverView.isHidden = false
     }
 
-    func display(piece: Piece) {
+    func display<SquareView>(piece: Piece<SquareView>) {
+        userInput.squares = piece.squares.map { $0.view as! UIView }
         for square in piece.squares {
-            view.addSubview(square.view)
+            view.addSubview(square.view as! UIView)
         }
     }
 
-    func remove(piece: Piece) {
+    func remove<SquareView>(piece: Piece<SquareView>) {
         for square in piece.squares {
             square.remove()
         }
     }
 
-    func next(piece nextPiece: Piece) {
-        nextPieceView.piece = nextPiece
+    func next<SquareView>(piece nextPiece: Piece<SquareView>) {
+        switch nextPiece {
+        case _ as I<SquareView>: nextPieceView.image = UIImage(named: "I")!
+        case _ as J<SquareView>: nextPieceView.image = UIImage(named: "J")!
+        case _ as L<SquareView>: nextPieceView.image = UIImage(named: "L")!
+        case _ as O<SquareView>: nextPieceView.image = UIImage(named: "O")!
+        case _ as S<SquareView>: nextPieceView.image = UIImage(named: "S")!
+        case _ as T<SquareView>: nextPieceView.image = UIImage(named: "T")!
+        case _ as Z<SquareView>: nextPieceView.image = UIImage(named: "Z")!
+        default: break
+        }
     }
 
     func scoreDidUpdate(newScore: Score) {

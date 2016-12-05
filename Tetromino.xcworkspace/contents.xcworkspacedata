@@ -51,6 +51,9 @@
          location = "group:Score.swift">
       </FileRef>
       <FileRef
+         location = "group:Square.swift">
+      </FileRef>
+      <FileRef
          location = "group:UserInput.swift">
       </FileRef>
    </Group>

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public struct Board {
+public struct Board<T: SquareViewType> {
 
     // MARK: - Properties
 
@@ -20,7 +20,7 @@ public struct Board {
 
     var squareWidth: CGFloat
     var squareHeight: CGFloat
-    var grid = [[Square?]]()
+    var grid = [[Square<T>?]]()
 
     var completedRows: [Int] {
         var rows = [Int]()
@@ -63,7 +63,7 @@ public struct Board {
         insertEmptyRows(count: numRows)
     }
 
-    mutating func add(piece: Piece) {
+    mutating func add(piece: Piece<T>) {
         for square in piece.squares {
             grid[square.row][square.col] = square
         }
@@ -102,14 +102,14 @@ public struct Board {
         return completedRows.count
     }
 
-    func intersects(with piece: Piece?) -> Bool {
+    func intersects(with piece: Piece<T>?) -> Bool {
         guard let piece = piece else { return false }
         return intersectsLeft(with: piece)
             || intersectsRight(with: piece)
             || intersectsBottom(with: piece)
     }
 
-    func intersectsLeft(with piece: Piece?) -> Bool {
+    func intersectsLeft(with piece: Piece<T>?) -> Bool {
         guard let piece = piece else { return false }
 
         for square in piece.squares {
@@ -128,7 +128,7 @@ public struct Board {
         return false
     }
 
-    func intersectsRight(with piece: Piece?) -> Bool {
+    func intersectsRight(with piece: Piece<T>?) -> Bool {
         guard let piece = piece else { return false }
 
         for square in piece.squares {
@@ -147,7 +147,7 @@ public struct Board {
         return false
     }
 
-    func intersectsBottom(with piece: Piece?) -> Bool {
+    func intersectsBottom(with piece: Piece<T>?) -> Bool {
         guard let piece = piece else { return false }
         
         for square in piece.squares {

@@ -7,7 +7,6 @@
 //
 
 public protocol UserInput {
-    var piece: Piece? { get set }
     var userInputDelegate: UserInputDelegate? { get set }
 }
 

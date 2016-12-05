@@ -1,12 +1,29 @@
 //
 //  Square.swift
-//  TetrominoMac
+//  Tetromino
 //
-//  Created by Christopher Reitz on 03/11/2016.
+//  Created by Christopher Reitz on 05/12/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-public class Square {
+import Foundation
+
+public protocol SquareViewType {
+    var frame: CGRect { get set }
+    var downOperation: (CGFloat, CGFloat) -> CGFloat { get }
+    init(
+        color: Color,
+        boardRow: Int,
+        boardCol: Int,
+        pieceRow: Int,
+        pieceCol: Int,
+        width: CGFloat,
+        height: CGFloat
+    )
+    func removeFromSuperview()
+}
+
+public class Square<T: SquareViewType> {
 
     var boardRow: Int
     var boardCol: Int
@@ -18,9 +35,17 @@ public class Square {
     public var row: Int
     public var col: Int
 
-    public var view: NSView
+    public var view: T
 
-    init(color: Color, boardRow: Int, boardCol: Int, pieceRow: Int, pieceCol: Int, width: CGFloat, height: CGFloat) {
+    init(
+        color: Color,
+        boardRow: Int,
+        boardCol: Int,
+        pieceRow: Int,
+        pieceCol: Int,
+        width: CGFloat,
+        height: CGFloat
+    ) {
         self.boardRow = boardRow
         self.boardCol = boardCol
         self.pieceRow = pieceRow
@@ -30,7 +55,7 @@ public class Square {
 
         row = boardRow + pieceRow
         col = boardCol + pieceCol
-        view = SquareView(
+        view = T(
             color: color,
             boardRow: boardRow,
             boardCol: boardCol,
@@ -59,53 +84,10 @@ public class Square {
         view.frame = newFrame
     }
 
-    // TODO: + || -
     func moveDown() {
         row += 1
         var newFrame = view.frame
-        newFrame.origin.y = newFrame.origin.y - newFrame.size.height
+        newFrame.origin.y = view.downOperation(newFrame.origin.y, newFrame.size.height)
         view.frame = newFrame
-    }
-}
-
-
-import AppKit
-
-public class SquareView: NSView {
-
-    // MARK: - Properties
-
-    let color: Color
-
-    // MARK: - Initializers
-
-    public init(
-        color: Color,
-        boardRow: Int,
-        boardCol: Int,
-        pieceRow: Int,
-        pieceCol: Int,
-        width: CGFloat,
-        height: CGFloat
-    ) {
-        self.color = color
-        let frame = CGRect(
-            x: CGFloat(boardCol) * width + CGFloat(pieceCol) * width,
-            y: 960 - CGFloat(boardRow + pieceRow + 1) * height,
-            width: width,
-            height: height
-        )
-        super.init(frame: frame)
-
-        wantsLayer = true
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        return nil
-    }
-
-    override public func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        layer?.backgroundColor = color.nsColor.cgColor
     }
 }

@@ -21,9 +21,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func initRootViewController() -> UIViewController {
-        let board = Board(width: screenBounds.width, height: screenBounds.height)
+        let board = Board<SquareView>(width: screenBounds.width, height: screenBounds.height)
         let userInput = TouchUserInput()
-        let game = Game(board: board, userInput: userInput, score: 0)
+        let game = Game<SquareView>(board: board, userInput: userInput, score: 0)
         let highscore = Highscore(userDefaults: UserDefaults.standard)
         let gameVC = GameViewController(game: game, userInput: userInput, highscore: highscore)
         let navigationController = UINavigationController(rootViewController: gameVC)

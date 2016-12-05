@@ -19,6 +19,8 @@
 		3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE1A1DF47DB5004F6B25 /* WindowController.swift */; };
 		3029DE831DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; };
 		3029DE841DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30D76A5F1DF6043A00595FBD /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A5E1DF6043A00595FBD /* SquareView.swift */; };
+		30D76A611DF6047600595FBD /* Color+nsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A601DF6047600595FBD /* Color+nsColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		3029DE191DF47DB5004F6B25 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		3029DE1A1DF47DB5004F6B25 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = ../WindowController.swift; sourceTree = "<group>"; };
 		3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoCoreMac.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-ggfcitwqllqrabesfoqyjomlirng/Build/Products/Debug/TetrominoCoreMac.framework"; sourceTree = "<group>"; };
+		30D76A5E1DF6043A00595FBD /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		30D76A601DF6047600595FBD /* Color+nsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+nsColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +157,8 @@
 		3029DDF91DF47DB5004F6B25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3029DE1A1DF47DB5004F6B25 /* WindowController.swift */,
 				3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */,
+				3029DE1A1DF47DB5004F6B25 /* WindowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +166,7 @@
 		3029DDFB1DF47DB5004F6B25 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				30D76A601DF6047600595FBD /* Color+nsColor.swift */,
 				3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */,
 			);
 			path = Extensions;
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				3029DE171DF47DB5004F6B25 /* GameOverView.swift */,
+				30D76A5E1DF6043A00595FBD /* SquareView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,10 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D76A611DF6047600595FBD /* Color+nsColor.swift in Sources */,
 				3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */,
 				3029DE1B1DF47DB5004F6B25 /* GameViewController.swift in Sources */,
 				3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */,
 				3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */,
+				30D76A5F1DF6043A00595FBD /* SquareView.swift in Sources */,
 				3029DDCE1DF47D32004F6B25 /* AppDelegate.swift in Sources */,
 				3029DE341DF47DB5004F6B25 /* Window.swift in Sources */,
 			);
