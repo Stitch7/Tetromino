@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3029DDCE1DF47D32004F6B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */; };
+		3029DDE01DF47D32004F6B25 /* TetrominoMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDDF1DF47D32004F6B25 /* TetrominoMacTests.swift */; };
+		3029DDEB1DF47D32004F6B25 /* TetrominoMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDEA1DF47D32004F6B25 /* TetrominoMacUITests.swift */; };
+		3029DE1B1DF47DB5004F6B25 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */; };
+		3029DE1C1DF47DB5004F6B25 /* Color+nsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFC1DF47DB5004F6B25 /* Color+nsColor.swift */; };
+		3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */; };
+		3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE121DF47DB5004F6B25 /* Assets.xcassets */; };
+		3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE131DF47DB5004F6B25 /* Main.storyboard */; };
+		3029DE311DF47DB5004F6B25 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE151DF47DB5004F6B25 /* Info.plist */; };
+		3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE171DF47DB5004F6B25 /* GameOverView.swift */; };
+		3029DE331DF47DB5004F6B25 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE181DF47DB5004F6B25 /* Square.swift */; };
+		3029DE341DF47DB5004F6B25 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE191DF47DB5004F6B25 /* Window.swift */; };
+		3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE1A1DF47DB5004F6B25 /* WindowController.swift */; };
+		3029DE831DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; };
+		3029DE841DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3029DDDC1DF47D32004F6B25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3029DDC21DF47D32004F6B25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3029DDC91DF47D32004F6B25;
+			remoteInfo = TetrominoMac;
+		};
+		3029DDE71DF47D32004F6B25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3029DDC21DF47D32004F6B25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3029DDC91DF47D32004F6B25;
+			remoteInfo = TetrominoMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3029DE851DF4A5FA004F6B25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3029DE841DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3029DDCA1DF47D32004F6B25 /* TetrominoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrominoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3029DDDB1DF47D32004F6B25 /* TetrominoMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrominoMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3029DDDF1DF47D32004F6B25 /* TetrominoMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrominoMacTests.swift; sourceTree = "<group>"; };
+		3029DDE11DF47D32004F6B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3029DDE61DF47D32004F6B25 /* TetrominoMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrominoMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3029DDEA1DF47D32004F6B25 /* TetrominoMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrominoMacUITests.swift; sourceTree = "<group>"; };
+		3029DDEC1DF47D32004F6B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3029DDFC1DF47DB5004F6B25 /* Color+nsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+nsColor.swift"; sourceTree = "<group>"; };
+		3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+addConstraints.swift"; sourceTree = "<group>"; };
+		3029DE121DF47DB5004F6B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3029DE141DF47DB5004F6B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3029DE151DF47DB5004F6B25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3029DE171DF47DB5004F6B25 /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		3029DE181DF47DB5004F6B25 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		3029DE191DF47DB5004F6B25 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		3029DE1A1DF47DB5004F6B25 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = ../WindowController.swift; sourceTree = "<group>"; };
+		3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoCoreMac.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-ggfcitwqllqrabesfoqyjomlirng/Build/Products/Debug/TetrominoCoreMac.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3029DDC71DF47D32004F6B25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3029DE831DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDD81DF47D32004F6B25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDE31DF47D32004F6B25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3029DDC11DF47D32004F6B25 = {
+			isa = PBXGroup;
+			children = (
+				3029DDCC1DF47D32004F6B25 /* TetrominoMac */,
+				3029DDDE1DF47D32004F6B25 /* TetrominoMacTests */,
+				3029DDE91DF47D32004F6B25 /* TetrominoMacUITests */,
+				3029DDCB1DF47D32004F6B25 /* Products */,
+				3029DE361DF47E53004F6B25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3029DDCB1DF47D32004F6B25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3029DDCA1DF47D32004F6B25 /* TetrominoMac.app */,
+				3029DDDB1DF47D32004F6B25 /* TetrominoMacTests.xctest */,
+				3029DDE61DF47D32004F6B25 /* TetrominoMacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3029DDCC1DF47D32004F6B25 /* TetrominoMac */ = {
+			isa = PBXGroup;
+			children = (
+				3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */,
+				3029DE191DF47DB5004F6B25 /* Window.swift */,
+				3029DDF91DF47DB5004F6B25 /* Controllers */,
+				3029DE161DF47DB5004F6B25 /* Views */,
+				3029DDFB1DF47DB5004F6B25 /* Extensions */,
+				3029DE111DF47DB5004F6B25 /* Supporting Files */,
+			);
+			path = TetrominoMac;
+			sourceTree = "<group>";
+		};
+		3029DDDE1DF47D32004F6B25 /* TetrominoMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				3029DDDF1DF47D32004F6B25 /* TetrominoMacTests.swift */,
+				3029DDE11DF47D32004F6B25 /* Info.plist */,
+			);
+			path = TetrominoMacTests;
+			sourceTree = "<group>";
+		};
+		3029DDE91DF47D32004F6B25 /* TetrominoMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3029DDEA1DF47D32004F6B25 /* TetrominoMacUITests.swift */,
+				3029DDEC1DF47D32004F6B25 /* Info.plist */,
+			);
+			path = TetrominoMacUITests;
+			sourceTree = "<group>";
+		};
+		3029DDF91DF47DB5004F6B25 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3029DE1A1DF47DB5004F6B25 /* WindowController.swift */,
+				3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3029DDFB1DF47DB5004F6B25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3029DDFC1DF47DB5004F6B25 /* Color+nsColor.swift */,
+				3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3029DE111DF47DB5004F6B25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3029DE121DF47DB5004F6B25 /* Assets.xcassets */,
+				3029DE131DF47DB5004F6B25 /* Main.storyboard */,
+				3029DE151DF47DB5004F6B25 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3029DE161DF47DB5004F6B25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3029DE171DF47DB5004F6B25 /* GameOverView.swift */,
+				3029DE181DF47DB5004F6B25 /* Square.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3029DE361DF47E53004F6B25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3029DDC91DF47D32004F6B25 /* TetrominoMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3029DDEF1DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMac" */;
+			buildPhases = (
+				3029DDC61DF47D32004F6B25 /* Sources */,
+				3029DDC71DF47D32004F6B25 /* Frameworks */,
+				3029DDC81DF47D32004F6B25 /* Resources */,
+				3029DE851DF4A5FA004F6B25 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TetrominoMac;
+			productName = TetrominoMac;
+			productReference = 3029DDCA1DF47D32004F6B25 /* TetrominoMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3029DDDA1DF47D32004F6B25 /* TetrominoMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3029DDF21DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMacTests" */;
+			buildPhases = (
+				3029DDD71DF47D32004F6B25 /* Sources */,
+				3029DDD81DF47D32004F6B25 /* Frameworks */,
+				3029DDD91DF47D32004F6B25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3029DDDD1DF47D32004F6B25 /* PBXTargetDependency */,
+			);
+			name = TetrominoMacTests;
+			productName = TetrominoMacTests;
+			productReference = 3029DDDB1DF47D32004F6B25 /* TetrominoMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3029DDE51DF47D32004F6B25 /* TetrominoMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3029DDF51DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMacUITests" */;
+			buildPhases = (
+				3029DDE21DF47D32004F6B25 /* Sources */,
+				3029DDE31DF47D32004F6B25 /* Frameworks */,
+				3029DDE41DF47D32004F6B25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3029DDE81DF47D32004F6B25 /* PBXTargetDependency */,
+			);
+			name = TetrominoMacUITests;
+			productName = TetrominoMacUITests;
+			productReference = 3029DDE61DF47D32004F6B25 /* TetrominoMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3029DDC21DF47D32004F6B25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Christopher Reitz";
+				TargetAttributes = {
+					3029DDC91DF47D32004F6B25 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					3029DDDA1DF47D32004F6B25 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3029DDC91DF47D32004F6B25;
+					};
+					3029DDE51DF47D32004F6B25 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3029DDC91DF47D32004F6B25;
+					};
+				};
+			};
+			buildConfigurationList = 3029DDC51DF47D32004F6B25 /* Build configuration list for PBXProject "TetrominoMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3029DDC11DF47D32004F6B25;
+			productRefGroup = 3029DDCB1DF47D32004F6B25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3029DDC91DF47D32004F6B25 /* TetrominoMac */,
+				3029DDDA1DF47D32004F6B25 /* TetrominoMacTests */,
+				3029DDE51DF47D32004F6B25 /* TetrominoMacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3029DDC81DF47D32004F6B25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */,
+				3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */,
+				3029DE311DF47DB5004F6B25 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDD91DF47D32004F6B25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDE41DF47D32004F6B25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3029DDC61DF47D32004F6B25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3029DE331DF47DB5004F6B25 /* Square.swift in Sources */,
+				3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */,
+				3029DE1C1DF47DB5004F6B25 /* Color+nsColor.swift in Sources */,
+				3029DE1B1DF47DB5004F6B25 /* GameViewController.swift in Sources */,
+				3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */,
+				3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */,
+				3029DDCE1DF47D32004F6B25 /* AppDelegate.swift in Sources */,
+				3029DE341DF47DB5004F6B25 /* Window.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDD71DF47D32004F6B25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3029DDE01DF47D32004F6B25 /* TetrominoMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3029DDE21DF47D32004F6B25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3029DDEB1DF47D32004F6B25 /* TetrominoMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3029DDDD1DF47D32004F6B25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3029DDC91DF47D32004F6B25 /* TetrominoMac */;
+			targetProxy = 3029DDDC1DF47D32004F6B25 /* PBXContainerItemProxy */;
+		};
+		3029DDE81DF47D32004F6B25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3029DDC91DF47D32004F6B25 /* TetrominoMac */;
+			targetProxy = 3029DDE71DF47D32004F6B25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3029DE131DF47DB5004F6B25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3029DE141DF47DB5004F6B25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3029DDED1DF47D32004F6B25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3029DDEE1DF47D32004F6B25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		3029DDF01DF47D32004F6B25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TetrominoMac/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3029DDF11DF47D32004F6B25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TetrominoMac/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3029DDF31DF47D32004F6B25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TetrominoMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrominoMac.app/Contents/MacOS/TetrominoMac";
+			};
+			name = Debug;
+		};
+		3029DDF41DF47D32004F6B25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TetrominoMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrominoMac.app/Contents/MacOS/TetrominoMac";
+			};
+			name = Release;
+		};
+		3029DDF61DF47D32004F6B25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TetrominoMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TetrominoMac;
+			};
+			name = Debug;
+		};
+		3029DDF71DF47D32004F6B25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TetrominoMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TetrominoMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3029DDC51DF47D32004F6B25 /* Build configuration list for PBXProject "TetrominoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3029DDED1DF47D32004F6B25 /* Debug */,
+				3029DDEE1DF47D32004F6B25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3029DDEF1DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3029DDF01DF47D32004F6B25 /* Debug */,
+				3029DDF11DF47D32004F6B25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3029DDF21DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3029DDF31DF47D32004F6B25 /* Debug */,
+				3029DDF41DF47D32004F6B25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3029DDF51DF47D32004F6B25 /* Build configuration list for PBXNativeTarget "TetrominoMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3029DDF61DF47D32004F6B25 /* Debug */,
+				3029DDF71DF47D32004F6B25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3029DDC21DF47D32004F6B25 /* Project object */;
+}

@@ -6,20 +6,20 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-struct Score: ExpressibleByIntegerLiteral {
+public struct Score: ExpressibleByIntegerLiteral {
 
     // MARK: - Properties
 
-    var value: Int
-    var rowsCompleted = 0
+    public var value: Int
+    public var rowsCompleted = 0
 
-    init(integerLiteral value: Int) {
+    public init(integerLiteral value: Int) {
         self.value = value
     }
 
     // MARK: - Public
 
-    mutating func add(numberOfRows: Int, level: Level) {
+    mutating public func add(numberOfRows: Int, level: Level) {
         var newScore = 0
         switch numberOfRows {
         case 1:

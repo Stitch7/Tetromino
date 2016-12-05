@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:TetrominoCoreMac/TetrominoCoreMac.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TetrominoCoreIOS/TetrominoCoreIOS.xcodeproj">
-   </FileRef>
    <Group
       location = "container:TetrominoCore"
       name = "TetrominoCore">
@@ -60,4 +54,16 @@
          location = "group:UserInput.swift">
       </FileRef>
    </Group>
+   <FileRef
+      location = "group:TetrominoCoreMac/TetrominoCoreMac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoCoreIOS/TetrominoCoreIOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoMac/TetrominoMac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoIOS/TetrominoIOS.xcodeproj">
+   </FileRef>
 </Workspace>

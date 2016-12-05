@@ -6,12 +6,12 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-protocol UserInput {
+public protocol UserInput {
     var piece: Piece? { get set }
     var userInputDelegate: UserInputDelegate? { get set }
 }
 
-protocol UserInputDelegate {
+public protocol UserInputDelegate {
     func rotate()
     func moveLeft()
     func moveRight()

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-enum Color {
+public enum Color {
     case green
     case purple
     case blue
@@ -18,7 +18,7 @@ enum Color {
     case orange
 }
 
-extension Color {
+public extension Color {
     var hsb: (h: CGFloat, s: CGFloat, b: CGFloat) {
         switch self {
         case .green:

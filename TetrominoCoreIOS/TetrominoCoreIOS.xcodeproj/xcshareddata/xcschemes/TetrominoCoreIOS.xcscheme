@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3029DD471DF4771F004F6B25"
+            BuildableName = "TetrominoIOS.app"
+            BlueprintName = "TetrominoIOS"
+            ReferencedContainer = "container:../TetrominoIOS/TetrominoIOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3029DD181DF4759F004F6B25"
-            BuildableName = "TetrominoCoreIOS.framework"
-            BlueprintName = "TetrominoCoreIOS"
-            ReferencedContainer = "container:TetrominoCoreIOS.xcodeproj">
+            BlueprintIdentifier = "3029DD471DF4771F004F6B25"
+            BuildableName = "TetrominoIOS.app"
+            BlueprintName = "TetrominoIOS"
+            ReferencedContainer = "container:../TetrominoIOS/TetrominoIOS.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

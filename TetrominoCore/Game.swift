@@ -6,7 +6,7 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-protocol GameDelegate {
+public protocol GameDelegate {
     func gameOver()
     func display(piece: Piece)
     func remove(piece: Piece)
@@ -15,7 +15,7 @@ protocol GameDelegate {
     func levelChanged(to newLevel: Level)
 }
 
-final class Game {
+public final class Game {
 
     // MARK: - Properties
 
@@ -25,11 +25,11 @@ final class Game {
             userInput.userInputDelegate = self
         }
     }
-    var score: Score
-    var nextPiece: Piece
-    var delegate: GameDelegate?
+    public var score: Score
+    public var nextPiece: Piece
+    public var delegate: GameDelegate?
 
-    var level: Level {
+    public var level: Level {
         willSet {
             if level != newValue {
                 delegate?.levelChanged(to: newValue)
@@ -53,7 +53,7 @@ final class Game {
 
     // MARK: - Initializers
 
-    init(board: Board, userInput: UserInput, score: Score = 0, level: Level = .one) {
+    public init(board: Board, userInput: UserInput, score: Score = 0, level: Level = .one) {
         self.board = board
         self.userInput = userInput
         self.score = score
@@ -63,14 +63,14 @@ final class Game {
 
     // MARK: - Public
 
-    func new() {
+    public func new() {
         board.reset()
         level = .one
         score = 0
         gameOver = false
     }
 
-    func tick() {
+    public func tick() {
         if gameOver { return }
 
         if currentPiece == nil {
@@ -131,7 +131,7 @@ final class Game {
 // MARK: - UserInputDelegate
 
 extension Game: UserInputDelegate {
-    func rotate() {
+    public func rotate() {
         guard let currentPiece = self.currentPiece else { return }
 
         let rotatedPiece = currentPiece.rotated
@@ -142,25 +142,25 @@ extension Game: UserInputDelegate {
         }
     }
 
-    func moveLeft() {
+    public func moveLeft() {
         if board.intersectsLeft(with: currentPiece) == false {
             currentPiece?.moveLeft()
         }
     }
 
-    func moveRight() {
+    public func moveRight() {
         if board.intersectsRight(with: currentPiece) == false {
             currentPiece?.moveRight()
         }
     }
 
-    func moveDown() {
+    public func moveDown() {
         if board.intersectsBottom(with: currentPiece) == false {
             currentPiece?.moveDown()
         }
     }
 
-    func dropDown() {
+    public func dropDown() {
         guard let currentPiece = self.currentPiece else { return }
 
         let piece = currentPiece

@@ -8,12 +8,13 @@
 
 import CoreGraphics
 
-struct Board {
+public struct Board {
 
     // MARK: - Properties
 
-    let width: CGFloat
-    let height: CGFloat
+    public let width: CGFloat
+    public let height: CGFloat
+
     let numRows = 20
     let numCols = 10
 
@@ -34,7 +35,7 @@ struct Board {
 
     // MARK: - Initializers
 
-    init(width: CGFloat, height: CGFloat) {
+    public init(width: CGFloat, height: CGFloat) {
         self.width = width
         self.height = height
         squareWidth = width / CGFloat(numCols)

@@ -8,7 +8,7 @@
 
 import Foundation.NSUserDefaults
 
-final class Highscore {
+public final class Highscore {
 
     // MARK: - Properties
 
@@ -16,13 +16,13 @@ final class Highscore {
     let key = "highscore"
 
     var list = [Int]()
-    var leader: Int {
+    public var leader: Int {
         return list.sorted(by: { $0 > $1 }).first ?? 0
     }
 
     // MARK: - Initializers
 
-    init(userDefaults: UserDefaults) {
+    public init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
         if let savedHighScore = userDefaults.array(forKey: key) as? [Int] {
             self.list = savedHighScore
@@ -31,7 +31,7 @@ final class Highscore {
 
     // MARK: - Public
 
-    func save(value: Int) -> Bool {
+    public func save(value: Int) -> Bool {
         let highscoreNotFull = list.count < 10
         let highscoreEntriesLowerThanCurrentScore = list.filter({ $0 < value }).count > 0
 

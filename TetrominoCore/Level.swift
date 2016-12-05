@@ -8,7 +8,7 @@
 
 import Foundation.NSDate
 
-enum Level: Int {
+public enum Level: Int {
     case one
     case two
     case three
@@ -19,7 +19,7 @@ enum Level: Int {
     case nine
 }
 
-extension Level {
+public extension Level {
     var number: Int {
         return self.rawValue + 1
     }

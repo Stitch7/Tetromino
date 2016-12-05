@@ -6,12 +6,12 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-struct J: Piece {
-    let color = Color.purple
-    var squares = [Square]()
-    var currentRow = 0
-    var currentCol = 3
-    var pattern: Pattern = [
+public struct J: Piece {
+    public let color = Color.purple
+    public var squares = [Square]()
+    public var currentRow = 0
+    public var currentCol = 3
+    public var pattern: Pattern = [
         [false, false, true, false],
         [false, false, true, false],
         [false, true, true, false],
