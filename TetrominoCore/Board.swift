@@ -55,7 +55,7 @@ public struct Board {
         if grid.count > 0 {
             walkAllSlots { row, col in
                 if let square = grid[row][col] {
-                    square.removeFromSuperview()
+                    square.remove()
                 }
             }
         }
@@ -86,7 +86,7 @@ public struct Board {
 
         for row in completedRows.reversed() {
             for square in grid[row] {
-                square?.removeFromSuperview()
+                square?.remove()
             }
             grid.remove(at: row)
         }

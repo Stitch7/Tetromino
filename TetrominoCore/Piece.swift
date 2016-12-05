@@ -10,16 +10,6 @@ import CoreGraphics
 
 public typealias Pattern = [[Bool]]
 
-//public protocol Square {
-//    var row: Int { get set }
-//    var col: Int { get set }
-//    var frame: NSRect { get set }
-//    init(color: Color, row: Int, col: Int, frame: CGRect)
-//    func removeFromSuperview()
-//    func moveLeft()
-//    func moveRight()
-//    func moveDown()
-//}
 
 // MARK: Piece
 
@@ -48,7 +38,7 @@ public extension Piece {
             [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
             [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
         ]
-        rotated.build(width: squares.first!.frame.width, height: squares.first!.frame.height)
+        rotated.build(width: squares.first!.view.frame.width, height: squares.first!.view.frame.height)
         return rotated
     }
 

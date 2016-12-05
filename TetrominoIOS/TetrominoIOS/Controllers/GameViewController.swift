@@ -131,13 +131,13 @@ extension GameViewController: GameDelegate {
 
     func display(piece: Piece) {
         for square in piece.squares {
-            view.addSubview(square)
+            view.addSubview(square.view)
         }
     }
 
     func remove(piece: Piece) {
         for square in piece.squares {
-            square.removeFromSuperview()
+            square.remove()
         }
     }
 
