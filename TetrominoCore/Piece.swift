@@ -59,19 +59,17 @@ public extension Piece {
         for rowNo in 0..<rowCount {
             for colNo in 0..<colCount {
                 guard pattern[rowNo][colNo] else { continue }
-// #################################################################################################
-                let col = currentCol + colNo
-                let row = currentRow + rowNo
-                let frame = CGRect(
-                    x: CGFloat(currentCol) * width + CGFloat(colNo) * width,
-                    y: CGFloat(currentRow) * height + CGFloat(rowNo) * height,
-//                    y: 960 - CGFloat(row + 1) * height,
+
+                let square = Square(
+                    color: color,
+                    boardRow: currentRow,
+                    boardCol: currentCol,
+                    pieceRow: rowNo,
+                    pieceCol: colNo,
                     width: width,
                     height: height
                 )
-                let square = Square(color: color, row: row, col: col, frame: frame)
                 squares.append(square)
-// #################################################################################################
             }
         }
     }

@@ -15,7 +15,6 @@
 		3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */; };
 		3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE121DF47DB5004F6B25 /* Assets.xcassets */; };
 		3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE131DF47DB5004F6B25 /* Main.storyboard */; };
-		3029DE311DF47DB5004F6B25 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE151DF47DB5004F6B25 /* Info.plist */; };
 		3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE171DF47DB5004F6B25 /* GameOverView.swift */; };
 		3029DE331DF47DB5004F6B25 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE181DF47DB5004F6B25 /* Square.swift */; };
 		3029DE341DF47DB5004F6B25 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE191DF47DB5004F6B25 /* Window.swift */; };
@@ -310,7 +309,6 @@
 			files = (
 				3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */,
 				3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */,
-				3029DE311DF47DB5004F6B25 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

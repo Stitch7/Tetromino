@@ -12,15 +12,30 @@ public class Square: UIView {
 
     // MARK: - Properties
 
+    let color: Color
     public var row = 0
     public var col = 0
 
     // MARK: - Initializers
 
-    public init(color: Color, row: Int, col: Int, frame: CGRect = .zero) {
-        self.row = row
-        self.col = col
-        
+    public init(
+        color: Color,
+        boardRow: Int,
+        boardCol: Int,
+        pieceRow: Int,
+        pieceCol: Int,
+        width: CGFloat,
+        height: CGFloat
+    ) {
+        self.color = color
+        self.row = boardRow + pieceRow
+        self.col = boardCol + pieceCol
+        let frame = CGRect(
+            x: CGFloat(boardCol) * width + CGFloat(pieceCol) * width,
+            y: CGFloat(boardRow) * height + CGFloat(pieceRow) * height,
+            width: width,
+            height: height
+        )
         super.init(frame: frame)
 
         backgroundColor = color.uiColor

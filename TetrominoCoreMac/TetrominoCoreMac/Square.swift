@@ -18,11 +18,26 @@ public class Square: NSView {
 
     // MARK: - Initializers
 
-    init(color: Color, row: Int, col: Int, frame: CGRect = .zero) {
+    public init(
+        color: Color,
+        boardRow: Int,
+        boardCol: Int,
+        pieceRow: Int,
+        pieceCol: Int,
+        width: CGFloat,
+        height: CGFloat
+    ) {
         self.color = color
-        self.row = row
-        self.col = col
+        self.row = boardRow + pieceRow
+        self.col = boardCol + pieceCol
+        let frame = CGRect(
+            x: CGFloat(boardCol) * width + CGFloat(pieceCol) * width,
+            y: 960 - CGFloat(row + 1) * height,
+            width: width,
+            height: height
+        )
         super.init(frame: frame)
+
         wantsLayer = true
     }
 
