@@ -11,12 +11,16 @@ import TetrominoCoreMac
 
 class GameViewController: NSViewController {
 
+    // MARK: - Properties
+
     var board: Board<SquareView>?
     var game: Game<SquareView>?
     var highscore = Highscore(userDefaults: UserDefaults.standard)
     var windowController: WindowController?
     var gameOverView = GameOverView()
     var timer: Timer?
+
+    // MARK: - NSViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,18 +110,7 @@ extension GameViewController: GameDelegate {
     }
 
     func next<SquareView>(piece nextPiece: Piece<SquareView>) {
-        guard let nextPieceToolbarItem = windowController?.nextPieceToolbarItem else { return }
-
-        switch nextPiece {
-        case _ as I<SquareView>: nextPieceToolbarItem.image = NSImage(named: "I")!
-        case _ as J<SquareView>: nextPieceToolbarItem.image = NSImage(named: "J")!
-        case _ as L<SquareView>: nextPieceToolbarItem.image = NSImage(named: "L")!
-        case _ as O<SquareView>: nextPieceToolbarItem.image = NSImage(named: "O")!
-        case _ as S<SquareView>: nextPieceToolbarItem.image = NSImage(named: "S")!
-        case _ as T<SquareView>: nextPieceToolbarItem.image = NSImage(named: "T")!
-        case _ as Z<SquareView>: nextPieceToolbarItem.image = NSImage(named: "Z")!
-        default: break
-        }
+        windowController?.nextPieceToolbarItem.image = NSImage(named: nextPiece.type.rawValue)!
     }
 
     func scoreDidUpdate(newScore: Score) {

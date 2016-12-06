@@ -9,7 +9,7 @@
 import UIKit
 import TetrominoCoreIOS
 
-class SquareView: UIView, SquareViewType {
+final class SquareView: UIView, SquareViewType {
 
     // MARK: - Properties
 
@@ -20,26 +20,18 @@ class SquareView: UIView, SquareViewType {
 
     // MARK: - Initializers
 
-    public required init(
-        color: Color,
-        boardRow: Int,
-        boardCol: Int,
-        pieceRow: Int,
-        pieceCol: Int,
-        width: CGFloat,
-        height: CGFloat
-    ) {
-        row = boardRow + pieceRow
-        col = boardCol + pieceCol
+    init(config: SquareViewConfig) {
+        row = config.boardRow + config.pieceRow
+        col = config.boardCol + config.pieceCol
         let frame = CGRect(
-            x: CGFloat(boardCol) * width + CGFloat(pieceCol) * width,
-            y: CGFloat(boardRow) * height + CGFloat(pieceRow) * height,
-            width: width,
-            height: height
+            x: CGFloat(config.boardCol) * config.width + CGFloat(config.pieceCol) * config.width,
+            y: CGFloat(config.boardRow) * config.height + CGFloat(config.pieceRow) * config.height,
+            width: config.width,
+            height: config.height
         )
         super.init(frame: frame)
 
-        backgroundColor = color.uiColor
+        backgroundColor = config.color.uiColor
     }
 
     required public init?(coder aDecoder: NSCoder) {

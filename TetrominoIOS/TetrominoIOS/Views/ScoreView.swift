@@ -15,17 +15,16 @@ class ScoreView: UIView {
 
     var score: Score {
         didSet {
+            let labelFont = label.font
             let labelText = NSMutableAttributedString(
                 string: "Score",
-                attributes: [
-                    NSFontAttributeName: label.font
-                ]
+                attributes: [NSFontAttributeName: labelFont]
             )
-            let valueText = NSAttributedString(
+            let valueFont = UIFont.systemFont(ofSize: label.font.pointSize,
+                                              weight: UIFontWeightThin)
+            let valueText = NSAttributedString (
                 string: " \(score.value)",
-                attributes: [
-                    NSFontAttributeName: UIFont.systemFont(ofSize: label.font.pointSize, weight: UIFontWeightThin)
-                ]
+                attributes: [NSFontAttributeName: valueFont]
             )
             labelText.append(valueText)
 
@@ -35,17 +34,16 @@ class ScoreView: UIView {
 
     var highscore: Highscore {
         didSet {
+            let labelFont = highscoreLabel.font
             let labelText = NSMutableAttributedString(
                 string: "Highscore",
-                attributes: [
-                    NSFontAttributeName: highscoreLabel.font
-                ]
+                attributes: [NSFontAttributeName: labelFont]
             )
+            let valueFont = UIFont.systemFont(ofSize: highscoreLabel.font.pointSize,
+                                              weight: UIFontWeightRegular)
             let valueText = NSAttributedString(
                 string: " \(highscore.leader)",
-                attributes: [
-                    NSFontAttributeName: UIFont.systemFont(ofSize: highscoreLabel.font.pointSize, weight: UIFontWeightRegular)
-                ]
+                attributes: [NSFontAttributeName: valueFont]
             )
             labelText.append(valueText)
 

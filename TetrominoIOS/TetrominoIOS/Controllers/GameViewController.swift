@@ -142,16 +142,7 @@ extension GameViewController: GameDelegate {
     }
 
     func next<SquareView>(piece nextPiece: Piece<SquareView>) {
-        switch nextPiece {
-        case _ as I<SquareView>: nextPieceView.image = UIImage(named: "I")!
-        case _ as J<SquareView>: nextPieceView.image = UIImage(named: "J")!
-        case _ as L<SquareView>: nextPieceView.image = UIImage(named: "L")!
-        case _ as O<SquareView>: nextPieceView.image = UIImage(named: "O")!
-        case _ as S<SquareView>: nextPieceView.image = UIImage(named: "S")!
-        case _ as T<SquareView>: nextPieceView.image = UIImage(named: "T")!
-        case _ as Z<SquareView>: nextPieceView.image = UIImage(named: "Z")!
-        default: break
-        }
+        nextPieceView.image = UIImage(named: nextPiece.type.rawValue)!
     }
 
     func scoreDidUpdate(newScore: Score) {

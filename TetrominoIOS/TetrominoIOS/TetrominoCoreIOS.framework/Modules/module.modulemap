@@ -1,6 +1,0 @@
-framework module TetrominoCoreIOS {
-  umbrella header "TetrominoCoreIOS.h"
-
-  export *
-  module * { export * }
-}

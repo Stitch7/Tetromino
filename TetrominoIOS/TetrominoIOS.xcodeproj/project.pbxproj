@@ -65,7 +65,6 @@
 		3029DD671DF4771F004F6B25 /* TetrominoIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrominoIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3029DD6B1DF4771F004F6B25 /* TetrominoIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrominoIOSUITests.swift; sourceTree = "<group>"; };
 		3029DD6D1DF4771F004F6B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3029DD791DF47943004F6B25 /* TetrominoIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TetrominoIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		3029DD7A1DF47944004F6B25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3029DD7C1DF47944004F6B25 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3029DD7F1DF47944004F6B25 /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
@@ -134,12 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				3029DD7A1DF47944004F6B25 /* AppDelegate.swift */,
-				3029DD981DF47944004F6B25 /* TouchUserInput.swift */,
+				30CEA2C51DF661EF0098418F /* UserInput */,
 				3029DD7B1DF47944004F6B25 /* Controllers */,
 				3029DD991DF47944004F6B25 /* Views */,
 				3029DD7D1DF47944004F6B25 /* Extensions */,
 				3029DD911DF47944004F6B25 /* Supporting Files */,
-				3029DD791DF47943004F6B25 /* TetrominoIOS-Bridging-Header.h */,
 			);
 			path = TetrominoIOS;
 			sourceTree = "<group>";
@@ -182,10 +180,10 @@
 		3029DD911DF47944004F6B25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3029DD961DF47944004F6B25 /* Music */,
 				3029DD921DF47944004F6B25 /* Assets.xcassets */,
 				3029DD931DF47944004F6B25 /* LaunchScreen.storyboard */,
 				3029DD951DF47944004F6B25 /* Info.plist */,
-				3029DD961DF47944004F6B25 /* Music */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,6 +214,14 @@
 				3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30CEA2C51DF661EF0098418F /* UserInput */ = {
+			isa = PBXGroup;
+			children = (
+				3029DD981DF47944004F6B25 /* TouchUserInput.swift */,
+			);
+			name = UserInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,7 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TetrominoIOS/TetrominoIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -534,7 +540,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TetrominoIOS/TetrominoIOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -14,13 +14,6 @@
 		3029DE571DF485E2004F6B25 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE471DF485E2004F6B25 /* Highscore.swift */; };
 		3029DE581DF485E2004F6B25 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE481DF485E2004F6B25 /* Level.swift */; };
 		3029DE591DF485E2004F6B25 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE491DF485E2004F6B25 /* Piece.swift */; };
-		3029DE5A1DF485E2004F6B25 /* I.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE4B1DF485E2004F6B25 /* I.swift */; };
-		3029DE5B1DF485E2004F6B25 /* J.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE4C1DF485E2004F6B25 /* J.swift */; };
-		3029DE5C1DF485E2004F6B25 /* L.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE4D1DF485E2004F6B25 /* L.swift */; };
-		3029DE5D1DF485E2004F6B25 /* O.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE4E1DF485E2004F6B25 /* O.swift */; };
-		3029DE5E1DF485E2004F6B25 /* S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE4F1DF485E2004F6B25 /* S.swift */; };
-		3029DE5F1DF485E2004F6B25 /* T.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE501DF485E2004F6B25 /* T.swift */; };
-		3029DE601DF485E2004F6B25 /* Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE511DF485E2004F6B25 /* Z.swift */; };
 		3029DE611DF485E2004F6B25 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE521DF485E2004F6B25 /* Score.swift */; };
 		3029DE621DF485E2004F6B25 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE531DF485E2004F6B25 /* UserInput.swift */; };
 		30D76A5D1DF6039E00595FBD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A5C1DF6039E00595FBD /* Square.swift */; };
@@ -36,13 +29,6 @@
 		3029DE471DF485E2004F6B25 /* Highscore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
 		3029DE481DF485E2004F6B25 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		3029DE491DF485E2004F6B25 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
-		3029DE4B1DF485E2004F6B25 /* I.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = I.swift; sourceTree = "<group>"; };
-		3029DE4C1DF485E2004F6B25 /* J.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = J.swift; sourceTree = "<group>"; };
-		3029DE4D1DF485E2004F6B25 /* L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L.swift; sourceTree = "<group>"; };
-		3029DE4E1DF485E2004F6B25 /* O.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = O.swift; sourceTree = "<group>"; };
-		3029DE4F1DF485E2004F6B25 /* S.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S.swift; sourceTree = "<group>"; };
-		3029DE501DF485E2004F6B25 /* T.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T.swift; sourceTree = "<group>"; };
-		3029DE511DF485E2004F6B25 /* Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Z.swift; sourceTree = "<group>"; };
 		3029DE521DF485E2004F6B25 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		3029DE531DF485E2004F6B25 /* UserInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		30D76A5C1DF6039E00595FBD /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
@@ -94,27 +80,12 @@
 				3029DE471DF485E2004F6B25 /* Highscore.swift */,
 				3029DE481DF485E2004F6B25 /* Level.swift */,
 				3029DE491DF485E2004F6B25 /* Piece.swift */,
-				3029DE4A1DF485E2004F6B25 /* Pieces */,
 				3029DE521DF485E2004F6B25 /* Score.swift */,
 				30D76A5C1DF6039E00595FBD /* Square.swift */,
 				3029DE531DF485E2004F6B25 /* UserInput.swift */,
 			);
 			name = TetrominoCore;
 			path = ../TetrominoCore;
-			sourceTree = "<group>";
-		};
-		3029DE4A1DF485E2004F6B25 /* Pieces */ = {
-			isa = PBXGroup;
-			children = (
-				3029DE4B1DF485E2004F6B25 /* I.swift */,
-				3029DE4C1DF485E2004F6B25 /* J.swift */,
-				3029DE4D1DF485E2004F6B25 /* L.swift */,
-				3029DE4E1DF485E2004F6B25 /* O.swift */,
-				3029DE4F1DF485E2004F6B25 /* S.swift */,
-				3029DE501DF485E2004F6B25 /* T.swift */,
-				3029DE511DF485E2004F6B25 /* Z.swift */,
-			);
-			path = Pieces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,17 +171,10 @@
 				3029DE621DF485E2004F6B25 /* UserInput.swift in Sources */,
 				3029DE541DF485E2004F6B25 /* Board.swift in Sources */,
 				3029DE561DF485E2004F6B25 /* Game.swift in Sources */,
-				3029DE5A1DF485E2004F6B25 /* I.swift in Sources */,
-				3029DE601DF485E2004F6B25 /* Z.swift in Sources */,
 				30D76A5D1DF6039E00595FBD /* Square.swift in Sources */,
-				3029DE5C1DF485E2004F6B25 /* L.swift in Sources */,
 				3029DE591DF485E2004F6B25 /* Piece.swift in Sources */,
-				3029DE5D1DF485E2004F6B25 /* O.swift in Sources */,
-				3029DE5F1DF485E2004F6B25 /* T.swift in Sources */,
-				3029DE5B1DF485E2004F6B25 /* J.swift in Sources */,
 				3029DE571DF485E2004F6B25 /* Highscore.swift in Sources */,
 				3029DE581DF485E2004F6B25 /* Level.swift in Sources */,
-				3029DE5E1DF485E2004F6B25 /* S.swift in Sources */,
 				3029DE551DF485E2004F6B25 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class GameOverView: NSVisualEffectView {
     }()
 
     var newGameButton: NSButton = {
-        let button = NSButton(frame: CGRect(x: 175, y: 450, width: 130, height: 30))
+        let button = NSButton(frame: CGRect(x: 175, y: 440, width: 130, height: 35))
 //        button.translatesAutoresizingMaskIntoConstraints = false
         button.bezelStyle = .rounded
         button.title = "New Game"

@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */,
-				3029DE191DF47DB5004F6B25 /* Window.swift */,
+				30CEA2C61DF661F90098418F /* UserInput */,
 				3029DDF91DF47DB5004F6B25 /* Controllers */,
 				3029DE161DF47DB5004F6B25 /* Views */,
 				3029DDFB1DF47DB5004F6B25 /* Extensions */,
@@ -197,6 +197,14 @@
 				3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30CEA2C61DF661F90098418F /* UserInput */ = {
+			isa = PBXGroup;
+			children = (
+				3029DE191DF47DB5004F6B25 /* Window.swift */,
+			);
+			name = UserInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

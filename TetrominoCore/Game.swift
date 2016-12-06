@@ -7,22 +7,22 @@
 //
 
 public protocol GameDelegate {
-    func display<T: SquareViewType>(piece: Piece<T>)
-    func remove<T: SquareViewType>(piece: Piece<T>)
-    func next<T: SquareViewType>(piece nextPiece: Piece<T>)
+    func display<ViewType: SquareViewType>(piece: Piece<ViewType>)
+    func remove<ViewType: SquareViewType>(piece: Piece<ViewType>)
+    func next<ViewType: SquareViewType>(piece nextPiece: Piece<ViewType>)
     func scoreDidUpdate(newScore: Score)
     func levelChanged(to newLevel: Level)
     func gameOver()
 }
 
-public final class Game<T: SquareViewType> {
+public final class Game<ViewType: SquareViewType> {
 
     // MARK: - Properties
 
-    var board: Board<T>
+    var board: Board<ViewType>
     var userInput: UserInput
     public var score: Score
-    public var nextPiece: Piece<T>
+    public var nextPiece: Piece<ViewType>
     public var delegate: GameDelegate?
 
     public var level: Level {
@@ -33,7 +33,7 @@ public final class Game<T: SquareViewType> {
         }
     }
 
-    fileprivate var currentPiece: Piece<T>?
+    fileprivate var currentPiece: Piece<ViewType>?
 
     var gameOver = false {
         didSet {
@@ -45,12 +45,12 @@ public final class Game<T: SquareViewType> {
 
     // MARK: - Initializers
 
-    public init(board: Board<T>, userInput: UserInput, score: Score = 0, level: Level = .one) {
+    public init(board: Board<ViewType>, userInput: UserInput, score: Score = 0, level: Level = .one) {
         self.board = board
         self.userInput = userInput
         self.score = score
         self.level = level
-        self.nextPiece = PieceFactory.random()
+        self.nextPiece = PieceType.random()
         self.userInput.userInputDelegate = self
     }
 
@@ -90,7 +90,7 @@ public final class Game<T: SquareViewType> {
             gameOver = true
         }
         else {
-            nextPiece = PieceFactory.random()
+            nextPiece = PieceType.random()
             delegate?.next(piece: nextPiece)
         }
     }

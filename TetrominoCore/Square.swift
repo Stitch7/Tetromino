@@ -6,65 +6,42 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
+
+public struct SquareViewConfig {
+    public let color: Color
+    public let boardRow: Int
+    public let boardCol: Int
+    public let pieceRow: Int
+    public let pieceCol: Int
+    public let width: CGFloat
+    public let height: CGFloat
+}
 
 public protocol SquareViewType {
     var frame: CGRect { get set }
     var downOperation: (CGFloat, CGFloat) -> CGFloat { get }
-    init(
-        color: Color,
-        boardRow: Int,
-        boardCol: Int,
-        pieceRow: Int,
-        pieceCol: Int,
-        width: CGFloat,
-        height: CGFloat
-    )
+    init(config: SquareViewConfig)
     func removeFromSuperview()
 }
 
-public class Square<T: SquareViewType> {
+public class Square<ViewType: SquareViewType> {
 
-    var boardRow: Int
-    var boardCol: Int
-    var pieceRow: Int
-    var pieceCol: Int
-    var width: CGFloat
-    var height: CGFloat
+    // MARK: - Properties
 
+    public var view: ViewType
     public var row: Int
     public var col: Int
 
-    public var view: T
+    // MARK: - Initializers
 
-    init(
-        color: Color,
-        boardRow: Int,
-        boardCol: Int,
-        pieceRow: Int,
-        pieceCol: Int,
-        width: CGFloat,
-        height: CGFloat
-    ) {
-        self.boardRow = boardRow
-        self.boardCol = boardCol
-        self.pieceRow = pieceRow
-        self.pieceCol = pieceCol
-        self.width = width
-        self.height = height
-
-        row = boardRow + pieceRow
-        col = boardCol + pieceCol
-        view = T(
-            color: color,
-            boardRow: boardRow,
-            boardCol: boardCol,
-            pieceRow: pieceRow,
-            pieceCol: pieceCol,
-            width: width,
-            height: height
-        )
+    init(config: SquareViewConfig) {
+        view = ViewType(config: config)
+        row = config.boardRow + config.pieceRow
+        col = config.boardCol + config.pieceCol
     }
+
+    // MARK: - Public
 
     public func remove() {
         view.removeFromSuperview()

@@ -18,21 +18,13 @@ final class SquareView: NSView, SquareViewType {
 
     // MARK: - Initializers
 
-    public init(
-        color: Color,
-        boardRow: Int,
-        boardCol: Int,
-        pieceRow: Int,
-        pieceCol: Int,
-        width: CGFloat,
-        height: CGFloat
-    ) {
-        self.color = color
+    init(config: SquareViewConfig) {
+        self.color = config.color
         let frame = CGRect(
-            x: CGFloat(boardCol) * width + CGFloat(pieceCol) * width,
-            y: 960 - CGFloat(boardRow + pieceRow + 1) * height,
-            width: width,
-            height: height
+            x: CGFloat(config.boardCol) * config.width + CGFloat(config.pieceCol) * config.width,
+            y: config.height * 20 - CGFloat(config.boardRow + config.pieceRow + 1) * config.height,
+            width: config.width,
+            height: config.height
         )
         super.init(frame: frame)
 

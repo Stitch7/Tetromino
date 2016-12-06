@@ -11,10 +11,14 @@ import TetrominoCoreMac
 
 class WindowController: NSWindowController {
 
+    // MARK: - IBOutlets
+
     @IBOutlet weak var levelTextField: NSTextField!
     @IBOutlet weak var scoreToolbarItem: NSToolbarItem!
     @IBOutlet weak var scoreTextField: NSTextField!
     @IBOutlet weak var nextPieceToolbarItem: NSToolbarItem!
+
+    // MARK: - Proprties
 
     var level: Level? {
         didSet {
@@ -37,20 +41,7 @@ class WindowController: NSWindowController {
         }
     }
 
-//    var piece: Piece<T>? {
-//        didSet {
-//            switch piece {
-//            case _ as I: nextPieceToolbarItem.image = NSImage(named: "I")!
-//            case _ as J: nextPieceToolbarItem.image = NSImage(named: "J")!
-//            case _ as L: nextPieceToolbarItem.image = NSImage(named: "L")!
-//            case _ as O: nextPieceToolbarItem.image = NSImage(named: "O")!
-//            case _ as S: nextPieceToolbarItem.image = NSImage(named: "S")!
-//            case _ as T: nextPieceToolbarItem.image = NSImage(named: "T")!
-//            case _ as Z: nextPieceToolbarItem.image = NSImage(named: "Z")!
-//            default: break
-//            }
-//        }
-//    }
+    // MARK: - NSWindowController
 
     override func windowDidLoad() {
         super.windowDidLoad()
