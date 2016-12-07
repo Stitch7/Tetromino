@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TetrominoMacKit/TetrominoMacKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoTouchKit/TetrominoTouchKit.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:TetrominoKit"
+      name = "TetrominoKit">
+      <FileRef
+         location = "group:Board.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Color.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Game.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Highscore.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Level.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Piece.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Score.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Square.swift">
+      </FileRef>
+      <FileRef
+         location = "group:UserInput.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:TetrominoKitTests"
+      name = "TetrominoKitTests">
+      <FileRef
+         location = "group:BoardTests.swift">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:TetrominoMac/TetrominoMac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoTouch/TetrominoTouch.xcodeproj">
+   </FileRef>
+</Workspace>

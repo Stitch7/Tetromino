@@ -1,6 +1,6 @@
 # TetrominoTouch
 
-One of my favorite games implemented with UIKit.
+One of my favorite games implemented for iOS & Mac.
 
 ## License
 
