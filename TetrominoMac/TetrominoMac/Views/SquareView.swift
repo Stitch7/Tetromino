@@ -7,7 +7,7 @@
 //
 
 import AppKit
-import TetrominoCoreMac
+import TetrominoMacKit
 
 final class SquareView: NSView, SquareViewType {
 

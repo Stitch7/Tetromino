@@ -1,18 +1,18 @@
 //
-//  Color+NSColor.swift
-//  TetrominoMac
+//  Color+uiColor.swift
+//  TetrominoTouch
 //
 //  Created by Christopher Reitz on 04/12/2016.
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import AppKit
-import TetrominoMacKit
+import UIKit
+import TetrominoTouchKit
 
 extension Color {
-    var nsColor: NSColor {
+    var uiColor: UIColor {
         let hsb = self.hsb
-        return NSColor(
+        return UIColor(
             hue: hsb.h / 360.0,
             saturation: hsb.s / 100.0,
             brightness: hsb.b / 100.0,

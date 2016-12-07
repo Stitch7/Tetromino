@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TetrominoCoreMac
+import TetrominoMacKit
 
 class WindowController: NSWindowController {
 

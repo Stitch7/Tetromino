@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:TetrominoMacKit/TetrominoMacKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TetrominoTouchKit/TetrominoTouchKit.xcodeproj">
+   </FileRef>
    <Group
-      location = "container:TetrominoCore"
-      name = "TetrominoCore">
+      location = "group:TetrominoKit"
+      name = "TetrominoKit">
       <FileRef
          location = "group:Board.swift">
       </FileRef>
@@ -32,16 +38,17 @@
          location = "group:UserInput.swift">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:TetrominoCoreMac/TetrominoCoreMac.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TetrominoCoreIOS/TetrominoCoreIOS.xcodeproj">
-   </FileRef>
+   <Group
+      location = "group:TetrominoKitTests"
+      name = "TetrominoKitTests">
+      <FileRef
+         location = "group:BoardTests.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:TetrominoMac/TetrominoMac.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TetrominoIOS/TetrominoIOS.xcodeproj">
+      location = "group:TetrominoTouch/TetrominoTouch.xcodeproj">
    </FileRef>
 </Workspace>

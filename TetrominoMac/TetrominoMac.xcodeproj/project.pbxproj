@@ -17,8 +17,7 @@
 		3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE171DF47DB5004F6B25 /* GameOverView.swift */; };
 		3029DE341DF47DB5004F6B25 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE191DF47DB5004F6B25 /* Window.swift */; };
 		3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE1A1DF47DB5004F6B25 /* WindowController.swift */; };
-		3029DE831DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; };
-		3029DE841DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3032AA911DF8698500BE5199 /* TetrominoMacKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032AA891DF867BF00BE5199 /* TetrominoMacKit.framework */; };
 		30D76A5F1DF6043A00595FBD /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A5E1DF6043A00595FBD /* SquareView.swift */; };
 		30D76A611DF6047600595FBD /* Color+nsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A601DF6047600595FBD /* Color+nsColor.swift */; };
 /* End PBXBuildFile section */
@@ -40,20 +39,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3029DE851DF4A5FA004F6B25 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3029DE841DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3029DDCA1DF47D32004F6B25 /* TetrominoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrominoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +56,7 @@
 		3029DE171DF47DB5004F6B25 /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		3029DE191DF47DB5004F6B25 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		3029DE1A1DF47DB5004F6B25 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = ../WindowController.swift; sourceTree = "<group>"; };
-		3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoCoreMac.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-ggfcitwqllqrabesfoqyjomlirng/Build/Products/Debug/TetrominoCoreMac.framework"; sourceTree = "<group>"; };
+		3032AA891DF867BF00BE5199 /* TetrominoMacKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoMacKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D76A5E1DF6043A00595FBD /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		30D76A601DF6047600595FBD /* Color+nsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+nsColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3029DE831DF4A5FA004F6B25 /* TetrominoCoreMac.framework in Frameworks */,
+				3032AA911DF8698500BE5199 /* TetrominoMacKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +90,7 @@
 		3029DDC11DF47D32004F6B25 = {
 			isa = PBXGroup;
 			children = (
+				3032AA891DF867BF00BE5199 /* TetrominoMacKit.framework */,
 				3029DDCC1DF47D32004F6B25 /* TetrominoMac */,
 				3029DDDE1DF47D32004F6B25 /* TetrominoMacTests */,
 				3029DDE91DF47D32004F6B25 /* TetrominoMacUITests */,
@@ -194,7 +180,6 @@
 		3029DE361DF47E53004F6B25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3029DE371DF47E53004F6B25 /* TetrominoCoreMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,7 +202,6 @@
 				3029DDC61DF47D32004F6B25 /* Sources */,
 				3029DDC71DF47D32004F6B25 /* Frameworks */,
 				3029DDC81DF47D32004F6B25 /* Resources */,
-				3029DE851DF4A5FA004F6B25 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
