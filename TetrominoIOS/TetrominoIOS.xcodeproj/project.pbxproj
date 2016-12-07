@@ -20,8 +20,8 @@
 		3029DDB81DF47944004F6B25 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DD9B1DF47944004F6B25 /* LevelView.swift */; };
 		3029DDB91DF47944004F6B25 /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DD9C1DF47944004F6B25 /* NextPieceView.swift */; };
 		3029DDBA1DF47944004F6B25 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DD9D1DF47944004F6B25 /* ScoreView.swift */; };
-		3032B4871DF4D1F20094512C /* TetrominoCoreIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */; };
-		3032B4881DF4D1F20094512C /* TetrominoCoreIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		304229071DF7A4F70054B891 /* TetrominoCoreIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304229061DF7A4F70054B891 /* TetrominoCoreIOS.framework */; };
+		304229081DF7A4F70054B891 /* TetrominoCoreIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 304229061DF7A4F70054B891 /* TetrominoCoreIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		30D76A631DF6050300595FBD /* Color+uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A621DF6050300595FBD /* Color+uiColor.swift */; };
 		30D76A651DF6050E00595FBD /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A641DF6050E00595FBD /* SquareView.swift */; };
 /* End PBXBuildFile section */
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3032B4881DF4D1F20094512C /* TetrominoCoreIOS.framework in Embed Frameworks */,
+				304229081DF7A4F70054B891 /* TetrominoCoreIOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +78,7 @@
 		3029DD9C1DF47944004F6B25 /* NextPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
 		3029DD9D1DF47944004F6B25 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		3029DDBF1DF47AB0004F6B25 /* TetrominoCoreIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoCoreIOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-ggfcitwqllqrabesfoqyjomlirng/Build/Products/Debug-iphonesimulator/TetrominoCoreIOS.framework"; sourceTree = "<group>"; };
+		304229061DF7A4F70054B891 /* TetrominoCoreIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoCoreIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D76A621DF6050300595FBD /* Color+uiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+uiColor.swift"; sourceTree = "<group>"; };
 		30D76A641DF6050E00595FBD /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032B4871DF4D1F20094512C /* TetrominoCoreIOS.framework in Frameworks */,
+				304229071DF7A4F70054B891 /* TetrominoCoreIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +112,7 @@
 		3029DD3F1DF4771F004F6B25 = {
 			isa = PBXGroup;
 			children = (
+				304229061DF7A4F70054B891 /* TetrominoCoreIOS.framework */,
 				3029DD4A1DF4771F004F6B25 /* TetrominoIOS */,
 				3029DD5F1DF4771F004F6B25 /* TetrominoIOSTests */,
 				3029DD6A1DF4771F004F6B25 /* TetrominoIOSUITests */,
@@ -293,6 +295,7 @@
 				TargetAttributes = {
 					3029DD471DF4771F004F6B25 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J8XDHCNJQA;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -512,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TetrominoIOS",
@@ -532,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TetrominoIOS",

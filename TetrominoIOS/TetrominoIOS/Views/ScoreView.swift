@@ -15,7 +15,7 @@ class ScoreView: UIView {
 
     var score: Score {
         didSet {
-            let labelFont = label.font
+            let labelFont = label.font!
             let labelText = NSMutableAttributedString(
                 string: "Score",
                 attributes: [NSFontAttributeName: labelFont]
@@ -34,7 +34,7 @@ class ScoreView: UIView {
 
     var highscore: Highscore {
         didSet {
-            let labelFont = highscoreLabel.font
+            let labelFont = highscoreLabel.font!
             let labelText = NSMutableAttributedString(
                 string: "Highscore",
                 attributes: [NSFontAttributeName: labelFont]
