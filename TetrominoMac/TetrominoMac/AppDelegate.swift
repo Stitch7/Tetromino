@@ -36,8 +36,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        configureMainMenu()
         window.contentView!.addSubview(viewController.view)
         window.delegate = windowController
         windowController.showWindow(self)
+    }
+
+    func configureMainMenu() {
+        let mainMenu = NSApplication.shared().mainMenu!
+        let viewMenuItem = mainMenu.item(at: 1)
+
+        let zoom1MenuItem = viewMenuItem!.submenu!.item(at: 2)!
+        zoom1MenuItem.target = window
+        zoom1MenuItem.action = #selector(window.zoom1MenuItemPressed)
+        let zoom2MenuItem = viewMenuItem!.submenu!.item(at: 3)!
+        zoom2MenuItem.target = window
+        zoom2MenuItem.action = #selector(window.zoom2MenuItemPressed)
+        let zoom3MenuItem = viewMenuItem!.submenu!.item(at: 4)!
+        zoom3MenuItem.target = window
+        zoom3MenuItem.action = #selector(window.zoom3MenuItemPressed)
     }
 }
