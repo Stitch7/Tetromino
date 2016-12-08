@@ -13,13 +13,15 @@
 		3029DE1B1DF47DB5004F6B25 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */; };
 		3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */; };
 		3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE121DF47DB5004F6B25 /* Assets.xcassets */; };
-		3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3029DE131DF47DB5004F6B25 /* Main.storyboard */; };
 		3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE171DF47DB5004F6B25 /* GameOverView.swift */; };
 		3029DE341DF47DB5004F6B25 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE191DF47DB5004F6B25 /* Window.swift */; };
 		3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029DE1A1DF47DB5004F6B25 /* WindowController.swift */; };
 		3032AA911DF8698500BE5199 /* TetrominoMacKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032AA891DF867BF00BE5199 /* TetrominoMacKit.framework */; };
 		30D76A5F1DF6043A00595FBD /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A5E1DF6043A00595FBD /* SquareView.swift */; };
 		30D76A611DF6047600595FBD /* Color+nsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D76A601DF6047600595FBD /* Color+nsColor.swift */; };
+		30E3D7C31DF879D90068946F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3D7C21DF879D90068946F /* main.swift */; };
+		30E3D7CD1DF9926C0068946F /* LevelTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E3D7CC1DF9926C0068946F /* LevelTextFieldCell.swift */; };
+		30E3D7CF1DF9AA310068946F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30E3D7CE1DF9AA310068946F /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,6 @@
 		3029DDFA1DF47DB5004F6B25 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3029DDFE1DF47DB5004F6B25 /* NSView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+addConstraints.swift"; sourceTree = "<group>"; };
 		3029DE121DF47DB5004F6B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3029DE141DF47DB5004F6B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3029DE151DF47DB5004F6B25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3029DE171DF47DB5004F6B25 /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		3029DE191DF47DB5004F6B25 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
@@ -59,6 +60,9 @@
 		3032AA891DF867BF00BE5199 /* TetrominoMacKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoMacKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D76A5E1DF6043A00595FBD /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		30D76A601DF6047600595FBD /* Color+nsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+nsColor.swift"; sourceTree = "<group>"; };
+		30E3D7C21DF879D90068946F /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		30E3D7CC1DF9926C0068946F /* LevelTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelTextFieldCell.swift; sourceTree = "<group>"; };
+		30E3D7CE1DF9AA310068946F /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3029DDCD1DF47D32004F6B25 /* AppDelegate.swift */,
+				30E3D7C21DF879D90068946F /* main.swift */,
 				30CEA2C61DF661F90098418F /* UserInput */,
 				3029DDF91DF47DB5004F6B25 /* Controllers */,
 				3029DE161DF47DB5004F6B25 /* Views */,
@@ -161,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				3029DE121DF47DB5004F6B25 /* Assets.xcassets */,
-				3029DE131DF47DB5004F6B25 /* Main.storyboard */,
 				3029DE151DF47DB5004F6B25 /* Info.plist */,
+				30E3D7CE1DF9AA310068946F /* MainMenu.xib */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				3029DE171DF47DB5004F6B25 /* GameOverView.swift */,
+				30E3D7CC1DF9926C0068946F /* LevelTextFieldCell.swift */,
 				30D76A5E1DF6043A00595FBD /* SquareView.swift */,
 			);
 			path = Views;
@@ -300,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3029DE2F1DF47DB5004F6B25 /* Assets.xcassets in Resources */,
-				3029DE301DF47DB5004F6B25 /* Main.storyboard in Resources */,
+				30E3D7CF1DF9AA310068946F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,10 +333,12 @@
 			files = (
 				30D76A611DF6047600595FBD /* Color+nsColor.swift in Sources */,
 				3029DE351DF47DB5004F6B25 /* WindowController.swift in Sources */,
+				30E3D7C31DF879D90068946F /* main.swift in Sources */,
 				3029DE1B1DF47DB5004F6B25 /* GameViewController.swift in Sources */,
 				3029DE321DF47DB5004F6B25 /* GameOverView.swift in Sources */,
 				3029DE1E1DF47DB5004F6B25 /* NSView+addConstraints.swift in Sources */,
 				30D76A5F1DF6043A00595FBD /* SquareView.swift in Sources */,
+				30E3D7CD1DF9926C0068946F /* LevelTextFieldCell.swift in Sources */,
 				3029DDCE1DF47D32004F6B25 /* AppDelegate.swift in Sources */,
 				3029DE341DF47DB5004F6B25 /* Window.swift in Sources */,
 			);
@@ -366,17 +374,6 @@
 			targetProxy = 3029DDE71DF47D32004F6B25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3029DE131DF47DB5004F6B25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3029DE141DF47DB5004F6B25 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3029DDED1DF47D32004F6B25 /* Debug */ = {

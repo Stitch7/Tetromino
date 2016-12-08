@@ -19,7 +19,7 @@ public final class Game<ViewType: SquareViewType> {
 
     // MARK: - Properties
 
-    var board: Board<ViewType>
+    public var board: Board<ViewType>
     var userInput: UserInput
     public var score: Score
     public var nextPiece: Piece<ViewType>

@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public typealias Pattern = [[Bool]]
+typealias Pattern = [[Bool]]
 
 // MARK: - Piece
 
@@ -21,7 +21,6 @@ public struct Piece<ViewType: SquareViewType> {
 
     var color: Color
     var pattern: Pattern
-
     var currentRow = 0
     var currentCol = 3
 

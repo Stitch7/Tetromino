@@ -22,7 +22,8 @@
 		3032AA7D1DF8644200BE5199 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6F1DF8644200BE5199 /* ScoreView.swift */; };
 		3032AA7E1DF8644200BE5199 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA701DF8644200BE5199 /* SquareView.swift */; };
 		3032AA811DF8647D00BE5199 /* TouchUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA801DF8647D00BE5199 /* TouchUserInput.swift */; };
-		3032AAC61DF8705F00BE5199 /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032AAC51DF8705F00BE5199 /* TetrominoTouchKit.framework */; };
+		30E3D7C61DF8875C0068946F /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */; };
+		30E3D7C71DF8875C0068946F /* TetrominoTouchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				30E3D7C71DF8875C0068946F /* TetrominoTouchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +80,7 @@
 		3032AA701DF8644200BE5199 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		3032AA801DF8647D00BE5199 /* TouchUserInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchUserInput.swift; sourceTree = "<group>"; };
 		3032AAC51DF8705F00BE5199 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoTouchKit.framework; path = "../TetrominoTouchKit/build/Debug-iphoneos/TetrominoTouchKit.framework"; sourceTree = "<group>"; };
+		30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoTouchKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Tetromino-bdfzcbxmsxbgoqeiqwylfcauoscz/Build/Products/Debug-iphoneos/TetrominoTouchKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032AAC61DF8705F00BE5199 /* TetrominoTouchKit.framework in Frameworks */,
+				30E3D7C61DF8875C0068946F /* TetrominoTouchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +220,7 @@
 		3032AAC41DF8705E00BE5199 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */,
 				3032AAC51DF8705F00BE5199 /* TetrominoTouchKit.framework */,
 			);
 			name = Frameworks;
@@ -291,6 +295,7 @@
 				TargetAttributes = {
 					3032A9F41DF8632500BE5199 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J8XDHCNJQA;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -512,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "TetrominoTouch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -527,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "TetrominoTouch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -6,49 +6,64 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import TetrominoMacKit
 
-class GameViewController: NSViewController {
+final class GameViewController: NSViewController {
 
     // MARK: - Properties
 
-    var board: Board<SquareView>?
-    var game: Game<SquareView>?
-    var highscore = Highscore(userDefaults: UserDefaults.standard)
+    let game: Game<SquareView>
+    let userInput: UserInput
+    let highscore: Highscore
+    let gameOverView: GameOverView
     var windowController: WindowController?
-    var gameOverView = GameOverView()
     var timer: Timer?
 
+    // MARK: - Initializers
+
+    init(game: Game<SquareView>, userInput: UserInput, highscore: Highscore) {
+        self.game = game
+        self.userInput = userInput
+        self.highscore = highscore
+
+        gameOverView = GameOverView()
+
+        super.init(nibName: nil, bundle: nil)!
+        game.delegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+
     // MARK: - NSViewController
+
+    override func loadView() {
+        view = NSView(frame: NSMakeRect(0, 0, game.board.width, game.board.height))
+        view.wantsLayer = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureAppearance()
+        configureGameOverView()
     }
 
     override func viewDidAppear() {
         super.viewDidAppear()
 
-        let titlebarHeight: CGFloat = 22.0
-        board = Board(width: view.window!.frame.width,
-                      height: view.window!.frame.height - titlebarHeight)
-        game = Game(board: board!, userInput: view.window as! UserInput)
-        game?.delegate = self
         windowController = view.window?.windowController as? WindowController
-
-        configureGameOverView()
-
         newGame()
     }
 
     private func configureAppearance() {
-        view.layer?.backgroundColor = NSColor.white.cgColor
+//        view.layer?.backgroundColor = NSColor.white.cgColor
     }
 
     private func configureGameOverView() {
-        gameOverView.frame = NSRect(x: 0, y: 0, width: board!.width, height: board!.height)
+        gameOverView.frame = NSRect(x: 0, y: 0, width: game.board.width, height: game.board.height)
         view.addSubview(gameOverView, positioned: .above, relativeTo: nil)
 
         gameOverView.newGameButton.target = self
@@ -73,13 +88,13 @@ class GameViewController: NSViewController {
     }
 
     func interval() {
-        game?.tick()
+        game.tick()
     }
 
     func newGame() {
-        game?.new()
-        levelChanged(to: game!.level)
-        windowController?.score = game?.score
+        game.new()
+        levelChanged(to: game.level)
+        windowController?.score = game.score
         windowController?.highscore = highscore
         gameOverView.isHidden = true
     }
@@ -91,7 +106,7 @@ extension GameViewController: GameDelegate {
     func gameOver() {
         disableInterval()
 
-        _ = highscore.save(value: game!.score.value)
+        _ = highscore.save(value: game.score.value)
         gameOverView.removeFromSuperview()
         view.addSubview(gameOverView, positioned: .above, relativeTo: nil)
         gameOverView.isHidden = false
