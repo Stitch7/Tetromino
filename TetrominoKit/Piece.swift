@@ -108,10 +108,10 @@ extension PieceType {
     var pattern: Pattern {
         switch self {
         case .I:
-            return [[true, false, false, false],
-                    [true, false, false, false],
-                    [true, false, false, false],
-                    [true, false, false, false]]
+            return [[false, false, true, false],
+                    [false, false, true, false],
+                    [false, false, true, false],
+                    [false, false, true, false]]
         case .J:
             return [[false, false, true, false],
                     [false, false, true, false],
@@ -128,19 +128,19 @@ extension PieceType {
                     [false, true, true, false],
                     [false, false, false, false]]
         case .S:
-            return [[false, true, true, false],
-                    [true, true, false, false],
-                    [false, false, false, false],
+            return [[false, false, false, false],
+                    [false, false, true, true],
+                    [false, true, true, false],
                     [false, false, false, false]]
         case .T:
-            return [[true, true, true, false],
-                    [false, true, false, false],
-                    [false, false, false, false],
+            return [[false, false, true, false],
+                    [false, true, true, false],
+                    [false, false, true, false],
                     [false, false, false, false]]
         case .Z:
-            return [[true, true, false, false],
+            return [[false, false, false, false],
                     [false, true, true, false],
-                    [false, false, false, false],
+                    [false, false, true, true],
                     [false, false, false, false]]
         }
     }

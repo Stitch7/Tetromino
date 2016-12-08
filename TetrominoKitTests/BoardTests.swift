@@ -89,7 +89,6 @@ class BoardTests: XCTestCase {
                     height: 0
                 )
             )
-
         }
         assert(board.completedRows.count == 4)
 
@@ -115,7 +114,7 @@ class BoardTests: XCTestCase {
         for _ in 0..<6 {
             piece.moveDown()
         }
-        for _ in 0..<6 {
+        for _ in 0..<4 {
             piece.moveRight()
         }
 
@@ -142,7 +141,7 @@ class BoardTests: XCTestCase {
     func testIntersectsRightWithSquaresOnBoard() {
         var board = Board<TestSquareView>(width: 0, height: 0)
         board.walkAllSlots { row, col in
-            if col != 4 { return }
+            if col != 6 { return }
             board.grid[row][col] = Square<TestSquareView>(
                 config: SquareViewConfig(
                     color: .green,
@@ -175,7 +174,7 @@ class BoardTests: XCTestCase {
         for _ in 0..<5 {
             piece.moveDown()
         }
-        for _ in 0..<3 {
+        for _ in 0..<5 {
             piece.moveLeft()
         }
 
@@ -201,7 +200,7 @@ class BoardTests: XCTestCase {
     func testIntersectsLeftWithSquaresOnBoard() {
         var board = Board<TestSquareView>(width: 0, height: 0)
         board.walkAllSlots { row, col in
-            if col != 2 { return }
+            if col != 4 { return }
             board.grid[row][col] = Square<TestSquareView>(
                 config: SquareViewConfig(
                     color: .green,
