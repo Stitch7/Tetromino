@@ -16,7 +16,7 @@ final class GameViewController: NSViewController {
     let game: Game<SquareView>
     let userInput: UserInput
     let highscore: Highscore
-    let gameOverView: GameOverView
+    let gameOverView = GameOverView()
     var windowController: WindowController?
     var timer: Timer?
 
@@ -26,8 +26,6 @@ final class GameViewController: NSViewController {
         self.game = game
         self.userInput = userInput
         self.highscore = highscore
-
-        gameOverView = GameOverView()
 
         super.init(nibName: nil, bundle: nil)!
         game.delegate = self

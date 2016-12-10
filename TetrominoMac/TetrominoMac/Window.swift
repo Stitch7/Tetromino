@@ -32,15 +32,15 @@ class Window: NSWindow, UserInput {
         }
     }
 
-    @IBAction func zoom1MenuItemPressed(_ sender: Any) {
+    func zoom1MenuItemPressed(_ sender: Any) {
         Swift.print("zoom 1")
     }
 
-    @IBAction func zoom2MenuItemPressed(_ sender: Any) {
+    func zoom2MenuItemPressed(_ sender: Any) {
         Swift.print("zoom 2")
     }
 
-    @IBAction func zoom3MenuItemPressed(_ sender: Any) {
+    func zoom3MenuItemPressed(_ sender: Any) {
         Swift.print("zoom 3")
     }
 }
