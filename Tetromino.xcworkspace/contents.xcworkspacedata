@@ -51,4 +51,7 @@
    <FileRef
       location = "group:TetrominoTouch/TetrominoTouch.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:TetrominoCurses/TetrominoCurses.xcodeproj">
+   </FileRef>
 </Workspace>

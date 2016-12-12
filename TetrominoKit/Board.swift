@@ -35,7 +35,7 @@ public struct Board<ViewType: SquareViewType> {
 
     // MARK: - Initializers
 
-    public init(width: CGFloat, height: CGFloat) {
+    public init(width: CGFloat = 0, height: CGFloat = 0) {
         self.width = width
         self.height = height
         squareWidth = width / CGFloat(numCols)

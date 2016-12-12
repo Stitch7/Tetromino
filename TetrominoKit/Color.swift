@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public enum Color {
+public enum Color: Int {
     case green
     case purple
     case blue

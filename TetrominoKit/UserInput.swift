@@ -11,7 +11,9 @@ public protocol UserInput {
 }
 
 public protocol UserInputDelegate {
+    var gameOver: Bool { get set }
     func newGame()
+//    func pause()
     func rotate()
     func moveLeft()
     func moveRight()

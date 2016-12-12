@@ -30,7 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowController = WindowController(window: window)
 
         let board = Board<SquareView>(width: screenBounds.width, height: screenBounds.height)
-        let game = Game<SquareView>(board: board, userInput: window, score: 0)
+        let game = Game<SquareView>(board: board)
+        window.userInputDelegate = game
         let highscore = Highscore(userDefaults: UserDefaults.standard)
         viewController = GameViewController(game: game, userInput: window, highscore: highscore)
     }

@@ -99,6 +99,9 @@ extension GameViewController: GameDelegate {
         gameOverView.isHidden = true
     }
 
+//    func pauseGame() {
+//
+//    }
 
     func gameOver() {
         disableInterval()

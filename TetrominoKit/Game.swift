@@ -13,6 +13,7 @@ public protocol GameDelegate {
     func scoreDidUpdate(newScore: Score)
     func levelChanged(to newLevel: Level)
     func newGame()
+//    func pauseGame()
     func gameOver()
 }
 
@@ -21,7 +22,6 @@ public final class Game<ViewType: SquareViewType> {
     // MARK: - Properties
 
     public var board: Board<ViewType>
-    var userInput: UserInput
     public var score: Score
     public var nextPiece: Piece<ViewType>
     public var delegate: GameDelegate?
@@ -34,9 +34,7 @@ public final class Game<ViewType: SquareViewType> {
         }
     }
 
-    fileprivate var currentPiece: Piece<ViewType>?
-
-    var gameOver = false {
+    public var gameOver = false {
         didSet {
             if gameOver {
                 delegate?.gameOver()
@@ -44,15 +42,15 @@ public final class Game<ViewType: SquareViewType> {
         }
     }
 
+    public var currentPiece: Piece<ViewType>?
+
     // MARK: - Initializers
 
-    public init(board: Board<ViewType>, userInput: UserInput, score: Score = 0, level: Level = .one) {
+    public init(board: Board<ViewType>, score: Score = 0, level: Level = .one) {
         self.board = board
-        self.userInput = userInput
         self.score = score
         self.level = level
         self.nextPiece = PieceType.random()
-        self.userInput.userInputDelegate = self
     }
 
     // MARK: - Public
@@ -90,6 +88,7 @@ public final class Game<ViewType: SquareViewType> {
         currentPiece = nextPiece
 
         if board.intersectsBottom(with: currentPiece) {
+            landPiece()
             gameOver = true
         }
         else {
@@ -131,6 +130,10 @@ extension Game: UserInputDelegate {
     public func newGame() {
         delegate?.newGame()
     }
+
+//    public func pause() {
+////        delegate?.pauseGame()
+//    }
 
     public func rotate() {
         guard let currentPiece = self.currentPiece else { return }
