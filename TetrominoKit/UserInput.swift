@@ -11,6 +11,7 @@ public protocol UserInput {
 }
 
 public protocol UserInputDelegate {
+    func newGame()
     func rotate()
     func moveLeft()
     func moveRight()

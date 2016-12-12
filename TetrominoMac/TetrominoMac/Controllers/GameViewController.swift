@@ -88,19 +88,18 @@ final class GameViewController: NSViewController {
     func interval() {
         game.tick()
     }
-
-    func newGame() {
-        game.new()
-        levelChanged(to: game.level)
-        windowController?.score = game.score
-        windowController?.highscore = highscore
-        gameOverView.isHidden = true
-    }
 }
 
 // MARK: - GameDelegate
 
 extension GameViewController: GameDelegate {
+    func newGame() {
+        game.new()
+        windowController?.highscore = highscore
+        gameOverView.isHidden = true
+    }
+
+
     func gameOver() {
         disableInterval()
 

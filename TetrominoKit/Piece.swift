@@ -32,8 +32,8 @@ public struct Piece<ViewType: SquareViewType> {
             [pattern[0][1], pattern[1][1], pattern[2][1], pattern[3][1]],
             [pattern[0][0], pattern[1][0], pattern[2][0], pattern[3][0]]
         ]
-        let firstFrame = squares.first!.view.frame
-        rotated.build(width: firstFrame.width, height: firstFrame.height)
+        let config = squares.first!.view.config
+        rotated.build(width: config.width, height: config.height)
         return rotated
     }
 

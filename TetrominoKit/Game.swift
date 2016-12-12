@@ -12,6 +12,7 @@ public protocol GameDelegate {
     func next<ViewType: SquareViewType>(piece nextPiece: Piece<ViewType>)
     func scoreDidUpdate(newScore: Score)
     func levelChanged(to newLevel: Level)
+    func newGame()
     func gameOver()
 }
 
@@ -59,7 +60,9 @@ public final class Game<ViewType: SquareViewType> {
     public func new() {
         board.reset()
         level = .one
+        delegate?.levelChanged(to: level)
         score = 0
+        delegate?.scoreDidUpdate(newScore: score)
         gameOver = false
     }
 
@@ -124,6 +127,11 @@ public final class Game<ViewType: SquareViewType> {
 // MARK: - UserInputDelegate
 
 extension Game: UserInputDelegate {
+
+    public func newGame() {
+        delegate?.newGame()
+    }
+
     public func rotate() {
         guard let currentPiece = self.currentPiece else { return }
 

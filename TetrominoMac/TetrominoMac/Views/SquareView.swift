@@ -13,12 +13,13 @@ final class SquareView: NSView, SquareViewType {
 
     // MARK: - Properties
 
-    var downOperation: (CGFloat, CGFloat) -> CGFloat = (-)
+    var config: SquareViewConfig
     let color: Color
 
     // MARK: - Initializers
 
     init(config: SquareViewConfig) {
+        self.config = config
         self.color = config.color
         let frame = CGRect(
             x: CGFloat(config.boardCol) * config.width + CGFloat(config.pieceCol) * config.width,
@@ -38,5 +39,27 @@ final class SquareView: NSView, SquareViewType {
     override public func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         layer?.backgroundColor = color.nsColor.cgColor
+    }
+
+    public func remove() {
+        removeFromSuperview()
+    }
+
+    func moveLeft() {
+        var newFrame = frame
+        newFrame.origin.x = newFrame.origin.x - newFrame.size.width
+        frame = newFrame
+    }
+
+    func moveRight() {
+        var newFrame = frame
+        newFrame.origin.x = newFrame.origin.x + newFrame.size.width
+        frame = newFrame
+    }
+
+    func moveDown() {
+        var newFrame = frame
+        newFrame.origin.y = newFrame.origin.y - newFrame.size.height
+        frame = newFrame
     }
 }

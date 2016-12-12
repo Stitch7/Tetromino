@@ -10,8 +10,8 @@ import CoreGraphics
 
 public struct SquareViewConfig {
     public let color: Color
-    public let boardRow: Int
-    public let boardCol: Int
+    public var boardRow: Int
+    public var boardCol: Int
     public let pieceRow: Int
     public let pieceCol: Int
     public let width: CGFloat
@@ -19,10 +19,12 @@ public struct SquareViewConfig {
 }
 
 public protocol SquareViewType {
-    var frame: CGRect { get set }
-    var downOperation: (CGFloat, CGFloat) -> CGFloat { get }
+    var config: SquareViewConfig { get set }
     init(config: SquareViewConfig)
-    func removeFromSuperview()
+    func remove()
+    func moveLeft()
+    func moveRight()
+    func moveDown()
 }
 
 public class Square<ViewType: SquareViewType> {
@@ -44,27 +46,21 @@ public class Square<ViewType: SquareViewType> {
     // MARK: - Public
 
     public func remove() {
-        view.removeFromSuperview()
+        view.remove()
     }
 
     func moveLeft() {
         col -= 1
-        var newFrame = view.frame
-        newFrame.origin.x = newFrame.origin.x - newFrame.size.width
-        view.frame = newFrame
+        view.moveLeft()
     }
 
     func moveRight() {
         col += 1
-        var newFrame = view.frame
-        newFrame.origin.x = newFrame.origin.x + newFrame.size.width
-        view.frame = newFrame
+        view.moveRight()
     }
 
     func moveDown() {
         row += 1
-        var newFrame = view.frame
-        newFrame.origin.y = view.downOperation(newFrame.origin.y, newFrame.size.height)
-        view.frame = newFrame
+        view.moveDown()
     }
 }

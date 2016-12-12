@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3001BAE41DFEC8A400D5AF1A /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BAE31DFEC8A400D5AF1A /* TetrominoTouchKit.framework */; };
+		3001BAE51DFEC8A400D5AF1A /* TetrominoTouchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BAE31DFEC8A400D5AF1A /* TetrominoTouchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3032AA0E1DF8632500BE5199 /* TetrominoTouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA0D1DF8632500BE5199 /* TetrominoTouchTests.swift */; };
 		3032AA191DF8632500BE5199 /* TetrominoTouchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA181DF8632500BE5199 /* TetrominoTouchUITests.swift */; };
 		3032AA711DF8644200BE5199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA5D1DF8644200BE5199 /* AppDelegate.swift */; };
@@ -22,8 +24,6 @@
 		3032AA7D1DF8644200BE5199 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6F1DF8644200BE5199 /* ScoreView.swift */; };
 		3032AA7E1DF8644200BE5199 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA701DF8644200BE5199 /* SquareView.swift */; };
 		3032AA811DF8647D00BE5199 /* TouchUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA801DF8647D00BE5199 /* TouchUserInput.swift */; };
-		30E3D7C61DF8875C0068946F /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */; };
-		30E3D7C71DF8875C0068946F /* TetrominoTouchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3D7C41DF887420068946F /* TetrominoTouchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3032AA901DF868C900BE5199 /* Embed Frameworks */ = {
+		3001BAE61DFEC8A400D5AF1A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				30E3D7C71DF8875C0068946F /* TetrominoTouchKit.framework in Embed Frameworks */,
+				3001BAE51DFEC8A400D5AF1A /* TetrominoTouchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3001BAE31DFEC8A400D5AF1A /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoTouchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3032A9F51DF8632500BE5199 /* TetrominoTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrominoTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3032AA091DF8632500BE5199 /* TetrominoTouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrominoTouchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3032AA0D1DF8632500BE5199 /* TetrominoTouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrominoTouchTests.swift; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E3D7C61DF8875C0068946F /* TetrominoTouchKit.framework in Frameworks */,
+				3001BAE41DFEC8A400D5AF1A /* TetrominoTouchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +113,7 @@
 		3032A9EC1DF8632500BE5199 = {
 			isa = PBXGroup;
 			children = (
+				3001BAE31DFEC8A400D5AF1A /* TetrominoTouchKit.framework */,
 				3032A9F71DF8632500BE5199 /* TetrominoTouch */,
 				3032AA0C1DF8632500BE5199 /* TetrominoTouchTests */,
 				3032AA171DF8632500BE5199 /* TetrominoTouchUITests */,
@@ -236,7 +238,7 @@
 				3032A9F11DF8632500BE5199 /* Sources */,
 				3032A9F21DF8632500BE5199 /* Frameworks */,
 				3032A9F31DF8632500BE5199 /* Resources */,
-				3032AA901DF868C900BE5199 /* Embed Frameworks */,
+				3001BAE61DFEC8A400D5AF1A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -108,19 +108,18 @@ final class GameViewController: UIViewController {
     func interval() {
         game.tick()
     }
-
-    func newGame() {
-        game.new()
-        levelChanged(to: game.level)
-        scoreView.score = game.score
-        scoreView.highscore = highscore
-        gameOverView.isHidden = true
-    }
 }
 
 // MARK: - GameDelegate
 
 extension GameViewController: GameDelegate {
+    func newGame() {
+        game.new()
+        scoreView.highscore = highscore
+        gameOverView.isHidden = true
+    }
+
+
     func gameOver() {
         disableInterval()
         gameOverView.newHighScore = highscore.save(value: game.score.value)

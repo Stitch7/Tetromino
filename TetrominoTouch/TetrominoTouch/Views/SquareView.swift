@@ -13,14 +13,14 @@ final class SquareView: UIView, SquareViewType {
 
     // MARK: - Properties
 
-    var downOperation: (CGFloat, CGFloat) -> CGFloat = (+)
-
+    var config: SquareViewConfig
     var row: Int
     var col: Int
 
     // MARK: - Initializers
 
     init(config: SquareViewConfig) {
+        self.config = config
         row = config.boardRow + config.pieceRow
         col = config.boardCol + config.pieceCol
         let frame = CGRect(
@@ -36,6 +36,30 @@ final class SquareView: UIView, SquareViewType {
 
     required public init?(coder aDecoder: NSCoder) {
         return nil
+    }
+
+    // MARK: - SquareViewType
+
+    public func remove() {
+        removeFromSuperview()
+    }
+
+    func moveLeft() {
+        var newFrame = frame
+        newFrame.origin.x = newFrame.origin.x - newFrame.size.width
+        frame = newFrame
+    }
+
+    func moveRight() {
+        var newFrame = frame
+        newFrame.origin.x = newFrame.origin.x + newFrame.size.width
+        frame = newFrame
+    }
+
+    func moveDown() {
+        var newFrame = frame
+        newFrame.origin.y = newFrame.origin.y + newFrame.size.height
+        frame = newFrame
     }
 
     // MARK: - Public
