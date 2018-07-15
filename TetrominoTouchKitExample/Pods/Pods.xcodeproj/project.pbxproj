@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14AD25B737A58F5A9DE13F8BECFD4305 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FF351D5644B653D97A1183224DC32D /* Square.swift */; };
+		1604F855A9C2F315D2E5373EC511D528 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD2DEA2FC886C14011898B93D91FA92 /* GameViewController.swift */; };
+		19C91D9877E94B59C81460966EE33C5B /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263E8B9673A3FCB177A3C07194B232A4 /* UserInput.swift */; };
+		28021E00DAF5A8600F770D94218C67C5 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45DE2E1F72D3B5FEAFB396EAEADF8 /* Score.swift */; };
+		2CA9F2AF6448EAB1A527AF85D1532492 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02201C0D58C996BF49A399F4EE6B62 /* Level.swift */; };
+		3B556D35DE04ACEF5F4A543044693A4A /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBE042FCA646011C818C6F08D68329 /* Highscore.swift */; };
+		454BA610D5D4A663586BC4D17B1DFE71 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A8FB7533FDDA3F90DA4EA2ADF333A /* SquareView.swift */; };
+		4710964AB49D39AC673A8586903BBC3A /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08E833F411090AC7D4FC39144C19A3D /* Board.swift */; };
+		6B9EF383C0827B0CD98C3B9EDC845771 /* TouchUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06605F124F912BA8060E70471EE2B2FA /* TouchUserInput.swift */; };
+		7065A43003F2ED46274DC2B63632B11A /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0403706AD78A778819945512F4ED723 /* GameOverView.swift */; };
+		7434770F8D4587E9AC107E0D25D4740B /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1F7F1F74B24E27902B1EB9C72E485 /* Piece.swift */; };
+		95E69938685A508CDDB16EAF15E96F9F /* TetrominoTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56928818BB62654FC5F69264B6B9A626 /* TetrominoTouch.swift */; };
+		9809EFCB291D1500BFDE141BB63C2C77 /* TetrominoTouchKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25183FFBCB42D3B3764620F47EF2218B /* TetrominoTouchKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ADEED0C7D39035843FF397815C44F56 /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEA0777FA8C8B83361896767F863C1 /* UIView+addConstraints.swift */; };
+		9F7E9E01BC611318199EE3752FEC5182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		9FE80E2AB7054D31C24AF34C7A0EF758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E89E3B87E67A6D315F221A6A6003D6 /* Assets.xcassets */; };
+		A6271FDF3A5F20C3726658FBBFAE85F2 /* Pods-TetrominoTouchKitExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 085F33F68AC6EABD634F129AA0A4F47B /* Pods-TetrominoTouchKitExample-dummy.m */; };
+		B68B8EE3C08946F2299D03A63A600992 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA1C069D9A3F28908768662761EA7B /* ScoreView.swift */; };
+		B78B9BA18D61FF7E8AAC7A2B854A5BAA /* Color+uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E584447F282B7A0DC4571BCD00EFE7 /* Color+uiColor.swift */; };
+		C1244E4042ABB31AD5951F6D42266383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		D5C22AC251D7BFD10E76DE1A1E5867FE /* TetrominoTouchKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 198372A9E863D89240EA0E1118467A8E /* TetrominoTouchKit-dummy.m */; };
+		D7182915F625B87D323298C23BD75DD6 /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7012CAA5132395D6F2517DD03EA56FC /* NextPieceView.swift */; };
+		DD0B6BC23F167D408DFA0555FD6937F7 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1887BC2B1CB8CA7961FD06844A6D72 /* LevelView.swift */; };
+		E5F2046C4E0CAF55864B5E9425C689C2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB16F3A6B6235F8F8CA27F1C4496D71B /* Game.swift */; };
+		E693A14ACC9C699E3FAB3F8F8D3047FF /* Pods-TetrominoTouchKitExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC3437EAFAA26D666721BF06FE386221 /* Pods-TetrominoTouchKitExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE4B7A3B772047C535BAE64C5253B038 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC47F35B4132AACAA6C0CF9B12391D /* Color.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE01A3EBFE019BFD47A4FCB8C7466B96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCF2BF82DBA16393126575E6CC5A2048;
+			remoteInfo = TetrominoTouchKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06605F124F912BA8060E70471EE2B2FA /* TouchUserInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TouchUserInput.swift; sourceTree = "<group>"; };
+		085F33F68AC6EABD634F129AA0A4F47B /* Pods-TetrominoTouchKitExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TetrominoTouchKitExample-dummy.m"; sourceTree = "<group>"; };
+		18574F42C0877C1FEB13B13C81A87288 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TetrominoTouchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		198372A9E863D89240EA0E1118467A8E /* TetrominoTouchKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TetrominoTouchKit-dummy.m"; sourceTree = "<group>"; };
+		25183FFBCB42D3B3764620F47EF2218B /* TetrominoTouchKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TetrominoTouchKit-umbrella.h"; sourceTree = "<group>"; };
+		263E8B9673A3FCB177A3C07194B232A4 /* UserInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
+		30EEA0777FA8C8B83361896767F863C1 /* UIView+addConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
+		37FF351D5644B653D97A1183224DC32D /* Square.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		43E584447F282B7A0DC4571BCD00EFE7 /* Color+uiColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+uiColor.swift"; sourceTree = "<group>"; };
+		56928818BB62654FC5F69264B6B9A626 /* TetrominoTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TetrominoTouch.swift; path = TetrominoTouchKit/Source/TetrominoTouch.swift; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		60BA1C069D9A3F28908768662761EA7B /* ScoreView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		644C5D633C1BB0A33177F73F11E15577 /* Pods-TetrominoTouchKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TetrominoTouchKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		6CD2DEA2FC886C14011898B93D91FA92 /* GameViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		80BEB4F2993687CC58ACF527DDA78A88 /* Pods-TetrominoTouchKitExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TetrominoTouchKitExample-frameworks.sh"; sourceTree = "<group>"; };
+		85BF0C3749F6ABC5CD5D96AA9A587138 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8C1887BC2B1CB8CA7961FD06844A6D72 /* LevelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		90052EECB2FE692EB954C4EFDCD84832 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F4AF4F63BEC62F9585E607F84E18704 /* Pods_TetrominoTouchKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrominoTouchKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0403706AD78A778819945512F4ED723 /* GameOverView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		A18B3C219B79BE0B54E00C94C0839E14 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD3002FAC8AC47CF6CB1C331B9F33B34 /* TetrominoTouchKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TetrominoTouchKit-prefix.pch"; sourceTree = "<group>"; };
+		AFF45DE2E1F72D3B5FEAFB396EAEADF8 /* Score.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		B08E833F411090AC7D4FC39144C19A3D /* Board.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		B7F646EE8095D80CFED7B28A498C3B82 /* TetrominoTouchKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TetrominoTouchKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B8C991C94E0FDB4664AFD819DA5E5549 /* Pods-TetrominoTouchKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TetrominoTouchKitExample.release.xcconfig"; sourceTree = "<group>"; };
+		BDAC47F35B4132AACAA6C0CF9B12391D /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CABBE042FCA646011C818C6F08D68329 /* Highscore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		CC3437EAFAA26D666721BF06FE386221 /* Pods-TetrominoTouchKitExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TetrominoTouchKitExample-umbrella.h"; sourceTree = "<group>"; };
+		CCA42C18B08D857ED682B76DB7958D6B /* TetrominoTouchKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TetrominoTouchKit.xcconfig; sourceTree = "<group>"; };
+		DB16F3A6B6235F8F8CA27F1C4496D71B /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		DEB2EBA74FB67628795C20620EA79FBC /* TetrominoTouchKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TetrominoTouchKit.modulemap; sourceTree = "<group>"; };
+		DF02201C0D58C996BF49A399F4EE6B62 /* Level.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		E4C1F7F1F74B24E27902B1EB9C72E485 /* Piece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		E71A8FB7533FDDA3F90DA4EA2ADF333A /* SquareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		E810316AA8F554373410DC2F017C2618 /* Pods-TetrominoTouchKitExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TetrominoTouchKitExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F1E89E3B87E67A6D315F221A6A6003D6 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = TetrominoTouchKit/Assets.xcassets; sourceTree = "<group>"; };
+		F3CCEE8F936986236C804045D8D62BA3 /* Pods-TetrominoTouchKitExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TetrominoTouchKitExample-resources.sh"; sourceTree = "<group>"; };
+		F5D3F5878A36B8CD45BFDEF709BDBC14 /* Pods-TetrominoTouchKitExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TetrominoTouchKitExample.modulemap"; sourceTree = "<group>"; };
+		F7012CAA5132395D6F2517DD03EA56FC /* NextPieceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
+		F7A338884E57EA62A7A086CAE0D7FE9A /* Pods-TetrominoTouchKitExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TetrominoTouchKitExample-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2585F497A93D87FD35EE4B982013DA9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1244E4042ABB31AD5951F6D42266383 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		418FB83AFB0EF2DDEE3D5594C3EF6C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F7E9E01BC611318199EE3752FEC5182 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09E0E28BF7A8856F8F883FFB312A7AAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1E89E3B87E67A6D315F221A6A6003D6 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		324B4EE76FAA48325E141C78B30F1975 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F543F851A9BBDAF0AEEFB247D7FFA49 /* TetrominoTouchKit */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		504D39FFA14FA868D3AFB67939E0DAFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CD2DEA2FC886C14011898B93D91FA92 /* GameViewController.swift */,
+			);
+			name = Controllers;
+			path = TetrominoTouchKit/Source/Controllers;
+			sourceTree = "<group>";
+		};
+		570D75B4C7474CBEE050CDBB53D39EF9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2143ACA47E2C793BFE1D017B7F71E4A /* Pods-TetrominoTouchKitExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		690533346A7F6BF8260E0E607A0F3ABA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43E584447F282B7A0DC4571BCD00EFE7 /* Color+uiColor.swift */,
+				30EEA0777FA8C8B83361896767F863C1 /* UIView+addConstraints.swift */,
+			);
+			name = Extensions;
+			path = TetrominoTouchKit/Source/Extensions;
+			sourceTree = "<group>";
+		};
+		73C57A8D6CBFBE57683CA87A95DB6DB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F4AF4F63BEC62F9585E607F84E18704 /* Pods_TetrominoTouchKitExample.framework */,
+				18574F42C0877C1FEB13B13C81A87288 /* TetrominoTouchKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7679B4429752CFE67D0077624A9D2A82 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				85BF0C3749F6ABC5CD5D96AA9A587138 /* LICENSE */,
+				B7F646EE8095D80CFED7B28A498C3B82 /* TetrominoTouchKit.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				324B4EE76FAA48325E141C78B30F1975 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				73C57A8D6CBFBE57683CA87A95DB6DB8 /* Products */,
+				570D75B4C7474CBEE050CDBB53D39EF9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9987B221FD5B960A3864FB0B0C6A678E /* UserInput */ = {
+			isa = PBXGroup;
+			children = (
+				06605F124F912BA8060E70471EE2B2FA /* TouchUserInput.swift */,
+			);
+			name = UserInput;
+			path = TetrominoTouchKit/Source/UserInput;
+			sourceTree = "<group>";
+		};
+		9F543F851A9BBDAF0AEEFB247D7FFA49 /* TetrominoTouchKit */ = {
+			isa = PBXGroup;
+			children = (
+				56928818BB62654FC5F69264B6B9A626 /* TetrominoTouch.swift */,
+				DB3B2C7794EE1D591FB0B5B60621912B /* __TetrominoKit */,
+				504D39FFA14FA868D3AFB67939E0DAFF /* Controllers */,
+				690533346A7F6BF8260E0E607A0F3ABA /* Extensions */,
+				7679B4429752CFE67D0077624A9D2A82 /* Pod */,
+				09E0E28BF7A8856F8F883FFB312A7AAE /* Resources */,
+				C3544E096E8A5954E402C9E8F9A6DEB1 /* Support Files */,
+				9987B221FD5B960A3864FB0B0C6A678E /* UserInput */,
+				CFA3A096706DAA20C025C6B4F50085CB /* Views */,
+			);
+			name = TetrominoTouchKit;
+			path = ../../TetrominoTouchKit;
+			sourceTree = "<group>";
+		};
+		A2143ACA47E2C793BFE1D017B7F71E4A /* Pods-TetrominoTouchKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				A18B3C219B79BE0B54E00C94C0839E14 /* Info.plist */,
+				F5D3F5878A36B8CD45BFDEF709BDBC14 /* Pods-TetrominoTouchKitExample.modulemap */,
+				E810316AA8F554373410DC2F017C2618 /* Pods-TetrominoTouchKitExample-acknowledgements.markdown */,
+				F7A338884E57EA62A7A086CAE0D7FE9A /* Pods-TetrominoTouchKitExample-acknowledgements.plist */,
+				085F33F68AC6EABD634F129AA0A4F47B /* Pods-TetrominoTouchKitExample-dummy.m */,
+				80BEB4F2993687CC58ACF527DDA78A88 /* Pods-TetrominoTouchKitExample-frameworks.sh */,
+				F3CCEE8F936986236C804045D8D62BA3 /* Pods-TetrominoTouchKitExample-resources.sh */,
+				CC3437EAFAA26D666721BF06FE386221 /* Pods-TetrominoTouchKitExample-umbrella.h */,
+				644C5D633C1BB0A33177F73F11E15577 /* Pods-TetrominoTouchKitExample.debug.xcconfig */,
+				B8C991C94E0FDB4664AFD819DA5E5549 /* Pods-TetrominoTouchKitExample.release.xcconfig */,
+			);
+			name = "Pods-TetrominoTouchKitExample";
+			path = "Target Support Files/Pods-TetrominoTouchKitExample";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3544E096E8A5954E402C9E8F9A6DEB1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90052EECB2FE692EB954C4EFDCD84832 /* Info.plist */,
+				DEB2EBA74FB67628795C20620EA79FBC /* TetrominoTouchKit.modulemap */,
+				CCA42C18B08D857ED682B76DB7958D6B /* TetrominoTouchKit.xcconfig */,
+				198372A9E863D89240EA0E1118467A8E /* TetrominoTouchKit-dummy.m */,
+				AD3002FAC8AC47CF6CB1C331B9F33B34 /* TetrominoTouchKit-prefix.pch */,
+				25183FFBCB42D3B3764620F47EF2218B /* TetrominoTouchKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../TetrominoTouchKitExample/Pods/Target Support Files/TetrominoTouchKit";
+			sourceTree = "<group>";
+		};
+		CFA3A096706DAA20C025C6B4F50085CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0403706AD78A778819945512F4ED723 /* GameOverView.swift */,
+				8C1887BC2B1CB8CA7961FD06844A6D72 /* LevelView.swift */,
+				F7012CAA5132395D6F2517DD03EA56FC /* NextPieceView.swift */,
+				60BA1C069D9A3F28908768662761EA7B /* ScoreView.swift */,
+				E71A8FB7533FDDA3F90DA4EA2ADF333A /* SquareView.swift */,
+			);
+			name = Views;
+			path = TetrominoTouchKit/Source/Views;
+			sourceTree = "<group>";
+		};
+		DB3B2C7794EE1D591FB0B5B60621912B /* __TetrominoKit */ = {
+			isa = PBXGroup;
+			children = (
+				B08E833F411090AC7D4FC39144C19A3D /* Board.swift */,
+				BDAC47F35B4132AACAA6C0CF9B12391D /* Color.swift */,
+				DB16F3A6B6235F8F8CA27F1C4496D71B /* Game.swift */,
+				CABBE042FCA646011C818C6F08D68329 /* Highscore.swift */,
+				DF02201C0D58C996BF49A399F4EE6B62 /* Level.swift */,
+				E4C1F7F1F74B24E27902B1EB9C72E485 /* Piece.swift */,
+				AFF45DE2E1F72D3B5FEAFB396EAEADF8 /* Score.swift */,
+				37FF351D5644B653D97A1183224DC32D /* Square.swift */,
+				263E8B9673A3FCB177A3C07194B232A4 /* UserInput.swift */,
+			);
+			name = __TetrominoKit;
+			path = TetrominoTouchKit/Source/__TetrominoKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2E3697B4E67C55284250C53ADEC90E27 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E693A14ACC9C699E3FAB3F8F8D3047FF /* Pods-TetrominoTouchKitExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8833A995FF5DC3C443D5D43E0C07ADD7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9809EFCB291D1500BFDE141BB63C2C77 /* TetrominoTouchKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7A906A5DC78C5542D108D88DC715C46A /* Pods-TetrominoTouchKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A48B78D915796B7E296C694F75C64C3C /* Build configuration list for PBXNativeTarget "Pods-TetrominoTouchKitExample" */;
+			buildPhases = (
+				BD4AD90FFC5D54B0779445672BC1A662 /* Sources */,
+				2585F497A93D87FD35EE4B982013DA9B /* Frameworks */,
+				2E3697B4E67C55284250C53ADEC90E27 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E937EF4FEDB92B141697E4BC8CAF872 /* PBXTargetDependency */,
+			);
+			name = "Pods-TetrominoTouchKitExample";
+			productName = "Pods-TetrominoTouchKitExample";
+			productReference = 9F4AF4F63BEC62F9585E607F84E18704 /* Pods_TetrominoTouchKitExample.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FCF2BF82DBA16393126575E6CC5A2048 /* TetrominoTouchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BC17B6F792A15050B1CCADCB09D21F6 /* Build configuration list for PBXNativeTarget "TetrominoTouchKit" */;
+			buildPhases = (
+				59EFD2502C538FA526D88274CBE3D67B /* Sources */,
+				418FB83AFB0EF2DDEE3D5594C3EF6C51 /* Frameworks */,
+				6A0F04C3D4AAD252A92C39E147A42F37 /* Resources */,
+				8833A995FF5DC3C443D5D43E0C07ADD7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TetrominoTouchKit;
+			productName = TetrominoTouchKit;
+			productReference = 18574F42C0877C1FEB13B13C81A87288 /* TetrominoTouchKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0940;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 73C57A8D6CBFBE57683CA87A95DB6DB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A906A5DC78C5542D108D88DC715C46A /* Pods-TetrominoTouchKitExample */,
+				FCF2BF82DBA16393126575E6CC5A2048 /* TetrominoTouchKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A0F04C3D4AAD252A92C39E147A42F37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FE80E2AB7054D31C24AF34C7A0EF758 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59EFD2502C538FA526D88274CBE3D67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4710964AB49D39AC673A8586903BBC3A /* Board.swift in Sources */,
+				B78B9BA18D61FF7E8AAC7A2B854A5BAA /* Color+uiColor.swift in Sources */,
+				FE4B7A3B772047C535BAE64C5253B038 /* Color.swift in Sources */,
+				E5F2046C4E0CAF55864B5E9425C689C2 /* Game.swift in Sources */,
+				7065A43003F2ED46274DC2B63632B11A /* GameOverView.swift in Sources */,
+				1604F855A9C2F315D2E5373EC511D528 /* GameViewController.swift in Sources */,
+				3B556D35DE04ACEF5F4A543044693A4A /* Highscore.swift in Sources */,
+				2CA9F2AF6448EAB1A527AF85D1532492 /* Level.swift in Sources */,
+				DD0B6BC23F167D408DFA0555FD6937F7 /* LevelView.swift in Sources */,
+				D7182915F625B87D323298C23BD75DD6 /* NextPieceView.swift in Sources */,
+				7434770F8D4587E9AC107E0D25D4740B /* Piece.swift in Sources */,
+				28021E00DAF5A8600F770D94218C67C5 /* Score.swift in Sources */,
+				B68B8EE3C08946F2299D03A63A600992 /* ScoreView.swift in Sources */,
+				14AD25B737A58F5A9DE13F8BECFD4305 /* Square.swift in Sources */,
+				454BA610D5D4A663586BC4D17B1DFE71 /* SquareView.swift in Sources */,
+				95E69938685A508CDDB16EAF15E96F9F /* TetrominoTouch.swift in Sources */,
+				D5C22AC251D7BFD10E76DE1A1E5867FE /* TetrominoTouchKit-dummy.m in Sources */,
+				6B9EF383C0827B0CD98C3B9EDC845771 /* TouchUserInput.swift in Sources */,
+				9ADEED0C7D39035843FF397815C44F56 /* UIView+addConstraints.swift in Sources */,
+				19C91D9877E94B59C81460966EE33C5B /* UserInput.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD4AD90FFC5D54B0779445672BC1A662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6271FDF3A5F20C3726658FBBFAE85F2 /* Pods-TetrominoTouchKitExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E937EF4FEDB92B141697E4BC8CAF872 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TetrominoTouchKit;
+			target = FCF2BF82DBA16393126575E6CC5A2048 /* TetrominoTouchKit */;
+			targetProxy = CE01A3EBFE019BFD47A4FCB8C7466B96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2173954C433668559F630784E3BBC103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 644C5D633C1BB0A33177F73F11E15577 /* Pods-TetrominoTouchKitExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TetrominoTouchKitExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TetrominoTouchKitExample/Pods-TetrominoTouchKitExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		325D3E76B4CC266D1F3FD8F2268D53D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCA42C18B08D857ED682B76DB7958D6B /* TetrominoTouchKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TetrominoTouchKit/TetrominoTouchKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TetrominoTouchKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TetrominoTouchKit/TetrominoTouchKit.modulemap";
+				PRODUCT_MODULE_NAME = TetrominoTouchKit;
+				PRODUCT_NAME = TetrominoTouchKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		69367E7EB21F25F1D4ED0DEC934CA53D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCA42C18B08D857ED682B76DB7958D6B /* TetrominoTouchKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TetrominoTouchKit/TetrominoTouchKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TetrominoTouchKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TetrominoTouchKit/TetrominoTouchKit.modulemap";
+				PRODUCT_MODULE_NAME = TetrominoTouchKit;
+				PRODUCT_NAME = TetrominoTouchKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		76FF35CC5568E0AD34997DF3A0E1DAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C991C94E0FDB4664AFD819DA5E5549 /* Pods-TetrominoTouchKitExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TetrominoTouchKitExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TetrominoTouchKitExample/Pods-TetrominoTouchKitExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BC17B6F792A15050B1CCADCB09D21F6 /* Build configuration list for PBXNativeTarget "TetrominoTouchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69367E7EB21F25F1D4ED0DEC934CA53D /* Debug */,
+				325D3E76B4CC266D1F3FD8F2268D53D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A48B78D915796B7E296C694F75C64C3C /* Build configuration list for PBXNativeTarget "Pods-TetrominoTouchKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2173954C433668559F630784E3BBC103 /* Debug */,
+				76FF35CC5568E0AD34997DF3A0E1DAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

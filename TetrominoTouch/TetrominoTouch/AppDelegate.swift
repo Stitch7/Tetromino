@@ -12,30 +12,16 @@ import TetrominoTouchKit
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let screenBounds = UIScreen.main.bounds
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = initWindow(rootViewController: initRootViewController())
+        let screenBounds = UIScreen.main.bounds
+        let gameController = TetrominoTouch().makeGameController(bounds: screenBounds)
+
+        window = UIWindow(frame: screenBounds)
+        window?.rootViewController = gameController
+        window?.makeKeyAndVisible()
+
         return true
-    }
-
-    private func initRootViewController() -> UIViewController {
-        let board = Board<SquareView>(width: screenBounds.width, height: screenBounds.height)
-        let userInput = TouchUserInput()
-        let game = Game<SquareView>(board: board, userInput: userInput, score: 0)
-        let highscore = Highscore(userDefaults: UserDefaults.standard)
-        let gameVC = GameViewController(game: game, userInput: userInput, highscore: highscore)
-        let navigationController = UINavigationController(rootViewController: gameVC)
-
-        return navigationController
-    }
-
-    private func initWindow(rootViewController: UIViewController) -> UIWindow {
-        let window = UIWindow(frame: screenBounds)
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
-
-        return window
     }
 }

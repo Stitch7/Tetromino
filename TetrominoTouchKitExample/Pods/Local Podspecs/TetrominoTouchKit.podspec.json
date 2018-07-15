@@ -1,0 +1,28 @@
+{
+  "name": "TetrominoTouchKit",
+  "version": "0.0.1",
+  "summary": "Classic Game.",
+  "description": "Tetromino implementation for iOS.",
+  "homepage": "https://github.com/Stitch7/Tetromino",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Christopher Reitz": "christopher@reitz.re"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/Stitch7/Tetromino.git"
+  },
+  "source_files": "TetrominoTouchKit/Source/**/*.swift",
+  "resources": "TetrominoTouchKit/Assets.xcassets",
+  "requires_arc": true,
+  "dependencies": {
+    "LTMorphingLabel": [
+
+    ]
+  }
+}

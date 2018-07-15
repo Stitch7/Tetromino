@@ -1,0 +1,23 @@
+PODS:
+  - LTMorphingLabel (0.5.6)
+  - TetrominoTouchKit (0.0.1):
+    - LTMorphingLabel
+
+DEPENDENCIES:
+  - TetrominoTouchKit (from `../TetrominoTouchKit`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - LTMorphingLabel
+
+EXTERNAL SOURCES:
+  TetrominoTouchKit:
+    :path: "../TetrominoTouchKit"
+
+SPEC CHECKSUMS:
+  LTMorphingLabel: bdb51d4682e9822da89da6f567bd8aa456fd6650
+  TetrominoTouchKit: b228751cddb2c99ba13d328cb5271693844cc8e7
+
+PODFILE CHECKSUM: 79a48660a927caf8b7cf7e96266551c7c1935c86
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,6 @@
+framework module TetrominoTouchKit {
+  umbrella header "TetrominoTouchKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

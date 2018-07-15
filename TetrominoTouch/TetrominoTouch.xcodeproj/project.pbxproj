@@ -10,20 +10,10 @@
 		3032AA0E1DF8632500BE5199 /* TetrominoTouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA0D1DF8632500BE5199 /* TetrominoTouchTests.swift */; };
 		3032AA191DF8632500BE5199 /* TetrominoTouchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA181DF8632500BE5199 /* TetrominoTouchUITests.swift */; };
 		3032AA711DF8644200BE5199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA5D1DF8644200BE5199 /* AppDelegate.swift */; };
-		3032AA721DF8644200BE5199 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA5F1DF8644200BE5199 /* GameViewController.swift */; };
-		3032AA731DF8644200BE5199 /* Color+uiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA611DF8644200BE5199 /* Color+uiColor.swift */; };
-		3032AA741DF8644200BE5199 /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA621DF8644200BE5199 /* UIView+addConstraints.swift */; };
 		3032AA751DF8644200BE5199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3032AA641DF8644200BE5199 /* Assets.xcassets */; };
 		3032AA761DF8644200BE5199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3032AA651DF8644200BE5199 /* LaunchScreen.storyboard */; };
-		3032AA781DF8644200BE5199 /* djrush.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3032AA691DF8644200BE5199 /* djrush.mp3 */; };
-		3032AA7A1DF8644200BE5199 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6C1DF8644200BE5199 /* GameOverView.swift */; };
-		3032AA7B1DF8644200BE5199 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6D1DF8644200BE5199 /* LevelView.swift */; };
-		3032AA7C1DF8644200BE5199 /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6E1DF8644200BE5199 /* NextPieceView.swift */; };
-		3032AA7D1DF8644200BE5199 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA6F1DF8644200BE5199 /* ScoreView.swift */; };
-		3032AA7E1DF8644200BE5199 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA701DF8644200BE5199 /* SquareView.swift */; };
-		3032AA811DF8647D00BE5199 /* TouchUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032AA801DF8647D00BE5199 /* TouchUserInput.swift */; };
-		3032AA8E1DF868C900BE5199 /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032AA8D1DF868C900BE5199 /* TetrominoTouchKit.framework */; };
-		3032AA8F1DF868C900BE5199 /* TetrominoTouchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3032AA8D1DF868C900BE5199 /* TetrominoTouchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3081131220F0D54000DED6B0 /* TetrominoTouchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3081131120F0D54000DED6B0 /* TetrominoTouchKit.framework */; };
+		3081131320F0D54000DED6B0 /* TetrominoTouchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3081131120F0D54000DED6B0 /* TetrominoTouchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3032AA8F1DF868C900BE5199 /* TetrominoTouchKit.framework in Embed Frameworks */,
+				3081131320F0D54000DED6B0 /* TetrominoTouchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,21 +56,12 @@
 		3032AA181DF8632500BE5199 /* TetrominoTouchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrominoTouchUITests.swift; sourceTree = "<group>"; };
 		3032AA1A1DF8632500BE5199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3032AA5D1DF8644200BE5199 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3032AA5F1DF8644200BE5199 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		3032AA611DF8644200BE5199 /* Color+uiColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+uiColor.swift"; sourceTree = "<group>"; };
-		3032AA621DF8644200BE5199 /* UIView+addConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
 		3032AA641DF8644200BE5199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3032AA661DF8644200BE5199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3032AA671DF8644200BE5199 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3032AA691DF8644200BE5199 /* djrush.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = djrush.mp3; sourceTree = "<group>"; };
-		3032AA6C1DF8644200BE5199 /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
-		3032AA6D1DF8644200BE5199 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
-		3032AA6E1DF8644200BE5199 /* NextPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
-		3032AA6F1DF8644200BE5199 /* ScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		3032AA701DF8644200BE5199 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		3032AA801DF8647D00BE5199 /* TouchUserInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchUserInput.swift; sourceTree = "<group>"; };
-		3032AA851DF867AE00BE5199 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoTouchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3032AA8D1DF868C900BE5199 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoTouchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3032AAC51DF8705F00BE5199 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TetrominoTouchKit.framework; path = "../TetrominoTouchKit/build/Debug-iphoneos/TetrominoTouchKit.framework"; sourceTree = "<group>"; };
+		3081131120F0D54000DED6B0 /* TetrominoTouchKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TetrominoTouchKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032AA8E1DF868C900BE5199 /* TetrominoTouchKit.framework in Frameworks */,
+				3081131220F0D54000DED6B0 /* TetrominoTouchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +93,12 @@
 		3032A9EC1DF8632500BE5199 = {
 			isa = PBXGroup;
 			children = (
-				3032AA8D1DF868C900BE5199 /* TetrominoTouchKit.framework */,
-				3032AA851DF867AE00BE5199 /* TetrominoTouchKit.framework */,
+				3081131120F0D54000DED6B0 /* TetrominoTouchKit.framework */,
 				3032A9F71DF8632500BE5199 /* TetrominoTouch */,
 				3032AA0C1DF8632500BE5199 /* TetrominoTouchTests */,
 				3032AA171DF8632500BE5199 /* TetrominoTouchUITests */,
 				3032A9F61DF8632500BE5199 /* Products */,
+				3032AAC41DF8705E00BE5199 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,10 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				3032AA5D1DF8644200BE5199 /* AppDelegate.swift */,
-				3032AA7F1DF8647D00BE5199 /* UserInput */,
-				3032AA5E1DF8644200BE5199 /* Controllers */,
-				3032AA6B1DF8644200BE5199 /* Views */,
-				3032AA601DF8644200BE5199 /* Extensions */,
 				3032AA631DF8644200BE5199 /* Supporting Files */,
 			);
 			path = TetrominoTouch;
@@ -162,30 +139,13 @@
 			path = TetrominoTouchUITests;
 			sourceTree = "<group>";
 		};
-		3032AA5E1DF8644200BE5199 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3032AA5F1DF8644200BE5199 /* GameViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3032AA601DF8644200BE5199 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3032AA611DF8644200BE5199 /* Color+uiColor.swift */,
-				3032AA621DF8644200BE5199 /* UIView+addConstraints.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		3032AA631DF8644200BE5199 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3032AA681DF8644200BE5199 /* Music */,
 				3032AA641DF8644200BE5199 /* Assets.xcassets */,
 				3032AA651DF8644200BE5199 /* LaunchScreen.storyboard */,
 				3032AA671DF8644200BE5199 /* Info.plist */,
-				3032AA681DF8644200BE5199 /* Music */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,24 +158,12 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
-		3032AA6B1DF8644200BE5199 /* Views */ = {
+		3032AAC41DF8705E00BE5199 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3032AA6C1DF8644200BE5199 /* GameOverView.swift */,
-				3032AA6D1DF8644200BE5199 /* LevelView.swift */,
-				3032AA6E1DF8644200BE5199 /* NextPieceView.swift */,
-				3032AA6F1DF8644200BE5199 /* ScoreView.swift */,
-				3032AA701DF8644200BE5199 /* SquareView.swift */,
+				3032AAC51DF8705F00BE5199 /* TetrominoTouchKit.framework */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3032AA7F1DF8647D00BE5199 /* UserInput */ = {
-			isa = PBXGroup;
-			children = (
-				3032AA801DF8647D00BE5199 /* TouchUserInput.swift */,
-			);
-			path = UserInput;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,21 +230,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Christopher Reitz";
 				TargetAttributes = {
 					3032A9F41DF8632500BE5199 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0810;
+						DevelopmentTeam = J8XDHCNJQA;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					3032AA081DF8632500BE5199 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J8XDHCNJQA;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3032A9F41DF8632500BE5199;
 					};
 					3032AA131DF8632500BE5199 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J8XDHCNJQA;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3032A9F41DF8632500BE5199;
 					};
@@ -327,7 +280,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032AA781DF8644200BE5199 /* djrush.mp3 in Resources */,
 				3032AA751DF8644200BE5199 /* Assets.xcassets in Resources */,
 				3032AA761DF8644200BE5199 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -354,16 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3032AA7B1DF8644200BE5199 /* LevelView.swift in Sources */,
-				3032AA7E1DF8644200BE5199 /* SquareView.swift in Sources */,
-				3032AA721DF8644200BE5199 /* GameViewController.swift in Sources */,
-				3032AA7D1DF8644200BE5199 /* ScoreView.swift in Sources */,
-				3032AA731DF8644200BE5199 /* Color+uiColor.swift in Sources */,
 				3032AA711DF8644200BE5199 /* AppDelegate.swift in Sources */,
-				3032AA741DF8644200BE5199 /* UIView+addConstraints.swift in Sources */,
-				3032AA7A1DF8644200BE5199 /* GameOverView.swift in Sources */,
-				3032AA7C1DF8644200BE5199 /* NextPieceView.swift in Sources */,
-				3032AA811DF8647D00BE5199 /* TouchUserInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,15 +362,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -456,6 +408,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -469,15 +422,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -498,6 +460,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -508,12 +471,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "TetrominoTouch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -522,11 +488,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "TetrominoTouch/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -535,11 +504,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				INFOPLIST_FILE = TetrominoTouchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrominoTouch.app/TetrominoTouch";
 			};
 			name = Debug;
@@ -549,11 +520,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				INFOPLIST_FILE = TetrominoTouchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrominoTouch.app/TetrominoTouch";
 			};
 			name = Release;
@@ -562,11 +535,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				INFOPLIST_FILE = TetrominoTouchUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = TetrominoTouch;
 			};
 			name = Debug;
@@ -575,11 +550,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = J8XDHCNJQA;
 				INFOPLIST_FILE = TetrominoTouchUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = re.reitz.TetrominoTouchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = TetrominoTouch;
 			};
 			name = Release;

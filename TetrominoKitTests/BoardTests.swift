@@ -6,15 +6,19 @@
 //  Copyright © 2016 Christopher Reitz. All rights reserved.
 //
 
-import AppKit
+import Foundation
 
 import XCTest
-@testable import TetrominoCoreMac
-@testable import TetrominoMac
+
+#if os(iOS)
+    @testable import TetrominoTouchKit
+#elseif os(OSX)
+    @testable import TetrominoMacKit
+#endif
 
 final class TestSquareView: SquareViewType {
     var frame: CGRect = .zero
-    var downOperation: (CGFloat, CGFloat) -> CGFloat = (-)
+    var downOperation: (CGFloat, CGFloat) -> CGFloat = (+)
     init(config: SquareViewConfig) { }
     func removeFromSuperview() { }
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highscore</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <h1 class="mt-3">m!client Tetromino Highscore</h1>
+    <form method="POST" action="/scores">
+    <div class="input-group">
+        <input type="text" name="username" class="form-control">
+        <input type="text" name="system" class="form-control">
+        <input type="text" name="value" class="form-control">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">
+                Create
+            </button>
+        </div>
+    </div>
+</form>
+#for(score in scores) {
+    <p class="mb-0">#(score.username): #(score.value)</p>
+}
+</body>
+</html>
